@@ -13,6 +13,12 @@ zen_cc_test(
 )
 
 zen_cc_test(
+  name="status",
+  srcs=["status.cpp"],
+  deps=["//:status"]
+)
+
+zen_cc_test(
   name="zen",
   srcs=["zen.cpp"],
   deps=["//:zen"]
