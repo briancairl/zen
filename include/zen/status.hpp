@@ -28,7 +28,6 @@ template <typename T, T... Elements> struct sequence
 {
 public:
   static constexpr std::size_t hash() { return hash_storage; }
-  constexpr operator std::size_t() const { return hash(); }
 
 private:
   static constexpr std::size_t hash_storage = hash_sequence<T, Elements...>();
@@ -39,64 +38,48 @@ template <typename T, T... Elements> [[nodiscard]] constexpr std::size_t hash(co
   return seq.hash();
 }
 
-// deduced difference elements for lhs/rhs sequences
-template <typename T, T... LHS_Ts, T... RHS_Ts>
-constexpr bool operator==(const sequence<T, LHS_Ts...>& lhs, const sequence<T, RHS_Ts...>& rhs)
-{
-  return false;
-}
-
-// deduced same elements for lhs/rhs sequences
-template <typename T, T... Both_Ts>
-constexpr bool operator==(const sequence<T, Both_Ts...>& lhs, const sequence<T, Both_Ts...>& rhs)
-{
-  return true;
-}
-
-// not equal, lifts above ==
-template <typename T, T... LHS_Ts, T... RHS_Ts>
-constexpr bool operator!=(const sequence<T, LHS_Ts...>& lhs, const sequence<T, RHS_Ts...>& rhs)
-{
-  return !operator==(lhs, rhs);
-}
-
 // a string-like sequence formed from a variadic pack, base on sequence
 template <char... Elements> struct message : public sequence<char, Elements...>
 {
 public:
   static constexpr const char* c_str() { return str_storage; }
-  constexpr operator const char*() const { return message::c_str(); }
-  constexpr operator std::string_view() const { return std::string_view{message::c_str()}; }
+  static constexpr std::string_view sv() { return std::string_view{message::c_str()}; }
 
 private:
   static constexpr char str_storage[] = {Elements..., '\0'};
 };
 
-// custom literal for flare
+template <typename LSeq, typename RSeq> struct are_messages_equal : std::false_type
+{};
+
+template <char... Elements> struct are_messages_equal<message<Elements...>, message<Elements...>> : std::true_type
+{};
+
 template <typename T, T... Elements> constexpr auto operator""_msg() { return message<Elements...>{}; }
 
-class status
+template <typename T, T... Elements> constexpr auto operator""_hash() { return hash(message<Elements...>{}); }
+
+static constexpr auto Valid = "valid"_msg;
+static constexpr auto Invalid = "invalid"_msg;
+static constexpr auto Unknown = "unknown"_msg;
+
+class result_status
 {
 public:
-  static constexpr auto valid = "valid"_msg;
-  static constexpr auto invalid = "invalid"_msg;
-  static constexpr auto unknown = "unknown"_msg;
+  constexpr result_status() = default;
+  constexpr result_status(const result_status& other) = default;
+  constexpr result_status(result_status&& other) : message_{other.message_} { other.message_ = Unknown.sv(); }
 
-  constexpr status() = default;
-  constexpr status(const status& other) = default;
-  constexpr status(status&& other) : message_{other.message_} { other.message_ = unknown; }
+  template <char... C> constexpr result_status(message<C...> m) : message_{m.c_str()} {}
 
-  template <char... C> constexpr status(message<C...> m) : message_{m.c_str()} {}
-
-  constexpr status& operator=(const status&) = default;
-  constexpr status& operator=(status&&) = default;
+  constexpr result_status& operator=(const result_status&) = default;
+  constexpr result_status& operator=(result_status&&) = default;
 
   [[nodiscard]] constexpr std::string_view message() const { return message_; }
-  [[nodiscard]] constexpr bool is_valid() const { return message_ == static_cast<std::string_view>(valid); }
-  [[nodiscard]] constexpr operator bool() const { return status::is_valid(); }
+  [[nodiscard]] constexpr bool valid() const { return message_.data() == Valid.c_str(); }
 
 private:
-  std::string_view message_ = unknown;
+  std::string_view message_ = Unknown.sv();
 };
 
 inline std::size_t hash(const std::string_view sv)
@@ -112,27 +95,30 @@ inline std::size_t hash(const std::string_view sv)
   return h;
 }
 
-inline std::size_t hash(const status& s) { return hash(s.message()); }
+inline std::size_t hash(const result_status& s) { return hash(s.message()); }
 
-template <char... C> inline bool operator==(const message<C...>& lhs, const status& rhs)
+template <char... C> [[nodiscard]] inline bool operator==(const message<C...>& lhs, const result_status& rhs)
 {
-  return hash(lhs) == hash(rhs);
+  return lhs.sv() == rhs.message();
 }
 
-template <char... C> inline bool operator==(const status& lhs, const message<C...>& rhs)
+template <char... C> [[nodiscard]] inline bool operator==(const result_status& lhs, const message<C...>& rhs)
 {
-  return hash(lhs) == hash(rhs);
+  return lhs.message() == rhs.sv();
 }
 
-template <char... C> inline bool operator!=(const message<C...>& lhs, const status& rhs) { return !(lhs == rhs); }
-
-template <char... C> inline bool operator!=(const status& lhs, const message<C...>& rhs) { return !(lhs == rhs); }
-
-inline std::ostream& operator<<(std::ostream& os, const status& s) { return os << s.message(); }
-
-template <char... C> inline std::ostream& operator<<(std::ostream& os, const message<C...> m)
+template <char... C> [[nodiscard]] inline bool operator!=(const message<C...>& lhs, const result_status& rhs)
 {
-  return os << static_cast<std::string_view>(m);
+  return !(lhs == rhs);
 }
+
+template <char... C> [[nodiscard]] inline bool operator!=(const result_status& lhs, const message<C...>& rhs)
+{
+  return !(lhs == rhs);
+}
+
+inline std::ostream& operator<<(std::ostream& os, const result_status& s) { return os << s.message(); }
+
+template <char... C> inline std::ostream& operator<<(std::ostream& os, const message<C...> m) { return os << m.sv(); }
 
 }  // namespace zen

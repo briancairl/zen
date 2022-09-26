@@ -26,13 +26,4 @@ struct result_of_apply<Fn, std::tuple<ArgTs...>, OthersTups...> : std::condition
 
 template <typename Fn, typename... AltTups> using result_of_apply_t = typename result_of_apply<Fn, AltTups...>::type;
 
-template <typename Fn, typename TupOfAlts> struct result_of_apply_tup;
-
-template <typename Fn, typename... Alts>
-struct result_of_apply_tup<Fn, std::tuple<Alts...>> : result_of_apply<Fn, Alts...>
-{};
-
-template <typename Fn, typename TupOfAlts>
-using result_of_apply_tup_t = typename result_of_apply_tup<Fn, TupOfAlts>::type;
-
 }  // namespace zen::meta

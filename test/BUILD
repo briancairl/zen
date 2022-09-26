@@ -19,6 +19,13 @@ zen_cc_test(
 )
 
 zen_cc_test(
+  name="result",
+  srcs=["result.cpp"],
+  deps=["//:result"]
+)
+
+
+zen_cc_test(
   name="zen",
   srcs=["zen.cpp"],
   deps=["//:zen"]

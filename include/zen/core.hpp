@@ -13,24 +13,35 @@ namespace zen
 
 template <typename... InvocableTs> class any_dispatch
 {
-  static constexpr std::size_t N = sizeof...(InvocableTs);
-
 public:
-  explicit constexpr any_dispatch(InvocableTs&&... fs) : invocables_{std::forward<InvocableTs>(fs)...} {};
-
-  template <typename ValueT> decltype(auto) operator()(ValueT&& v) const
+  explicit constexpr any_dispatch(InvocableTs&&... fs) : invocables_{std::forward<InvocableTs>(fs)...}
   {
-    return exec_impl(std::forward<ValueT>(v), std::make_index_sequence<N>{});
+    static_assert(sizeof...(InvocableTs) > 0, "At least one invocable must be specified");
+  };
+
+  template <typename... ValueTs> decltype(auto) operator()(ValueTs&&... values) const
+  {
+    static constexpr std::size_t N = sizeof...(InvocableTs);
+    return exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
   }
 
 private:
-  template <typename ValueT, std::size_t... Is> decltype(auto) exec_impl(ValueT&& v, std::index_sequence<Is...>) const
+  template <typename... ValueTs, std::size_t... Is>
+  decltype(auto) exec_impl(std::index_sequence<Is...> _, ValueTs&&... values) const
   {
-    using result_type = meta::
-      result_of_apply_t<meta::first_t<std::tuple<InvocableTs...>>, result_as_tuple_t<std::remove_reference_t<ValueT>>>;
+    using result_type = std::invoke_result_t<meta::first_t<InvocableTs...>, ValueTs...>;
 
-    result_type return_value{status{v.message()}};
-    v.valid() && ((return_value = std::get<Is>(this->invocables_)(std::forward<ValueT>(v)), return_value) || ...);
+    static_assert(
+      (sizeof...(InvocableTs) == 1) ||
+        (std::is_same_v<result_type, std::invoke_result_t<InvocableTs, ValueTs...>> && ...),
+      "'InvocableTs' executed under [any_dispatch] must all have the same return type");
+
+    result_type return_value;
+    {
+      [[maybe_unused]] const auto unused =
+        ((return_value = std::get<Is>(this->invocables_)(std::forward<ValueTs>(values)...), return_value.valid()) ||
+         ...);
+    }
     return return_value;
   }
 
@@ -39,61 +50,50 @@ private:
 
 template <typename... InvocableTs> class all_dispatch
 {
-  static constexpr std::size_t N = sizeof...(InvocableTs);
-
 public:
-  explicit constexpr all_dispatch(InvocableTs&&... fs) : invocables_{std::forward<InvocableTs>(fs)...} {};
-
-  template <typename ValueT> decltype(auto) operator()(ValueT&& v) const
+  explicit constexpr all_dispatch(InvocableTs&&... fs) : invocables_{std::forward<InvocableTs>(fs)...}
   {
-    return exec_impl(std::forward<ValueT>(v), std::make_index_sequence<N>{});
+    static_assert(sizeof...(InvocableTs) > 0, "At least one invocable must be specified");
+  };
+
+  template <typename... ValueTs> decltype(auto) operator()(ValueTs&&... values) const
+  {
+    static constexpr std::size_t N = sizeof...(InvocableTs);
+    return exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
   }
 
 private:
-  template <typename ValueT, std::size_t... Is> decltype(auto) exec_impl(ValueT&& v, std::index_sequence<Is...>) const
+  template <typename... ValueTs, std::size_t... Is>
+  decltype(auto) exec_impl(std::index_sequence<Is...> _, ValueTs&&... values) const
   {
-    using result_type =
-      make_result_t<std::tuple<InvocableTs...>, std::tuple<result_as_tuple_t<std::remove_reference_t<ValueT>>>>;
-
-    return v.valid() ? result_type::create(deferred<InvocableTs, std::remove_reference_t<ValueT>>{
-                         std::forward<InvocableTs>(std::get<Is>(invocables_)), std::forward<ValueT>(v)}...)
-                     : result_type::error(v.message());
+    return create(
+      make_deferred_result(std::forward<InvocableTs>(std::get<Is>(invocables_)), std::forward_as_tuple(values...))...);
   }
 
   std::tuple<InvocableTs&&...> invocables_;
 };
 
-template <typename... Ts> constexpr decltype(auto) begin(Ts&&... t)
+template <typename... ValueTs> constexpr decltype(auto) pass(ValueTs&&... values)
 {
-  return result<std::remove_reference_t<Ts>...>{std::forward<Ts>(t)...};
+  static_assert(sizeof...(ValueTs) > 0, "at least one value must be specified");
+  return make_result(std::forward<ValueTs>(values)...);
 }
 
-template <typename... Ts> constexpr decltype(auto) any(Ts&&... t)
+template <typename... InvocableTs> constexpr decltype(auto) any(InvocableTs&&... t)
 {
-  return any_dispatch<std::remove_reference_t<Ts>...>{std::forward<Ts>(t)...};
+  return any_dispatch<std::remove_reference_t<InvocableTs>...>{std::forward<InvocableTs>(t)...};
 }
 
-template <typename... Ts> constexpr decltype(auto) all(Ts&&... t)
+template <typename... InvocableTs> constexpr decltype(auto) all(InvocableTs&&... t)
 {
-  return all_dispatch<std::remove_reference_t<Ts>...>{std::forward<Ts>(t)...};
+  return all_dispatch<std::remove_reference_t<InvocableTs>...>{std::forward<InvocableTs>(t)...};
 }
 
-template <typename... Ts, typename... InvocableTs>
-decltype(auto) operator|(result<Ts...>&& r, any_dispatch<InvocableTs...> dispatch)
+template <typename T, typename Fn> decltype(auto) operator|(result<T>&& r, Fn&& f)
 {
-  return dispatch(r);
-}
-
-template <typename... Ts, typename... InvocableTs>
-decltype(auto) operator|(result<Ts...>&& r, all_dispatch<InvocableTs...> dispatch)
-{
-  return dispatch(r);
-}
-
-template <typename... Ts, typename Fn> decltype(auto) operator|(result<Ts...>&& r, Fn f)
-{
-  using return_type = decltype(std::apply(f, r.as_tuple()));
-  return r.valid() ? std::apply(f, r.as_tuple()) : return_type::error(r.message());
+  using original_return_type = decltype(std::apply(std::forward<Fn>(f), as_tuple(r)));
+  using return_type = to_result_t<original_return_type>;
+  return r.valid() ? return_type{std::apply(std::forward<Fn>(f), as_tuple(r))} : return_type{r.status()};
 }
 
 }  // namespace zen

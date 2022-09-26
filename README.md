@@ -16,7 +16,8 @@ Supports multi-threaded execution. Attempts to allow for the construction of exe
 int main(int argc, char** argv)
 {
   using namespace zen;
-  auto r = begin(argc, argc)
+
+  auto r = pass(argc, argc)
          | [](int a, float b) -> result<float> { return a + b; }
          | [](float b) -> result<float> { return 2.f * b; };
 
@@ -26,7 +27,7 @@ int main(int argc, char** argv)
    }
    else
   {
-    std::cout << r.message() << std::endl;
+    std::cout << r.status() << std::endl;
   }
 };
 ```
@@ -41,7 +42,7 @@ int main(int argc, char** argv)
 int main(int argc, char** argv)
 {
   using namespace zen;
-  auto r = begin(argc, argc)
+  auto r = pass(argc, argc)
          | [](int a, float b) -> result<float>
            {
              if (a > 2)
@@ -79,7 +80,7 @@ int main(int argc, char** argv)
    }
    else
   {
-    std::cout << r.message() << std::endl;
+    std::cout << r.status() << std::endl;
   }
 };
 ```
@@ -97,7 +98,7 @@ int main(int argc, char** argv)
 
   exec::thread_pool tp{4};
 
-  auto r = begin(argc, argc)
+  auto r = pass(argc, argc)
          | [](int a, float b) -> result<float> { return 2 * b; }
          | any(
            tp,
@@ -118,7 +119,7 @@ int main(int argc, char** argv)
    }
    else
   {
-    std::cout << r.message() << std::endl;
+    std::cout << r.status() << std::endl;
   }
 };
 ```

@@ -44,24 +44,6 @@ TEST(ResultOfApply, WithAlternatives)
   EXPECT_TRUE((std::is_same_v<result_type, double>));
 }
 
-TEST(ResultOfApplyTup, NoAlternatives)
-{
-  auto l = [](const int, const float) { return double{1}; };
-
-  using result_type = result_of_apply_tup_t<decltype(l), std::tuple<std::tuple<int, float>>>;
-
-  EXPECT_TRUE((std::is_same_v<result_type, double>));
-}
-
-TEST(ResultOfApplyTup, WithAlternatives)
-{
-  auto l = [](const int, const float) { return double{1}; };
-
-  using result_type = result_of_apply_tup_t<decltype(l), std::tuple<std::tuple<int*, float*>, std::tuple<int, float>>>;
-
-  EXPECT_TRUE((std::is_same_v<result_type, double>));
-}
-
 TEST(Append, Single)
 {
   using lhs_type = std::tuple<const int, const float>;

@@ -5,89 +5,82 @@
 
 // Zen
 #include <zen/fwd.hpp>
-#include <zen/meta/collect.hpp>
 #include <zen/meta/invocable.hpp>
-#include <zen/meta/type_to_string.hpp>
+#include <zen/meta/is_specialization.hpp>
+#include <zen/meta/transform.hpp>
+#include <zen/status.hpp>
 
 namespace zen
 {
+template <typename T> struct to_result
+{
+  using type = result<T>;
+};
 
-template <typename InvocableT, typename ArgTs = void> class deferred;
+template <typename T> struct to_result<result<T>>
+{
+  using type = result<T>;
+};
 
-template <typename InvocableT> class deferred<InvocableT, void>
+template <typename T> using to_result_t = typename to_result<T>::type;
+
+template <typename InvocableT, typename ArgumentTupleT> class deferred_result
 {
 public:
-  using original_return_type = meta::result_of_apply_t<InvocableT, std::tuple<>>;
-  using return_type =
-    std::conditional_t<is_result_v<original_return_type>, original_return_type, result<original_return_type>>;
+  using invocable_return_type = meta::result_of_apply_t<InvocableT, ArgumentTupleT>;
+  using return_type = to_result_t<invocable_return_type>;
+  constexpr deferred_result(InvocableT&& fn, ArgumentTupleT&& args) :
+      fn_{std::forward<InvocableT>(fn)}, args_{std::forward<ArgumentTupleT>(args)}
+  {}
 
-  constexpr deferred(InvocableT&& fn) : fn_{std::forward<InvocableT>(fn)} {}
+  [[nodiscard]] constexpr auto operator()() const -> return_type { return std::apply(fn_, args_); }
 
-  constexpr return_type operator()() const { return fn_(); }
+private:
+  InvocableT&& fn_;
+  ArgumentTupleT&& args_;
+};
+
+
+template <typename InvocableT> class deferred_result<InvocableT, void>
+{
+public:
+  using invocable_return_type = meta::result_of_apply_t<InvocableT, std::tuple<>>;
+  using return_type = to_result_t<invocable_return_type>;
+  constexpr deferred_result(InvocableT&& fn) : fn_{std::forward<InvocableT>(fn)} {}
+
+  [[nodiscard]] constexpr auto operator()() const -> return_type { return fn_(); }
 
 private:
   InvocableT&& fn_;
 };
 
-template <typename InvocableT, typename... Ts> class deferred<InvocableT, result<Ts...>>
+template <typename D> struct deferred_result_of;
+
+template <typename InvocableT, typename InputT> struct deferred_result_of<deferred_result<InvocableT, InputT>>
 {
-public:
-  using original_return_type = meta::result_of_apply_t<InvocableT, std::tuple<Ts...>>;
-  using return_type =
-    std::conditional_t<is_result_v<original_return_type>, original_return_type, result<original_return_type>>;
-
-  constexpr deferred(InvocableT&& fn, result<Ts...> r) : fn_{std::forward<InvocableT>(fn)}, args_(r.value()) {}
-
-  constexpr return_type operator()() const { return std::apply(fn_, args_); }
-
-private:
-  InvocableT&& fn_;
-  std::tuple<Ts&...> args_;
+  using type = typename deferred_result<InvocableT, InputT>::return_type;
 };
 
-template <typename InvocableT> decltype(auto) make_deferred(InvocableT&& invocable)
+template <typename D> using deferred_result_of_t = typename deferred_result_of<D>::type;
+
+template <typename InvocableT> decltype(auto) make_deferred_result(InvocableT&& invocable)
 {
-  return deferred<std::remove_reference_t<InvocableT>, void>{std::forward<InvocableT>(invocable)};
+  return deferred_result<std::remove_reference_t<InvocableT>, void>{std::forward<InvocableT>(invocable)};
 }
 
-template <typename InvocableT, typename ArgT> decltype(auto) make_deferred(InvocableT&& invocable, ArgT&& arg)
+template <typename InvocableT, typename ArgTupleT>
+decltype(auto) make_deferred_result(InvocableT&& invocable, ArgTupleT&& arg)
 {
-  return deferred<std::remove_reference_t<InvocableT>, std::remove_reference_t<ArgT>>{
-    std::forward<InvocableT>(invocable), std::forward<ArgT>(arg)};
+  return deferred_result<std::remove_reference_t<InvocableT>, std::remove_reference_t<ArgTupleT>>{
+    std::forward<InvocableT>(invocable), std::forward<ArgTupleT>(arg)};
 }
 
-class status
-{
-  static constexpr const char* kStrMoved{"moved"};
-  static constexpr const char* kStrValid{""};
-
-public:
-  constexpr status(const status& other) = default;
-
-  constexpr status(status&& other) : message_{other.message_} { other.message_ = kStrMoved; }
-
-  constexpr status& operator=(const status&) = default;
-  constexpr status& operator=(status&&) = default;
-
-  constexpr explicit status(const char* reason) : message_{reason} {}
-  constexpr const char* message() const { return message_; }
-
-  constexpr bool valid() const { return message_ == kStrValid; }
-  constexpr operator bool() const { return valid(); }
-
-protected:
-  constexpr status() = default;
-
-private:
-  const char* message_ = kStrValid;
-};
-
-template <typename T> class mem
+template <typename T> class result_value
 {
 public:
-  constexpr mem() = default;
-  constexpr mem(const T& value) { emplace(value); }
-  constexpr mem(T&& value) { emplace(std::move(value)); }
+  constexpr result_value() = default;
+  constexpr result_value(const T& value) { emplace(value); }
+  constexpr result_value(T&& value) { emplace(std::move(value)); }
 
   [[nodiscard]] constexpr T& value() { return (*data()); }
   [[nodiscard]] constexpr const T& value() const { return (*data()); }
@@ -97,152 +90,131 @@ public:
 
   template <typename... ArgTs> void emplace(ArgTs&&... args) { new (data()) T{std::forward<ArgTs>(args)...}; }
 
+protected:
+  void destroy() { data()->~T(); }
+
 private:
   T* data() { return reinterpret_cast<T*>(&value_buffer_); }
   const T* data() const { return reinterpret_cast<const T*>(&value_buffer_); }
-  void destroy() { data()->~T(); }
 
   alignas(T) std::byte value_buffer_[sizeof(T)];
-
-  template <typename... Ts> friend class result;
 };
 
-template <typename T> class result<T> final : public status, public mem<T>
+template <typename T> class result final : public result_value<T>
 {
 public:
   constexpr result() = default;
-  constexpr result(status&& s) : status{std::move(s)} {}
-  constexpr result(const T& value) : status{}, mem<T>{value} {}
-  constexpr result(T&& value) : status{}, mem<T>{std::move(value)} {}
+
+  template <char... Elements>
+  constexpr result(message<Elements...> error_message) : result_value<T>{}, status_{error_message}
+  {
+    static_assert(
+      !are_messages_equal<message<Elements...>, decltype(Valid)>(),
+      "To set a valid result, assign a value, not an error message");
+  }
+
+  constexpr result(result_status&& status) : result_value<T>{}, status_{std::move(status)} {}
+  constexpr result(const T& value) : result_value<T>{value}, status_{Valid} {}
+  constexpr result(T&& value) : result_value<T>{std::move(value)}, status_{Valid} {}
 
   ~result()
   {
-    if constexpr (std::is_trivial_v<T>)
+    if constexpr (!std::is_trivial_v<T>)
     {
-      return;
-    }
-    else if (status::valid())
-    {
-      result::destroy();
-    }
-  }
-
-  [[nodiscard]] constexpr decltype(auto) as_tuple() { return std::forward_as_tuple(this->value()); }
-  [[nodiscard]] constexpr decltype(auto) as_tuple() const { return std::forward_as_tuple(this->value()); }
-
-  template <typename InvocableT, typename... ArgTs>
-  [[nodiscard]] static result<T> create(deferred<InvocableT, ArgTs...> creator)
-  {
-    return creator();
-  }
-
-  using mem<T>::operator*;
-
-  static constexpr result<T> error(const char* message) { return result<T>{status{message}}; };
-};
-
-template <typename... Ts> class result final : public status
-{
-public:
-  result() = default;
-  constexpr result(status&& s) : status{std::move(s)} {}
-  constexpr result(const Ts&... values) : status{}, values_{values...} {}
-  constexpr result(Ts&&... values) : status{}, values_{std::move(values)...} {}
-
-  ~result()
-  {
-    if (status::valid())
-    {
-      destroy_impl(values_, std::make_index_sequence<sizeof...(Ts)>{});
+      if (status_.valid())
+      {
+        result::destroy();
+      }
     }
   }
 
-  template <typename... DeferredTs> [[nodiscard]] static result<Ts...> create(DeferredTs&&... deferred)
-  {
-    static constexpr std::size_t N = sizeof...(Ts);
-    static_assert(N == sizeof...(DeferredTs));
-    return create_impl(std::forward_as_tuple(deferred...), std::make_index_sequence<N>{});
-  }
+  using result_value<T>::operator*;
 
-  [[nodiscard]] constexpr decltype(auto) value()
-  {
-    return value_impl(values_, std::make_index_sequence<sizeof...(Ts)>{});
-  }
-  [[nodiscard]] constexpr decltype(auto) value() const
-  {
-    return value_impl(values_, std::make_index_sequence<sizeof...(Ts)>{});
-  }
+  [[nodiscard]] constexpr result_status status() const { return status_; }
 
-  [[nodiscard]] constexpr decltype(auto) as_tuple() { return value(); }
-  [[nodiscard]] constexpr decltype(auto) as_tuple() const { return value(); }
+  [[nodiscard]] constexpr bool valid() const { return status_.valid(); }
 
-  [[nodiscard]] constexpr decltype(auto) operator*() { return value(); }
-  [[nodiscard]] constexpr decltype(auto) operator*() const { return value(); }
-
-  static constexpr result<Ts...> error(const char* message) { return result<Ts...>{status{message}}; };
+  [[nodiscard]] constexpr operator bool() const { return status_.valid(); }
 
 private:
-  template <typename DeferredTupleT, std::size_t... Is>
-  static result<Ts...> create_impl(DeferredTupleT&& deferred, std::index_sequence<Is...>)
-  {
-    result<Ts...> r;
-    std::tuple<result<Ts>...> deferred_results;
-    if (((std::get<Is>(deferred_results) = std::get<Is>(deferred)(), std::get<Is>(deferred_results).valid()) && ...))
-    {
-      [[maybe_unused]] const auto _ =
-        ((std::get<Is>(r.values_) = std::move(std::get<Is>(deferred_results)), true) && ...);
-    }
-    else
-    {
-      [[maybe_unused]] const auto _ =
-        ((std::get<Is>(deferred_results).valid() ||
-          (r = result<Ts...>{status{std::get<Is>(deferred_results).message()}}, false)) &&
-         ...);
-    }
-    return r;
-  }
-
-  template <typename Tup, std::size_t... Is> static decltype(auto) value_impl(Tup&& tup, std::index_sequence<Is...>)
-  {
-    return std::forward_as_tuple(std::get<Is>(std::forward<Tup>(tup)).value()...);
-  }
-
-  template <typename Tup, std::size_t... Is> static void destroy_impl(Tup&& tup, std::index_sequence<Is...>)
-  {
-    [[maybe_unused]] const auto _ = (([&] { std::get<Is>(std::forward<Tup>(tup)).destroy(); }(), Is) + ...);
-  }
-
-  std::tuple<mem<Ts>...> values_;
+  result_status status_;
 };
 
-template <typename OutputPackT, typename... Ts> struct collect_customization<OutputPackT, std::tuple<Ts...>>
+template <typename T> [[nodiscard]] constexpr decltype(auto) as_tuple(const result<T>& r)
 {
-  using type = meta::append_t<OutputPackT, result<Ts...>>;
-};
+  return std::forward_as_tuple(r.value());
+}
 
-template <typename OutputPackT, typename... Ts> struct collect_customization<OutputPackT, result<Ts...>>
+template <typename... Ts> [[nodiscard]] constexpr decltype(auto) as_tuple(const result<std::tuple<Ts...>>& r)
 {
-  using type = meta::append_t<OutputPackT, result<Ts...>>;
-};
+  return r.value();
+}
 
-template <typename Invocables, typename Alternatives> struct make_result;
+template <typename DeferredT> decltype(auto) create(DeferredT deferred_result) { return deferred_result(); }
 
-template <typename Alternatives, typename... Invocables> struct make_result<std::tuple<Invocables...>, Alternatives>
+template <typename ResultTupleT, typename DeferredTupleT, std::size_t... Is>
+decltype(auto) create(ResultTupleT&& result_tuple, DeferredTupleT&& deferred_result_tuple, std::index_sequence<Is...> _)
 {
-  using type = typename meta::collect<
-    result<meta::result_of_apply_tup_t<std::remove_reference_t<Invocables>, Alternatives>...>>::type;
+  using concat_result_tuple_type =
+    decltype(std::tuple_cat(as_tuple(std::get<Is>(std::forward<ResultTupleT>(result_tuple)))...));
+  using result_type = result<meta::transform_t<concat_result_tuple_type, std::remove_reference>>;
+
+  result_type r;
+  if (((std::get<Is>(std::forward<ResultTupleT>(result_tuple)) =
+          std::get<Is>(std::forward<DeferredTupleT>(deferred_result_tuple))(),
+        std::get<Is>(std::forward<ResultTupleT>(result_tuple)).valid()) &&
+       ...))
+  {
+    r = result_type{std::tuple_cat(as_tuple(std::get<Is>(std::forward<ResultTupleT>(result_tuple)))...)};
+  }
+  else
+  {
+    [[maybe_unused]] const auto _ =
+      ((std::get<Is>(std::forward<ResultTupleT>(result_tuple)).valid() ||
+        (r = result_type{std::get<Is>(std::forward<ResultTupleT>(result_tuple)).status()}, false)) &&
+       ...);
+  }
+  return r;
+}
+
+template <typename DeferredT1, typename DeferredT2, typename... OtherDeferredTs>
+decltype(auto) create(DeferredT1 d1, DeferredT2 d2, OtherDeferredTs... dn)
+{
+  std::
+    tuple<deferred_result_of_t<DeferredT1>, deferred_result_of_t<DeferredT2>, deferred_result_of_t<OtherDeferredTs>...>
+      results;
+  return create(
+    results, std::forward_as_tuple(d1, d2, dn...), std::make_index_sequence<sizeof...(OtherDeferredTs) + 2>{});
+}
+
+template <typename ResultT> struct result_as_tuple;
+
+template <typename T> struct result_as_tuple<result<T>>
+{
+  using type = std::tuple<T>;
 };
 
-template <typename Invocables, typename Alternatives>
-using make_result_t = typename make_result<Invocables, Alternatives>::type;
-
-template <typename ResulT> struct result_as_tuple;
-
-template <typename... Ts> struct result_as_tuple<result<Ts...>>
+template <typename... Ts> struct result_as_tuple<result<std::tuple<Ts...>>>
 {
   using type = std::tuple<Ts...>;
 };
 
-template <typename ResulT> using result_as_tuple_t = typename result_as_tuple<ResulT>::type;
+template <typename ResultT> using result_as_tuple_t = typename result_as_tuple<ResultT>::type;
+
+template <typename... Ts> decltype(auto) make_result(Ts&&... values)
+{
+  if constexpr (sizeof...(Ts) > 1)
+  {
+    return result<std::tuple<std::remove_reference_t<Ts>...>>{{std::forward<Ts>(values)...}};
+  }
+  else if constexpr (meta::is_specialization_v<std::remove_reference_t<Ts>..., std::tuple>)
+  {
+    return result<std::remove_reference_t<Ts>...>{std::forward<Ts>(values)...};
+  }
+  else
+  {
+    return result<std::remove_reference_t<Ts>...>{std::forward<Ts>(values)...};
+  }
+}
 
 }  // namespace zen
