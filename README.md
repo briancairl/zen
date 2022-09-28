@@ -1,3 +1,5 @@
+[![Unit Tests](https://github.com/briancairl/zen/actions/workflows/pr.yml/badge.svg)](https://github.com/briancairl/zen/actions/workflows/pr.yml)
+
 # Zen
 
 Zen provides facilities for railroad style programming in C++.
