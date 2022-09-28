@@ -17,7 +17,7 @@ private:
   [[nodiscard]] constexpr const ExecutorT* derived() const { return reinterpret_cast<const ExecutorT*>(this); }
 };
 
-template <typename HandleT> class executor_status_handle
+template <typename HandleT> class executor_handle
 {
 public:
   [[nodiscard]] constexpr bool is_working() const { return derived()->is_working_impl(); };
@@ -33,18 +33,9 @@ private:
   constexpr const HandleT* derived() const { return reinterpret_cast<const HandleT*>(this); }
 };
 
-template <typename DerivedT>
-[[nodiscard]] constexpr bool executor_status_handle_test(executor_status_handle<DerivedT>* _)
-{
-  return true;
-}
-[[nodiscard]] constexpr bool executor_status_handle_test(...) { return false; }
-
-template <typename T>
-struct is_executor_status_handle
-    : std::integral_constant<bool, executor_status_handle_test(std::add_pointer_t<T>{nullptr})>
+template <typename T> struct is_executor_handle : std::integral_constant<bool, std::is_base_of_v<executor_handle<T>, T>>
 {};
 
-template <typename T> static constexpr bool is_executor_status_handle_v = is_executor_status_handle<T>::value;
+template <typename T> static constexpr bool is_executor_handle_v = is_executor_handle<T>::value;
 
 }  // namespace zen::exec

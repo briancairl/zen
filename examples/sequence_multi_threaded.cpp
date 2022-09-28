@@ -1,6 +1,8 @@
+// C++ Standard Library
 #include <iostream>
 
-#include <zen/zen.hpp>
+// Zen
+#include <zen/parallel.hpp>
 
 int main(int argc, char** argv)
 {
@@ -9,7 +11,7 @@ int main(int argc, char** argv)
   exec::thread_pool tp{4};
 
   // clang-format off
-  auto r = begin(argc, argc)
+  auto r = pass(argc, argc)
          | [](int a, float b) -> zen::result<float> { return 2 * b; }
          | any(
            tp,
@@ -31,6 +33,6 @@ int main(int argc, char** argv)
   }
   else
   {
-    std::cout << r.message() << std::endl;
+    std::cout << r.status() << std::endl;
   }
 };

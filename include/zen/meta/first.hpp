@@ -5,14 +5,13 @@ namespace zen::meta
 /**
  * @brief Grabs first type in VariadicPackT template argument list
  */
-template <typename VariadicPackT> struct first;
+template <typename... Ts> struct first;
 
-template <template <typename...> class VariadicPackTmpl, typename FirstT, typename... OtherTs>
-struct first<VariadicPackTmpl<FirstT, OtherTs...>>
+template <typename FirstT, typename... OtherTs> struct first<FirstT, OtherTs...>
 {
   using type = FirstT;
 };
 
-template <typename VariadicPackT> using first_t = typename first<VariadicPackT>::type;
+template <typename... Ts> using first_t = typename first<Ts...>::type;
 
 }  // namespace zen::meta
