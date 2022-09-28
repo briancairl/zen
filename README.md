@@ -1,8 +1,8 @@
 # Zen
 
-Zen is a functional-ish programming library. I made it for fun, and nothing else.
+Zen provides facilities for railroad style programming in C++.
 
-Supports multi-threaded execution. Attempts to allow for the construction of execution-context generic sequences.
+This library supports parallel execution which can be easily swapped into any single-threaded program written with Zen.
 
 ## Examples
 
@@ -32,7 +32,7 @@ int main(int argc, char** argv)
 };
 ```
 
-### Joins / Merges with `any` and `all`
+### Merging with `any` and `all`
 
 ```c++
 #include <iostream>
@@ -47,7 +47,8 @@ int main(int argc, char** argv)
            {
              if (a > 2)
              {
-               return status{"invalid 1 "};
+               // Failure message
+               return "invalid 1 "_msg;
              }
              return 2 * b;
            }
@@ -57,7 +58,8 @@ int main(int argc, char** argv)
            {
              if (a > 2)
              {
-               return status{"invalid 2"};
+               // Failure message
+               return "invalid 2"_msg;
              }
              return 2 * a;
            })
@@ -67,7 +69,8 @@ int main(int argc, char** argv)
            {
              if (a > 2)
              {
-               return status{"invalid 3"};
+               // Failure message
+               return "invalid 3"_msg;
              }
              return 2 * a;
            });
