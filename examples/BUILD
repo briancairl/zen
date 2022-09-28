@@ -23,3 +23,9 @@ zen_cc_test_binary(
   srcs=["simple_sequence.cpp"],
   deps=["//:core"]
 )
+
+zen_cc_test_binary(
+  name="zen",
+  srcs=["zen.cpp"],
+  deps=["//:zen"]
+)
