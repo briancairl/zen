@@ -57,6 +57,8 @@ template <char... Elements> struct are_messages_equal<message<Elements...>, mess
 
 template <typename T, T... Elements> constexpr auto operator""_msg() { return message<Elements...>{}; }
 
+template <typename T, T... Elements> constexpr auto operator""_fail() { return message<Elements...>{}; }
+
 template <typename T, T... Elements> constexpr auto operator""_hash() { return hash(message<Elements...>{}); }
 
 static constexpr auto Valid = "valid"_msg;

@@ -25,35 +25,40 @@ public:
   template <typename... ValueTs> decltype(auto) operator()(ValueTs&&... values) const
   {
     static constexpr std::size_t N = sizeof...(InvocableTs);
-    return exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
+    return call_exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
   }
 
 private:
   template <typename... ValueTs, std::size_t... Is>
-  decltype(auto) exec_impl(std::index_sequence<Is...> _, ValueTs&&... values) const
+  decltype(auto)
+  exec_impl(std::index_sequence<Is...> _, const exec::thread_pool_handle& _handle, ValueTs&&... values) const
   {
+    exec::thread_pool_handle& handle{const_cast<exec::thread_pool_handle&>(_handle)};
+
     // clang-format off
-    using result_type = meta::result_of_apply_t<
-      meta::first_t<InvocableTs...>,
-      /*overload 1*/std::tuple<ValueTs...>,
-      /*overload 2*/std::tuple<exec::thread_pool_handle, ValueTs...>>;
+    using result_type = to_result_t<
+      meta::result_of_apply_t<
+        meta::first_t<InvocableTs...>,
+        /*overload 1*/std::tuple<ValueTs...>,
+        /*overload 2*/std::tuple<exec::thread_pool_handle, ValueTs...>
+      >
+    >;
 
     static_assert(
       (sizeof...(InvocableTs) == 1) ||
         (std::is_same_v<
            result_type,
-           meta::result_of_apply_t<
-             InvocableTs,
-             /*overload 1*/std::tuple<ValueTs...>,
-             /*overload 2*/std::tuple<exec::thread_pool_handle, ValueTs...>>> &&
+           to_result_t<
+             meta::result_of_apply_t<
+               InvocableTs,
+               /*overload 1*/std::tuple<ValueTs...>,
+               /*overload 2*/std::tuple<exec::thread_pool_handle, ValueTs...>>>> &&
          ...),
       "'InvocableTs' executed under [any_dispatch] must all have the same return type");
 
     static constexpr std::size_t N = sizeof...(Is);
     std::promise<result_type> promises[N];
     std::future<result_type> results[N] = {promises[Is].get_future()...};
-
-    exec::thread_pool_handle handle;
 
     // Queue up all work to run simultaneously
     {
@@ -84,6 +89,22 @@ private:
     return r;
   }
 
+  template <typename... ValueTs, std::size_t... Is>
+  decltype(auto) call_exec_impl(std::index_sequence<Is...> _, ValueTs&&... values) const
+  {
+    if constexpr (std::is_base_of_v<
+                    exec::executor_handle<std::remove_reference_t<meta::first_t<ValueTs...>>>,
+                    std::remove_reference_t<meta::first_t<ValueTs...>>>)
+    {
+      return exec_impl(_, std::forward<ValueTs>(values)...);
+    }
+    else
+    {
+      exec::thread_pool_handle handle;
+      return exec_impl(_, handle, std::forward<ValueTs>(values)...);
+    }
+  }
+
   exec::thread_pool<F, A>& e_;
   std::tuple<InvocableTs&&...> invocables_;
 };
@@ -100,15 +121,16 @@ public:
   template <typename... ValueTs> decltype(auto) operator()(ValueTs&&... values) const
   {
     static constexpr std::size_t N = sizeof...(InvocableTs);
-    return exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
+    return call_exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
   }
 
 private:
   template <typename... ValueTs, std::size_t... Is>
-  decltype(auto) exec_impl(std::index_sequence<Is...> _, ValueTs&&... values) const
+  decltype(auto)
+  exec_impl(std::index_sequence<Is...> _, const exec::thread_pool_handle& _handle, ValueTs&&... values) const
   {
     // clang-format off
-    exec::thread_pool_handle handle;
+    exec::thread_pool_handle& handle{const_cast<exec::thread_pool_handle&>(_handle)};
 
     // Create promises
     auto ps = std::make_tuple(
@@ -164,6 +186,22 @@ private:
 
     return r;
     // clang-format on
+  }
+
+  template <typename... ValueTs, std::size_t... Is>
+  decltype(auto) call_exec_impl(std::index_sequence<Is...> _, ValueTs&&... values) const
+  {
+    if constexpr (std::is_base_of_v<
+                    exec::executor_handle<std::remove_reference_t<meta::first_t<ValueTs...>>>,
+                    std::remove_reference_t<meta::first_t<ValueTs...>>>)
+    {
+      return exec_impl(_, std::forward<ValueTs>(values)...);
+    }
+    else
+    {
+      exec::thread_pool_handle handle;
+      return exec_impl(_, handle, std::forward<ValueTs>(values)...);
+    }
   }
 
   exec::thread_pool<F, A>& e_;

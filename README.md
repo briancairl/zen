@@ -129,6 +129,16 @@ int main(int argc, char** argv)
 };
 ```
 
+# Running examples
+
+```
+bazel run examples:<target>
+```
+
+```
+bazel run examples:zen
+```
+
 # Running tests
 
 ## bazel

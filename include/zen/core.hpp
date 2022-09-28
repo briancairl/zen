@@ -22,7 +22,7 @@ public:
   template <typename... ValueTs> decltype(auto) operator()(ValueTs&&... values) const
   {
     static constexpr std::size_t N = sizeof...(InvocableTs);
-    return exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
+    return call_exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
   }
 
 private:
@@ -45,6 +45,27 @@ private:
     return return_value;
   }
 
+  template <typename... ValueTs, typename Ignore, std::size_t... Is>
+  decltype(auto) exec_impl_ignore(std::index_sequence<Is...> _, Ignore&&, ValueTs&&... values) const
+  {
+    return exec_impl(_, std::forward<ValueTs>(values)...);
+  }
+
+  template <typename... ValueTs, std::size_t... Is>
+  decltype(auto) call_exec_impl(std::index_sequence<Is...> _, ValueTs&&... values) const
+  {
+    if constexpr (std::is_base_of_v<
+                    exec::executor_handle<std::remove_reference_t<meta::first_t<ValueTs...>>>,
+                    std::remove_reference_t<meta::first_t<ValueTs...>>>)
+    {
+      return exec_impl_ignore(_, std::forward<ValueTs>(values)...);
+    }
+    else
+    {
+      return exec_impl(_, std::forward<ValueTs>(values)...);
+    }
+  }
+
   std::tuple<InvocableTs&&...> invocables_;
 };
 
@@ -59,7 +80,7 @@ public:
   template <typename... ValueTs> decltype(auto) operator()(ValueTs&&... values) const
   {
     static constexpr std::size_t N = sizeof...(InvocableTs);
-    return exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
+    return call_exec_impl(std::make_index_sequence<N>{}, std::forward<ValueTs>(values)...);
   }
 
 private:
@@ -68,6 +89,27 @@ private:
   {
     return create(
       make_deferred_result(std::forward<InvocableTs>(std::get<Is>(invocables_)), std::forward_as_tuple(values...))...);
+  }
+
+  template <typename... ValueTs, typename Ignore, std::size_t... Is>
+  decltype(auto) exec_impl_ignore(std::index_sequence<Is...> _, Ignore&&, ValueTs&&... values) const
+  {
+    return exec_impl(_, std::forward<ValueTs>(values)...);
+  }
+
+  template <typename... ValueTs, std::size_t... Is>
+  decltype(auto) call_exec_impl(std::index_sequence<Is...> _, ValueTs&&... values) const
+  {
+    if constexpr (std::is_base_of_v<
+                    exec::executor_handle<std::remove_reference_t<meta::first_t<ValueTs...>>>,
+                    std::remove_reference_t<meta::first_t<ValueTs...>>>)
+    {
+      return exec_impl_ignore(_, std::forward<ValueTs>(values)...);
+    }
+    else
+    {
+      return exec_impl(_, std::forward<ValueTs>(values)...);
+    }
   }
 
   std::tuple<InvocableTs&&...> invocables_;
