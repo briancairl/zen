@@ -21,18 +21,10 @@ cc_library(
 )
 
 cc_library(
-  name="status",
-  hdrs=["include/zen/status.hpp"],
-  strip_include_prefix="include",
-  deps=[],
-  visibility=["//visibility:public"]
-)
-
-cc_library(
   name="result",
-  hdrs=["include/zen/result.hpp"],
+  hdrs=["include/zen/result.hpp"] + glob(["include/zen/result/*.hpp"]),
   strip_include_prefix="include",
-  deps=[":fwd", ":status", ":meta"],
+  deps=[":fwd", ":meta"],
   visibility=["//visibility:public"]
 )
 
@@ -40,7 +32,7 @@ cc_library(
   name="core",
   hdrs=["include/zen/core.hpp"],
   strip_include_prefix="include",
-  deps=[":fwd", ":meta", ":status", ":result"],
+  deps=[":fwd", ":meta", ":result"],
   visibility=["//visibility:public"]
 )
 
