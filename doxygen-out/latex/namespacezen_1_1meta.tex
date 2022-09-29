@@ -1,0 +1,105 @@
+\hypertarget{namespacezen_1_1meta}{}\doxysection{zen\+::meta Namespace Reference}
+\label{namespacezen_1_1meta}\index{zen::meta@{zen::meta}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1append}{append}}
+\begin{DoxyCompactList}\small\item\em Appends AppendT to a template with a variadic parameter list. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1append_3_01_variadic_pack_tmpl_3_01_original_ts_8_8_8_01_4_00_01_append_t_01_4}{append$<$ Variadic\+Pack\+Tmpl$<$ Original\+Ts... $>$, Append\+T $>$}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1append_3_01_variadic_pack_tmpl_3_01_original_ts_8_8_8_01_4_00_01_variadic_p644dc40400e891c121bb6f4b1e18fd56}{append$<$ Variadic\+Pack\+Tmpl$<$ Original\+Ts... $>$, Variadic\+Pack\+Tmpl$<$ Append\+Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1can__apply}{can\+\_\+apply}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1can__apply_3_01_fn_00_01std_1_1tuple_3_01_arg_ts_8_8_8_01_4_01_4}{can\+\_\+apply$<$ Fn, std\+::tuple$<$ Arg\+Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1first}{first}}
+\begin{DoxyCompactList}\small\item\em Grabs first type in Variadic\+PackT template argument list. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1first_3_01_first_t_00_01_other_ts_8_8_8_01_4}{first$<$ First\+T, Other\+Ts... $>$}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1is__specialization}{is\+\_\+specialization}}
+\begin{DoxyCompactList}\small\item\em Checks if {\ttfamily T} is a specialization of a template {\ttfamily Tmpl}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1is__specialization_3_01_tmpl_3_01_ts_8_8_8_01_4_00_01_tmpl_01_4}{is\+\_\+specialization$<$ Tmpl$<$ Ts... $>$, Tmpl $>$}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1result__of__apply}{result\+\_\+of\+\_\+apply}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1result__of__apply_3_01_fn_00_01std_1_1tuple_3_01_arg_ts_8_8_8_01_4_00_01_others_tups_8_8_8_01_4}{result\+\_\+of\+\_\+apply$<$ Fn, std\+::tuple$<$ Arg\+Ts... $>$, Others\+Tups... $>$}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1transform}{transform}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1meta_1_1transform_3_01_pack_tmpl_3_01_ts_8_8_8_01_4_00_01_transform_tmpl_01_4}{transform$<$ Pack\+Tmpl$<$ Ts... $>$, Transform\+Tmpl $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Variadic\+PackT , typename AppendT $>$ }\\using \mbox{\hyperlink{namespacezen_1_1meta_a1839dc5c0a029566b136b2a5b04c1771}{append\+\_\+t}} = typename \mbox{\hyperlink{structzen_1_1meta_1_1append}{append}}$<$ Variadic\+PackT, AppendT $>$\+::type
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{namespacezen_1_1meta_aa704b98ab800673c033f342a328fa5c3}{first\+\_\+t}} = typename \mbox{\hyperlink{structzen_1_1meta_1_1first}{first}}$<$ Ts... $>$\+::type
+\item 
+{\footnotesize template$<$typename Fn , typename... Alt\+Tups$>$ }\\using \mbox{\hyperlink{namespacezen_1_1meta_afdf312f81a78a1d3ddf399dc8e144b50}{result\+\_\+of\+\_\+apply\+\_\+t}} = typename \mbox{\hyperlink{structzen_1_1meta_1_1result__of__apply}{result\+\_\+of\+\_\+apply}}$<$ Fn, Alt\+Tups... $>$\+::type
+\item 
+{\footnotesize template$<$typename PackT , template$<$ typename $>$ class Transform\+Tmpl$>$ }\\using \mbox{\hyperlink{namespacezen_1_1meta_a0177f3f1891bc6ea3051b5d7a6c51469}{transform\+\_\+t}} = typename \mbox{\hyperlink{structzen_1_1meta_1_1transform}{transform}}$<$ PackT, Transform\+Tmpl $>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\const char $\ast$ \mbox{\hyperlink{namespacezen_1_1meta_a792b4e57bad8e191a57003ad7cad4107}{type\+\_\+to\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em Returns the full-\/qualified name of a type as a C-\/style string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string\+\_\+view \mbox{\hyperlink{namespacezen_1_1meta_ad90bfc2b32cab913644c56d4b50ecbf2}{type\+\_\+to\+\_\+string\+\_\+view}} ()
+\begin{DoxyCompactList}\small\item\em Returns the full-\/qualified name of a type as a string\+\_\+view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacezen_1_1meta_a1839dc5c0a029566b136b2a5b04c1771}\label{namespacezen_1_1meta_a1839dc5c0a029566b136b2a5b04c1771}} 
+\index{zen::meta@{zen::meta}!append\_t@{append\_t}}
+\index{append\_t@{append\_t}!zen::meta@{zen::meta}}
+\doxysubsubsection{\texorpdfstring{append\_t}{append\_t}}
+{\footnotesize\ttfamily template$<$typename Variadic\+PackT , typename AppendT $>$ \\
+using \mbox{\hyperlink{namespacezen_1_1meta_a1839dc5c0a029566b136b2a5b04c1771}{zen\+::meta\+::append\+\_\+t}} = typedef typename \mbox{\hyperlink{structzen_1_1meta_1_1append}{append}}$<$Variadic\+PackT, AppendT$>$\+::type}
+
+\mbox{\Hypertarget{namespacezen_1_1meta_aa704b98ab800673c033f342a328fa5c3}\label{namespacezen_1_1meta_aa704b98ab800673c033f342a328fa5c3}} 
+\index{zen::meta@{zen::meta}!first\_t@{first\_t}}
+\index{first\_t@{first\_t}!zen::meta@{zen::meta}}
+\doxysubsubsection{\texorpdfstring{first\_t}{first\_t}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+using \mbox{\hyperlink{namespacezen_1_1meta_aa704b98ab800673c033f342a328fa5c3}{zen\+::meta\+::first\+\_\+t}} = typedef typename \mbox{\hyperlink{structzen_1_1meta_1_1first}{first}}$<$Ts...$>$\+::type}
+
+\mbox{\Hypertarget{namespacezen_1_1meta_afdf312f81a78a1d3ddf399dc8e144b50}\label{namespacezen_1_1meta_afdf312f81a78a1d3ddf399dc8e144b50}} 
+\index{zen::meta@{zen::meta}!result\_of\_apply\_t@{result\_of\_apply\_t}}
+\index{result\_of\_apply\_t@{result\_of\_apply\_t}!zen::meta@{zen::meta}}
+\doxysubsubsection{\texorpdfstring{result\_of\_apply\_t}{result\_of\_apply\_t}}
+{\footnotesize\ttfamily template$<$typename Fn , typename... Alt\+Tups$>$ \\
+using \mbox{\hyperlink{namespacezen_1_1meta_afdf312f81a78a1d3ddf399dc8e144b50}{zen\+::meta\+::result\+\_\+of\+\_\+apply\+\_\+t}} = typedef typename \mbox{\hyperlink{structzen_1_1meta_1_1result__of__apply}{result\+\_\+of\+\_\+apply}}$<$Fn, Alt\+Tups...$>$\+::type}
+
+\mbox{\Hypertarget{namespacezen_1_1meta_a0177f3f1891bc6ea3051b5d7a6c51469}\label{namespacezen_1_1meta_a0177f3f1891bc6ea3051b5d7a6c51469}} 
+\index{zen::meta@{zen::meta}!transform\_t@{transform\_t}}
+\index{transform\_t@{transform\_t}!zen::meta@{zen::meta}}
+\doxysubsubsection{\texorpdfstring{transform\_t}{transform\_t}}
+{\footnotesize\ttfamily template$<$typename PackT , template$<$ typename $>$ class Transform\+Tmpl$>$ \\
+using \mbox{\hyperlink{namespacezen_1_1meta_a0177f3f1891bc6ea3051b5d7a6c51469}{zen\+::meta\+::transform\+\_\+t}} = typedef typename \mbox{\hyperlink{structzen_1_1meta_1_1transform}{transform}}$<$PackT, Transform\+Tmpl$>$\+::type}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacezen_1_1meta_a792b4e57bad8e191a57003ad7cad4107}\label{namespacezen_1_1meta_a792b4e57bad8e191a57003ad7cad4107}} 
+\index{zen::meta@{zen::meta}!type\_to\_string@{type\_to\_string}}
+\index{type\_to\_string@{type\_to\_string}!zen::meta@{zen::meta}}
+\doxysubsubsection{\texorpdfstring{type\_to\_string()}{type\_to\_string()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const char$\ast$ zen\+::meta\+::type\+\_\+to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the full-\/qualified name of a type as a C-\/style string. 
+
+\mbox{\Hypertarget{namespacezen_1_1meta_ad90bfc2b32cab913644c56d4b50ecbf2}\label{namespacezen_1_1meta_ad90bfc2b32cab913644c56d4b50ecbf2}} 
+\index{zen::meta@{zen::meta}!type\_to\_string\_view@{type\_to\_string\_view}}
+\index{type\_to\_string\_view@{type\_to\_string\_view}!zen::meta@{zen::meta}}
+\doxysubsubsection{\texorpdfstring{type\_to\_string\_view()}{type\_to\_string\_view()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string\+\_\+view zen\+::meta\+::type\+\_\+to\+\_\+string\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the full-\/qualified name of a type as a string\+\_\+view. 
+

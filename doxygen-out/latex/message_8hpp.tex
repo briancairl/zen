@@ -1,0 +1,32 @@
+\hypertarget{message_8hpp}{}\doxysection{include/zen/result/message.hpp File Reference}
+\label{message_8hpp}\index{include/zen/result/message.hpp@{include/zen/result/message.hpp}}
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structzen_1_1message}{zen\+::message$<$ Elements $>$}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1are__messages__equal}{zen\+::are\+\_\+messages\+\_\+equal$<$ L\+Seq, R\+Seq $>$}}
+\item 
+struct \mbox{\hyperlink{structzen_1_1are__messages__equal_3_01message_3_01_elements_8_8_8_01_4_00_01message_3_01_elements_8_8_8_01_4_01_4}{zen\+::are\+\_\+messages\+\_\+equal$<$ message$<$ Elements... $>$, message$<$ Elements... $>$ $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacezen}{zen}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , T First\+Element$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_a7db13f7a291fab3b3b5dc438850c144c}{zen\+::hash\+\_\+sequence}} ()
+\item 
+{\footnotesize template$<$typename T , T First\+Element, T Second\+Element, T... Other\+Elements$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_ab45660cb174cbd2a3caea214464fb477}{zen\+::hash\+\_\+sequence}} ()
+\item 
+{\footnotesize template$<$typename T , T... Elements$>$ }\\constexpr auto \mbox{\hyperlink{namespacezen_a19335d4087bb4b056179057c4ab21207}{zen\+::operator\char`\"{}\char`\"{}\+\_\+msg}} ()
+\item 
+{\footnotesize template$<$typename T , T... Elements$>$ }\\constexpr auto \mbox{\hyperlink{namespacezen_a472cfa5e6813a49e52923cc1605c6711}{zen\+::operator\char`\"{}\char`\"{}\+\_\+hash}} ()
+\item 
+{\footnotesize template$<$char... C$>$ }\\std\+::ostream \& \mbox{\hyperlink{namespacezen_a6548677007dd525859f3b093b10be71a}{zen\+::operator$<$$<$}} (std\+::ostream \&os, const message$<$ C... $>$ m)
+\end{DoxyCompactItemize}

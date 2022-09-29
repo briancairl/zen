@@ -1,0 +1,35 @@
+\hypertarget{status_8hpp}{}\doxysection{include/zen/result/status.hpp File Reference}
+\label{status_8hpp}\index{include/zen/result/status.hpp@{include/zen/result/status.hpp}}
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$zen/result/message.\+hpp$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classzen_1_1result__status}{zen\+::result\+\_\+status}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacezen}{zen}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , T... Elements$>$ }\\constexpr auto \mbox{\hyperlink{namespacezen_abc6a073e79657ca62009c8a9ba8d5eae}{zen\+::operator\char`\"{}\char`\"{}\+\_\+fail}} ()
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_a5de5843680a3f6729c2dd69d5e24f0c1}{zen\+::hash}} (const std\+::string\+\_\+view sv)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_a28c8e386dd2c231f81bc0b687e9b4a43}{zen\+::hash}} (const result\+\_\+status \&s)
+\item 
+{\footnotesize template$<$char... C$>$ }\\bool \mbox{\hyperlink{namespacezen_a936d980e8994dedcf61dea858c89fdeb}{zen\+::operator==}} (const message$<$ C... $>$ \&lhs, const result\+\_\+status \&rhs)
+\item 
+{\footnotesize template$<$char... C$>$ }\\bool \mbox{\hyperlink{namespacezen_a06b4131f8c1fccba6885296ffe91f84d}{zen\+::operator==}} (const result\+\_\+status \&lhs, const message$<$ C... $>$ \&rhs)
+\item 
+{\footnotesize template$<$char... C$>$ }\\bool \mbox{\hyperlink{namespacezen_a8f5c24304aebe2a2231207eb6b46e9cc}{zen\+::operator!=}} (const message$<$ C... $>$ \&lhs, const result\+\_\+status \&rhs)
+\item 
+{\footnotesize template$<$char... C$>$ }\\bool \mbox{\hyperlink{namespacezen_a48159882618ed66d5f6976cc63840ffa}{zen\+::operator!=}} (const result\+\_\+status \&lhs, const message$<$ C... $>$ \&rhs)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacezen_a04bc261b0462b49974b511f377bb93e7}{zen\+::operator$<$$<$}} (std\+::ostream \&os, const result\+\_\+status \&s)
+\end{DoxyCompactItemize}

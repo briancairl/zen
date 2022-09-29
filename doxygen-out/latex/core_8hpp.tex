@@ -1,0 +1,29 @@
+\hypertarget{core_8hpp}{}\doxysection{include/zen/core.hpp File Reference}
+\label{core_8hpp}\index{include/zen/core.hpp@{include/zen/core.hpp}}
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$zen/fwd.\+hpp$>$}\newline
+{\ttfamily \#include $<$zen/meta/first.\+hpp$>$}\newline
+{\ttfamily \#include $<$zen/result.\+hpp$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classzen_1_1any__dispatch}{zen\+::any\+\_\+dispatch$<$ Invocable\+Ts $>$}}
+\item 
+class \mbox{\hyperlink{classzen_1_1all__dispatch}{zen\+::all\+\_\+dispatch$<$ Invocable\+Ts $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacezen}{zen}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Value\+Ts$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespacezen_aad3fe1cdae1ef44f70cc7408e48f613c}{zen\+::pass}} (Value\+Ts \&\&... values)
+\item 
+{\footnotesize template$<$typename... Invocable\+Ts$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespacezen_a05a50c5c2e385783abd1ff1859c74eae}{zen\+::any}} (Invocable\+Ts \&\&... t)
+\item 
+{\footnotesize template$<$typename... Invocable\+Ts$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespacezen_aa51ef351adfb85513022091752267a12}{zen\+::all}} (Invocable\+Ts \&\&... t)
+\item 
+{\footnotesize template$<$typename T , typename Fn $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a00d12d6a51ffeabf349241a0ae804224}{zen\+::operator$\vert$}} (result$<$ T $>$ \&\&r, Fn \&\&f)
+\end{DoxyCompactItemize}
