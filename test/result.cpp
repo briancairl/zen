@@ -9,7 +9,7 @@ using namespace zen;
 TEST(Result, Default)
 {
   result<int> r;
-  ASSERT_FALSE(r.valid()) << r.status();
+  ASSERT_FALSE(r.valid()) << r;
   EXPECT_EQ(r.status(), Unknown);
 }
 

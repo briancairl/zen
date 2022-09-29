@@ -1,6 +1,7 @@
 #pragma once
 
 // C++ Standard Library
+#include <iosfwd>
 #include <utility>
 
 // Zen
@@ -192,6 +193,15 @@ template <typename... Ts> decltype(auto) make_result(Ts&&... values)
   {
     return result<std::remove_reference_t<Ts>...>{std::forward<Ts>(values)...};
   }
+}
+
+template <typename T> inline std::ostream& operator<<(std::ostream& os, const result<T>& r)
+{
+  if (r.valid())
+  {
+    return os << r.value();
+  }
+  return os << r.status();
 }
 
 }  // namespace zen
