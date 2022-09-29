@@ -6,6 +6,10 @@ Zen provides facilities for railroad style programming in C++.
 
 This library supports parallel execution which can be easily swapped into any single-threaded program written with Zen.
 
+## API Documentation
+
+Documentation for latest version available [here](https://briancairl.github.io/zen/doxygen-out/html/index.html).
+
 ## Examples
 
 ### Simple sequence
