@@ -8,7 +8,8 @@
 #include <zen/meta/invocable.hpp>
 #include <zen/meta/is_specialization.hpp>
 #include <zen/meta/transform.hpp>
-#include <zen/status.hpp>
+#include <zen/result/status.hpp>
+#include <zen/result/value.hpp>
 
 namespace zen
 {
@@ -75,32 +76,7 @@ decltype(auto) make_deferred_result(InvocableT&& invocable, ArgTupleT&& arg)
     std::forward<InvocableT>(invocable), std::forward<ArgTupleT>(arg)};
 }
 
-template <typename T> class result_value
-{
-public:
-  constexpr result_value() = default;
-  constexpr result_value(const T& value) { emplace(value); }
-  constexpr result_value(T&& value) { emplace(std::move(value)); }
-
-  [[nodiscard]] constexpr T& value() { return (*data()); }
-  [[nodiscard]] constexpr const T& value() const { return (*data()); }
-
-  [[nodiscard]] constexpr T& operator*() { return (*data()); }
-  [[nodiscard]] constexpr const T& operator*() const { return (*data()); }
-
-  template <typename... ArgTs> void emplace(ArgTs&&... args) { new (data()) T{std::forward<ArgTs>(args)...}; }
-
-protected:
-  void destroy() { data()->~T(); }
-
-private:
-  T* data() { return reinterpret_cast<T*>(&value_buffer_); }
-  const T* data() const { return reinterpret_cast<const T*>(&value_buffer_); }
-
-  alignas(T) std::byte value_buffer_[sizeof(T)];
-};
-
-template <typename T> class result final : public result_value<T>
+template <typename T> class result final : private result_value<T>
 {
 public:
   constexpr result() = default;
@@ -128,6 +104,7 @@ public:
     }
   }
 
+  using result_value<T>::value;
   using result_value<T>::operator*;
 
   [[nodiscard]] constexpr result_status status() const { return status_; }
