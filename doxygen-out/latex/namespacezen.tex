@@ -109,6 +109,8 @@ std\+::ostream \& \mbox{\hyperlink{namespacezen_a04bc261b0462b49974b511f377bb93e
 {\footnotesize template$<$typename Deferred\+T1 , typename Deferred\+T2 , typename... Other\+Deferred\+Ts$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_aff9279c60152efdf55e598f81a684e74}{create}} (Deferred\+T1 d1, Deferred\+T2 d2, Other\+Deferred\+Ts... dn)
 \item 
 {\footnotesize template$<$typename... Ts$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a81e6dd0fb313cbc5ca08ae08a9376887}{make\+\_\+result}} (Ts \&\&... values)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespacezen_a2e0e2113bbc8d754556f78043781cb9f}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classzen_1_1result}{result}}$<$ T $>$ \&r)
 \end{DoxyCompactItemize}
 
 
@@ -271,14 +273,21 @@ constexpr auto zen\+::operator\char`\"{}\char`\"{}\+\_\+msg (\begin{DoxyParamCap
 \mbox{\Hypertarget{namespacezen_a6548677007dd525859f3b093b10be71a}\label{namespacezen_a6548677007dd525859f3b093b10be71a}} 
 \index{zen@{zen}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!zen@{zen}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$char... C$>$ \\
 std\+::ostream\& zen\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacezen_a2e0e2113bbc8d754556f78043781cb9f}\label{namespacezen_a2e0e2113bbc8d754556f78043781cb9f}} 
+\index{zen@{zen}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!zen@{zen}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream\& zen\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classzen_1_1result}{result}}$<$ T $>$ \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{namespacezen_a04bc261b0462b49974b511f377bb93e7}\label{namespacezen_a04bc261b0462b49974b511f377bb93e7}} 
 \index{zen@{zen}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!zen@{zen}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily std\+::ostream\& zen\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{namespacezen_a936d980e8994dedcf61dea858c89fdeb}\label{namespacezen_a936d980e8994dedcf61dea858c89fdeb}} 

@@ -1,5 +1,6 @@
 \hypertarget{result_8hpp}{}\doxysection{include/zen/result.hpp File Reference}
 \label{result_8hpp}\index{include/zen/result.hpp@{include/zen/result.hpp}}
+{\ttfamily \#include $<$iosfwd$>$}\newline
 {\ttfamily \#include $<$utility$>$}\newline
 {\ttfamily \#include $<$zen/fwd.\+hpp$>$}\newline
 {\ttfamily \#include $<$zen/meta/invocable.\+hpp$>$}\newline
@@ -62,4 +63,6 @@ struct \mbox{\hyperlink{structzen_1_1result__as__tuple_3_01result_3_01std_1_1tup
 {\footnotesize template$<$typename Deferred\+T1 , typename Deferred\+T2 , typename... Other\+Deferred\+Ts$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_aff9279c60152efdf55e598f81a684e74}{zen\+::create}} (Deferred\+T1 d1, Deferred\+T2 d2, Other\+Deferred\+Ts... dn)
 \item 
 {\footnotesize template$<$typename... Ts$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a81e6dd0fb313cbc5ca08ae08a9376887}{zen\+::make\+\_\+result}} (Ts \&\&... values)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespacezen_a2e0e2113bbc8d754556f78043781cb9f}{zen\+::operator$<$$<$}} (std\+::ostream \&os, const result$<$ T $>$ \&r)
 \end{DoxyCompactItemize}

@@ -207,6 +207,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a81e6dd0fb313cbc5ca08ae08a9376887"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:a81e6dd0fb313cbc5ca08ae08a9376887"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen.html#a81e6dd0fb313cbc5ca08ae08a9376887">make_result</a> (Ts &amp;&amp;... values)</td></tr>
 <tr class="separator:a81e6dd0fb313cbc5ca08ae08a9376887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0e2113bbc8d754556f78043781cb9f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2e0e2113bbc8d754556f78043781cb9f"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen.html#a2e0e2113bbc8d754556f78043781cb9f">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classzen_1_1result.html">result</a>&lt; T &gt; &amp;r)</td></tr>
+<tr class="separator:a2e0e2113bbc8d754556f78043781cb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ab7670f825b824c968ee8e155e4531ce5"></a>
@@ -796,7 +799,7 @@ template&lt;typename T , T... Elements&gt; </div>
 </div>
 </div>
 <a id="a6548677007dd525859f3b093b10be71a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6548677007dd525859f3b093b10be71a">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6548677007dd525859f3b093b10be71a">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -833,8 +836,46 @@ template&lt;char... C&gt; </div>
 
 </div>
 </div>
+<a id="a2e0e2113bbc8d754556f78043781cb9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e0e2113bbc8d754556f78043781cb9f">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; zen::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classzen_1_1result.html">result</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a04bc261b0462b49974b511f377bb93e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04bc261b0462b49974b511f377bb93e7">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a04bc261b0462b49974b511f377bb93e7">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
