@@ -56,6 +56,20 @@ protected:
   [[nodiscard]] constexpr const T& operator*() const { return (*data()); }
 
   /**
+   * @brief Returns pointer to held value <code>T</code>
+   *
+   * @warning behavior undefined if <code>emplace</code> has not been called
+   */
+  [[nodiscard]] constexpr T* operator->() { return data(); }
+
+  /**
+   * @brief Returns immutable pointer to held value <code>T</code>
+   *
+   * @warning behavior undefined if <code>emplace</code> has not been called
+   */
+  [[nodiscard]] constexpr const T* operator->() const { return data(); }
+
+  /**
    * @brief Forwards <code>ArgTs...</code> and invokes constructor associated with <code>T</code>
    */
   template <typename... ArgTs> void emplace(ArgTs&&... args) { new (data()) T{std::forward<ArgTs>(args)...}; }
