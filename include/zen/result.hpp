@@ -10,7 +10,7 @@
 #include <zen/meta/is_specialization.hpp>
 #include <zen/meta/transform.hpp>
 #include <zen/result/status.hpp>
-#include <zen/result/value.hpp>
+#include <zen/utility/value_mem.hpp>
 
 namespace zen
 {
@@ -77,36 +77,34 @@ decltype(auto) make_deferred_result(InvocableT&& invocable, ArgTupleT&& arg)
     std::forward<InvocableT>(invocable), std::forward<ArgTupleT>(arg)};
 }
 
-template <typename T> class result final : private result_value<T>
+template <typename T> class result final : private value_mem<T>
 {
 public:
   constexpr result() = default;
 
   template <char... Elements>
-  constexpr result(message<Elements...> error_message) : result_value<T>{}, status_{error_message}
+  constexpr result(message<Elements...> error_message) : value_mem<T>{}, status_{error_message}
   {
     static_assert(
       !are_messages_equal<message<Elements...>, decltype(Valid)>(),
       "To set a valid result, assign a value, not an error message");
   }
 
-  constexpr result(result_status&& status) : result_value<T>{}, status_{std::move(status)} {}
-  constexpr result(const T& value) : result_value<T>{value}, status_{Valid} {}
-  constexpr result(T&& value) : result_value<T>{std::move(value)}, status_{Valid} {}
+  constexpr result(result_status&& status) : value_mem<T>{}, status_{std::move(status)} {}
+  constexpr result(const T& value) : value_mem<T>{value}, status_{Valid} {}
+  constexpr result(T&& value) : value_mem<T>{std::move(value)}, status_{Valid} {}
 
   ~result()
   {
-    if constexpr (!std::is_trivial_v<T>)
+    if (status_.valid())
     {
-      if (status_.valid())
-      {
-        result::destroy();
-      }
+      result::destroy();
     }
   }
 
-  using result_value<T>::value;
-  using result_value<T>::operator*;
+  using value_mem<T>::value;
+  using value_mem<T>::operator*;
+  using value_mem<T>::operator->;
 
   [[nodiscard]] constexpr result_status status() const { return status_; }
 

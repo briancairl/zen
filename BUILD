@@ -2,7 +2,14 @@ cc_library(
   name="fwd",
   hdrs=["include/zen/fwd.hpp"],
   strip_include_prefix="include",
-  visibility=["//visibility:private"]
+  visibility=["//:__subpackages__"]
+)
+
+cc_library(
+  name="utility",
+  hdrs=glob(["include/zen/utility/*.hpp"]),
+  strip_include_prefix="include",
+  visibility=["//visibility:public"]
 )
 
 cc_library(
@@ -16,7 +23,7 @@ cc_library(
   name="executor",
   hdrs=["include/zen/executor.hpp"] + glob(["include/zen/executor/*.hpp"]),
   strip_include_prefix="include",
-  deps=[":core"],
+  deps=[":utility"],
   visibility=["//visibility:public"]
 )
 
@@ -24,7 +31,7 @@ cc_library(
   name="result",
   hdrs=["include/zen/result.hpp"] + glob(["include/zen/result/*.hpp"]),
   strip_include_prefix="include",
-  deps=[":fwd", ":meta"],
+  deps=[":fwd", ":meta", ":utility"],
   visibility=["//visibility:public"]
 )
 

@@ -1,6 +1,7 @@
 #pragma once
 
 // C++ Standard Library
+#include <type_traits>
 #include <utility>
 
 namespace zen
@@ -15,15 +16,15 @@ namespace zen
  *
  * @tparam T  value type
  */
-template <typename T> class result_value
+template <typename T> class value_mem
 {
 public:
-  constexpr result_value() = default;
+  constexpr value_mem() = default;
 
   /**
    * @copydoc emplace
    */
-  template <typename... ArgTs> constexpr result_value(ArgTs&&... args) { emplace(std::forward<ArgTs>(args)...); }
+  template <typename... ArgTs> constexpr value_mem(ArgTs&&... args) { emplace(std::forward<ArgTs>(args)...); }
 
 protected:
   /**
@@ -55,6 +56,20 @@ protected:
   [[nodiscard]] constexpr const T& operator*() const { return (*data()); }
 
   /**
+   * @brief Returns pointer to held value <code>T</code>
+   *
+   * @warning behavior undefined if <code>emplace</code> has not been called
+   */
+  [[nodiscard]] constexpr T* operator->() { return data(); }
+
+  /**
+   * @brief Returns immutable pointer to held value <code>T</code>
+   *
+   * @warning behavior undefined if <code>emplace</code> has not been called
+   */
+  [[nodiscard]] constexpr const T* operator->() const { return data(); }
+
+  /**
    * @brief Forwards <code>ArgTs...</code> and invokes constructor associated with <code>T</code>
    */
   template <typename... ArgTs> void emplace(ArgTs&&... args) { new (data()) T{std::forward<ArgTs>(args)...}; }
@@ -64,7 +79,13 @@ protected:
    *
    * @warning behavior undefined if <code>emplace</code> has not been called
    */
-  void destroy() { data()->~T(); }
+  constexpr void destroy()
+  {
+    if constexpr (!std::is_trivial<T>())
+    {
+      data()->~T();
+    }
+  }
 
 private:
   /**
