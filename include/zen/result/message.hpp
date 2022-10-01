@@ -10,6 +10,8 @@ namespace zen
 namespace detail
 {
 
+static constexpr std::size_t kStringHashShift = 7;
+
 /**
  * @brief Computes a hash from elements in a variadic argument pack
  */
@@ -21,9 +23,9 @@ template <typename T, T FirstElement> constexpr std::size_t hash_sequence();
  */
 template <typename T, T FirstElement, T SecondElement, T... OtherElements> constexpr std::size_t hash_sequence()
 {
-  constexpr std::size_t Shift = 7;
+
   constexpr std::size_t Hash = hash_sequence<T, SecondElement, OtherElements...>();
-  return ((Hash << Shift) + Hash) + static_cast<std::size_t>(FirstElement);
+  return ((Hash << kStringHashShift) + Hash) + static_cast<std::size_t>(FirstElement);
 }
 
 /**

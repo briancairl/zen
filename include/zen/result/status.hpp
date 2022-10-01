@@ -73,12 +73,10 @@ private:
  */
 inline std::size_t hash(const std::string_view sv)
 {
-  constexpr std::size_t Shift = 5;  // ?
-
   std::size_t h = 0;
   for (auto itr = sv.rbegin(); itr != sv.rend(); ++itr)
   {
-    h = ((h << Shift) + h) + static_cast<std::size_t>(*itr);
+    h = ((h << detail::kStringHashShift) + h) + static_cast<std::size_t>(*itr);
   }
   return h;
 }
