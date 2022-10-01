@@ -104,6 +104,7 @@ public:
 
   using value_mem<T>::value;
   using value_mem<T>::operator*;
+  using value_mem<T>::operator->;
 
   [[nodiscard]] constexpr result_status status() const { return status_; }
 
