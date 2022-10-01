@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['emplace_26',['emplace',['../classzen_1_1result__value.html#a695d1f9083672a8bc9eacd42935a6cb9',1,'zen::result_value']]],
+  ['emplace_26',['emplace',['../classzen_1_1value__mem.html#a67e587dcf8fb5bacf8d81eb1c7b20a02',1,'zen::value_mem']]],
   ['execute_27',['execute',['../classzen_1_1exec_1_1executor.html#a851703bff28971d79fa0ff4188c7adc8',1,'zen::exec::executor']]],
   ['executor_28',['executor',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
   ['executor_2ehpp_29',['executor.hpp',['../executor_2executor_8hpp.html',1,'(Global Namespace)'],['../executor_8hpp.html',1,'(Global Namespace)']]],

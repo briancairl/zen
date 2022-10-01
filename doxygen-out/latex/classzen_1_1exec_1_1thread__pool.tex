@@ -2,6 +2,11 @@
 \label{classzen_1_1exec_1_1thread__pool}\index{zen::exec::thread\_pool$<$ FuncWrapperT, FuncWrapperAllocatorT $>$@{zen::exec::thread\_pool$<$ FuncWrapperT, FuncWrapperAllocatorT $>$}}
 
 
+Thread pool with variable number of worker threads.  
+
+
+
+
 {\ttfamily \#include $<$thread\+\_\+pool.\+hpp$>$}
 
 Inheritance diagram for zen\+::exec\+::thread\+\_\+pool$<$ Func\+WrapperT, Func\+Wrapper\+AllocatorT $>$\+:\begin{figure}[H]
@@ -14,12 +19,18 @@ Inheritance diagram for zen\+::exec\+::thread\+\_\+pool$<$ Func\+WrapperT, Func\
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool_ae77a9d18cc06a9b5dfd47f5dc484c1af}{thread\+\_\+pool}} (std\+::size\+\_\+t worker\+\_\+count=std\+::thread\+::hardware\+\_\+concurrency())
-\item 
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool}{thread\+\_\+pool}} with a fixed number of worker threads. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool_a0497322275e6f5bcb5cdb65d19811e9e}{$\sim$thread\+\_\+pool}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Stops active workers. \end{DoxyCompactList}\item 
 constexpr std\+::size\+\_\+t \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool_a84dceb9c95148f417c0b0e5070e91a54}{workers}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the number of worker threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Func\+WrapperT = std\+::function$<$void()$>$, typename Func\+Wrapper\+AllocatorT = std\+::allocator$<$\+Func\+Wrapper\+T$>$$>$\newline
+class zen\+::exec\+::thread\+\_\+pool$<$ Func\+Wrapper\+T, Func\+Wrapper\+Allocator\+T $>$}
+
+Thread pool with variable number of worker threads. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classzen_1_1exec_1_1thread__pool_ae77a9d18cc06a9b5dfd47f5dc484c1af}\label{classzen_1_1exec_1_1thread__pool_ae77a9d18cc06a9b5dfd47f5dc484c1af}} 
@@ -29,12 +40,25 @@ constexpr std\+::size\+\_\+t \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool_a
 {\footnotesize\ttfamily template$<$typename Func\+WrapperT  = std\+::function$<$void()$>$, typename Func\+Wrapper\+AllocatorT  = std\+::allocator$<$\+Func\+Wrapper\+T$>$$>$ \\
 \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool}{zen\+::exec\+::thread\+\_\+pool}}$<$ Func\+WrapperT, Func\+Wrapper\+AllocatorT $>$\+::\mbox{\hyperlink{classzen_1_1exec_1_1thread__pool}{thread\+\_\+pool}} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{worker\+\_\+count = {\ttfamily std\+:\+:thread\+:\+:hardware\+\_\+concurrency()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
+
+
+Creates \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool}{thread\+\_\+pool}} with a fixed number of worker threads. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em worker\+\_\+count} & number of worker threads; by default, set to the number of hardware cores \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classzen_1_1exec_1_1thread__pool_a0497322275e6f5bcb5cdb65d19811e9e}\label{classzen_1_1exec_1_1thread__pool_a0497322275e6f5bcb5cdb65d19811e9e}} 
 \index{zen::exec::thread\_pool$<$ FuncWrapperT, FuncWrapperAllocatorT $>$@{zen::exec::thread\_pool$<$ FuncWrapperT, FuncWrapperAllocatorT $>$}!````~thread\_pool@{$\sim$thread\_pool}}
 \index{````~thread\_pool@{$\sim$thread\_pool}!zen::exec::thread\_pool$<$ FuncWrapperT, FuncWrapperAllocatorT $>$@{zen::exec::thread\_pool$<$ FuncWrapperT, FuncWrapperAllocatorT $>$}}
 \doxysubsubsection{\texorpdfstring{$\sim$thread\_pool()}{~thread\_pool()}}
 {\footnotesize\ttfamily template$<$typename Func\+WrapperT  = std\+::function$<$void()$>$, typename Func\+Wrapper\+AllocatorT  = std\+::allocator$<$\+Func\+Wrapper\+T$>$$>$ \\
 \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool}{zen\+::exec\+::thread\+\_\+pool}}$<$ Func\+WrapperT, Func\+Wrapper\+AllocatorT $>$\+::$\sim$\mbox{\hyperlink{classzen_1_1exec_1_1thread__pool}{thread\+\_\+pool}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stops active workers. 
 
 
 
@@ -45,6 +69,10 @@ constexpr std\+::size\+\_\+t \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool_a
 \doxysubsubsection{\texorpdfstring{workers()}{workers()}}
 {\footnotesize\ttfamily template$<$typename Func\+WrapperT  = std\+::function$<$void()$>$, typename Func\+Wrapper\+AllocatorT  = std\+::allocator$<$\+Func\+Wrapper\+T$>$$>$ \\
 constexpr std\+::size\+\_\+t \mbox{\hyperlink{classzen_1_1exec_1_1thread__pool}{zen\+::exec\+::thread\+\_\+pool}}$<$ Func\+WrapperT, Func\+Wrapper\+AllocatorT $>$\+::workers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Returns the number of worker threads. 
 
 
 

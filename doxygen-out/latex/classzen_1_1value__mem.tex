@@ -1,0 +1,196 @@
+\hypertarget{classzen_1_1value__mem}{}\doxysection{zen\+::value\+\_\+mem$<$ T $>$ Class Template Reference}
+\label{classzen_1_1value__mem}\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+
+
+Holds a value whose constructor/destructor can be manually invoked.  
+
+
+
+
+{\ttfamily \#include $<$value\+\_\+mem.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{classzen_1_1value__mem_a159928fd67148c5d3ded2d67e3bfff8a}{value\+\_\+mem}} ()=default
+\item 
+{\footnotesize template$<$typename... Arg\+Ts$>$ }\\constexpr \mbox{\hyperlink{classzen_1_1value__mem_a4c04a1b5abd469769210f0eee65ecb5d}{value\+\_\+mem}} (Arg\+Ts \&\&... args)
+\begin{DoxyCompactList}\small\item\em Forwards {\ttfamily Arg\+Ts...} and invokes constructor associated with {\ttfamily T} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr T \& \mbox{\hyperlink{classzen_1_1value__mem_ac8313886f1a4b1c2d47a6b8ece1caa8b}{value}} ()
+\begin{DoxyCompactList}\small\item\em Returns reference to held value {\ttfamily T} \end{DoxyCompactList}\item 
+constexpr const T \& \mbox{\hyperlink{classzen_1_1value__mem_a8b62ab69285ea4312698527ce63878fe}{value}} () const
+\begin{DoxyCompactList}\small\item\em Returns immutable reference to held value {\ttfamily T} \end{DoxyCompactList}\item 
+constexpr T \& \mbox{\hyperlink{classzen_1_1value__mem_a56b6da2899f049052f20c3dc8d916de8}{operator$\ast$}} ()
+\begin{DoxyCompactList}\small\item\em Returns reference to held value {\ttfamily T} \end{DoxyCompactList}\item 
+constexpr const T \& \mbox{\hyperlink{classzen_1_1value__mem_a2c5336ee0d25fc951292b0089171980c}{operator$\ast$}} () const
+\begin{DoxyCompactList}\small\item\em Returns immutable reference to held value {\ttfamily T} \end{DoxyCompactList}\item 
+constexpr T $\ast$ \mbox{\hyperlink{classzen_1_1value__mem_aca10d80139d2d7d9b1cf335fe810bbf3}{operator-\/$>$}} ()
+\begin{DoxyCompactList}\small\item\em Returns pointer to held value {\ttfamily T} \end{DoxyCompactList}\item 
+constexpr const T $\ast$ \mbox{\hyperlink{classzen_1_1value__mem_a02e8719669a94dd17df8c2bf3afd217e}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Returns immutable pointer to held value {\ttfamily T} \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Arg\+Ts$>$ }\\void \mbox{\hyperlink{classzen_1_1value__mem_a67e587dcf8fb5bacf8d81eb1c7b20a02}{emplace}} (Arg\+Ts \&\&... args)
+\begin{DoxyCompactList}\small\item\em Forwards {\ttfamily Arg\+Ts...} and invokes constructor associated with {\ttfamily T} \end{DoxyCompactList}\item 
+constexpr void \mbox{\hyperlink{classzen_1_1value__mem_a3b75464219c22a73a2b41b14450fc7d1}{destroy}} ()
+\begin{DoxyCompactList}\small\item\em Invokes constructor associated with {\ttfamily T} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class zen\+::value\+\_\+mem$<$ T $>$}
+
+Holds a value whose constructor/destructor can be manually invoked. 
+
+This is used to deal with objects which have non-\/default constructors\+:
+\begin{DoxyItemize}
+\item Defers construction of a value of type {\ttfamily T} to manual call to {\ttfamily emplace}
+\item Requires manual destruction with {\ttfamily destroy}
+\end{DoxyItemize}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & value type \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classzen_1_1value__mem_a159928fd67148c5d3ded2d67e3bfff8a}\label{classzen_1_1value__mem_a159928fd67148c5d3ded2d67e3bfff8a}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!value\_mem@{value\_mem}}
+\index{value\_mem@{value\_mem}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value\_mem()}{value\_mem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1value__mem}{value\+\_\+mem}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classzen_1_1value__mem_a4c04a1b5abd469769210f0eee65ecb5d}\label{classzen_1_1value__mem_a4c04a1b5abd469769210f0eee65ecb5d}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!value\_mem@{value\_mem}}
+\index{value\_mem@{value\_mem}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value\_mem()}{value\_mem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename... Arg\+Ts$>$ \\
+constexpr \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1value__mem}{value\+\_\+mem}} (\begin{DoxyParamCaption}\item[{Arg\+Ts \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Forwards {\ttfamily Arg\+Ts...} and invokes constructor associated with {\ttfamily T} 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classzen_1_1value__mem_a3b75464219c22a73a2b41b14450fc7d1}\label{classzen_1_1value__mem_a3b75464219c22a73a2b41b14450fc7d1}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!destroy@{destroy}}
+\index{destroy@{destroy}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr void \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Invokes constructor associated with {\ttfamily T} 
+
+\begin{DoxyWarning}{Warning}
+behavior undefined if {\ttfamily emplace} has not been called 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classzen_1_1value__mem_a67e587dcf8fb5bacf8d81eb1c7b20a02}\label{classzen_1_1value__mem_a67e587dcf8fb5bacf8d81eb1c7b20a02}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!emplace@{emplace}}
+\index{emplace@{emplace}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{emplace()}{emplace()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename... Arg\+Ts$>$ \\
+void \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::emplace (\begin{DoxyParamCaption}\item[{Arg\+Ts \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Forwards {\ttfamily Arg\+Ts...} and invokes constructor associated with {\ttfamily T} 
+
+\mbox{\Hypertarget{classzen_1_1value__mem_a56b6da2899f049052f20c3dc8d916de8}\label{classzen_1_1value__mem_a56b6da2899f049052f20c3dc8d916de8}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr T\& \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Returns reference to held value {\ttfamily T} 
+
+\begin{DoxyWarning}{Warning}
+behavior undefined if {\ttfamily emplace} has not been called 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classzen_1_1value__mem_a2c5336ee0d25fc951292b0089171980c}\label{classzen_1_1value__mem_a2c5336ee0d25fc951292b0089171980c}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr const T\& \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Returns immutable reference to held value {\ttfamily T} 
+
+\begin{DoxyWarning}{Warning}
+behavior undefined if {\ttfamily emplace} has not been called 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classzen_1_1value__mem_aca10d80139d2d7d9b1cf335fe810bbf3}\label{classzen_1_1value__mem_aca10d80139d2d7d9b1cf335fe810bbf3}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr T$\ast$ \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Returns pointer to held value {\ttfamily T} 
+
+\begin{DoxyWarning}{Warning}
+behavior undefined if {\ttfamily emplace} has not been called 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classzen_1_1value__mem_a02e8719669a94dd17df8c2bf3afd217e}\label{classzen_1_1value__mem_a02e8719669a94dd17df8c2bf3afd217e}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr const T$\ast$ \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Returns immutable pointer to held value {\ttfamily T} 
+
+\begin{DoxyWarning}{Warning}
+behavior undefined if {\ttfamily emplace} has not been called 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classzen_1_1value__mem_ac8313886f1a4b1c2d47a6b8ece1caa8b}\label{classzen_1_1value__mem_ac8313886f1a4b1c2d47a6b8ece1caa8b}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!value@{value}}
+\index{value@{value}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr T\& \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Returns reference to held value {\ttfamily T} 
+
+\begin{DoxyWarning}{Warning}
+behavior undefined if {\ttfamily emplace} has not been called 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classzen_1_1value__mem_a8b62ab69285ea4312698527ce63878fe}\label{classzen_1_1value__mem_a8b62ab69285ea4312698527ce63878fe}} 
+\index{zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}!value@{value}}
+\index{value@{value}!zen::value\_mem$<$ T $>$@{zen::value\_mem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr const T\& \mbox{\hyperlink{classzen_1_1value__mem}{zen\+::value\+\_\+mem}}$<$ T $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Returns immutable reference to held value {\ttfamily T} 
+
+\begin{DoxyWarning}{Warning}
+behavior undefined if {\ttfamily emplace} has not been called 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/zen/utility/\mbox{\hyperlink{value__mem_8hpp}{value\+\_\+mem.\+hpp}}\end{DoxyCompactItemize}

@@ -5,5 +5,5 @@ var searchData=
   ['deferred_5fresult_5fof_22',['deferred_result_of',['../structzen_1_1deferred__result__of.html',1,'zen']]],
   ['deferred_5fresult_5fof_3c_20deferred_5fresult_3c_20invocablet_2c_20inputt_20_3e_20_3e_23',['deferred_result_of&lt; deferred_result&lt; InvocableT, InputT &gt; &gt;',['../structzen_1_1deferred__result__of_3_01deferred__result_3_01_invocable_t_00_01_input_t_01_4_01_4.html',1,'zen']]],
   ['deferred_5fresult_5fof_5ft_24',['deferred_result_of_t',['../namespacezen.html#ab7670f825b824c968ee8e155e4531ce5',1,'zen']]],
-  ['destroy_25',['destroy',['../classzen_1_1result__value.html#a2c6351f6b3032a6ac28c2aaf504f887b',1,'zen::result_value']]]
+  ['destroy_25',['destroy',['../classzen_1_1value__mem.html#a3b75464219c22a73a2b41b14450fc7d1',1,'zen::value_mem']]]
 ];
