@@ -75,18 +75,36 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Holds characters in a variadic pack.  
+ <a href="structzen_1_1message.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="message_8hpp_source.html">message.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae50adb8629faaac4acaa76d91db48492"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzen_1_1message.html#ae50adb8629faaac4acaa76d91db48492">hash</a> ()</td></tr>
+<tr class="memdesc:ae50adb8629faaac4acaa76d91db48492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns hash of string Elements.  <a href="structzen_1_1message.html#ae50adb8629faaac4acaa76d91db48492">More...</a><br /></td></tr>
 <tr class="separator:ae50adb8629faaac4acaa76d91db48492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75ad421af9dcdc6db0b8dafc97516fa4"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzen_1_1message.html#a75ad421af9dcdc6db0b8dafc97516fa4">c_str</a> ()</td></tr>
+<tr class="memdesc:a75ad421af9dcdc6db0b8dafc97516fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns C-string comprised of <code>{Elements...}</code>  <a href="structzen_1_1message.html#a75ad421af9dcdc6db0b8dafc97516fa4">More...</a><br /></td></tr>
 <tr class="separator:a75ad421af9dcdc6db0b8dafc97516fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f50492923cf7f5c367a566210e338d9"><td class="memItemLeft" align="right" valign="top">static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzen_1_1message.html#a4f50492923cf7f5c367a566210e338d9">sv</a> ()</td></tr>
+<tr class="memdesc:a4f50492923cf7f5c367a566210e338d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string literal storage as a <code>std::string_view</code>  <a href="structzen_1_1message.html#a4f50492923cf7f5c367a566210e338d9">More...</a><br /></td></tr>
 <tr class="separator:a4f50492923cf7f5c367a566210e338d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;char... Elements&gt;<br />
+struct zen::message&lt; Elements &gt;</h3>
+
+<p>Holds characters in a variadic pack. </p>
+<p>Acts as a string literal creator/wrapper with safeguards against invalid c-string points</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Elements</td><td>characters of string </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a75ad421af9dcdc6db0b8dafc97516fa4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75ad421af9dcdc6db0b8dafc97516fa4">&#9670;&nbsp;</a></span>c_str()</h2>
 
@@ -111,6 +129,8 @@ template&lt;char... Elements&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns C-string comprised of <code>{Elements...}</code> </p>
 
 </div>
 </div>
@@ -139,6 +159,8 @@ template&lt;char... Elements&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns hash of string Elements. </p>
+
 </div>
 </div>
 <a id="a4f50492923cf7f5c367a566210e338d9"></a>
@@ -165,6 +187,8 @@ template&lt;char... Elements&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns string literal storage as a <code>std::string_view</code> </p>
 
 </div>
 </div>

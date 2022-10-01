@@ -3,6 +3,8 @@
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
+ \mbox{\hyperlink{namespacezen_1_1detail}{detail}}
+\item 
  \mbox{\hyperlink{namespacezen_1_1exec}{exec}}
 \item 
  \mbox{\hyperlink{namespacezen_1_1meta}{meta}}
@@ -19,9 +21,9 @@ class \mbox{\hyperlink{classzen_1_1any__dispatch}{any\+\_\+dispatch}}
 class \mbox{\hyperlink{classzen_1_1any__dispatch_3_01exec_1_1thread__pool_3_01_f_00_01_a_01_4_00_01_invocable_ts_8_8_8_01_4}{any\+\_\+dispatch$<$ exec\+::thread\+\_\+pool$<$ F, A $>$, Invocable\+Ts... $>$}}
 \item 
 struct \mbox{\hyperlink{structzen_1_1are__messages__equal}{are\+\_\+messages\+\_\+equal}}
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if two {\ttfamily message} types are equal. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structzen_1_1are__messages__equal_3_01message_3_01_elements_8_8_8_01_4_00_01message_3_01_elements_8_8_8_01_4_01_4}{are\+\_\+messages\+\_\+equal$<$ message$<$ Elements... $>$, message$<$ Elements... $>$ $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if two {\ttfamily message} types are equal. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classzen_1_1deferred__result}{deferred\+\_\+result}}
 \item 
 class \mbox{\hyperlink{classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4}{deferred\+\_\+result$<$ Invocable\+T, void $>$}}
@@ -31,7 +33,7 @@ struct \mbox{\hyperlink{structzen_1_1deferred__result__of}{deferred\+\_\+result\
 struct \mbox{\hyperlink{structzen_1_1deferred__result__of_3_01deferred__result_3_01_invocable_t_00_01_input_t_01_4_01_4}{deferred\+\_\+result\+\_\+of$<$ deferred\+\_\+result$<$ Invocable\+T, Input\+T $>$ $>$}}
 \item 
 struct \mbox{\hyperlink{structzen_1_1message}{message}}
-\item 
+\begin{DoxyCompactList}\small\item\em Holds characters in a variadic pack. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classzen_1_1result}{result}}
 \item 
 struct \mbox{\hyperlink{structzen_1_1result__as__tuple}{result\+\_\+as\+\_\+tuple}}
@@ -41,9 +43,9 @@ struct \mbox{\hyperlink{structzen_1_1result__as__tuple_3_01result_3_01std_1_1tup
 struct \mbox{\hyperlink{structzen_1_1result__as__tuple_3_01result_3_01_t_01_4_01_4}{result\+\_\+as\+\_\+tuple$<$ result$<$ T $>$ $>$}}
 \item 
 class \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}}
-\item 
+\begin{DoxyCompactList}\small\item\em Indicates valid/invalid state with an associated message payload. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classzen_1_1result__value}{result\+\_\+value}}
-\item 
+\begin{DoxyCompactList}\small\item\em Holds a value whose constructor/destructor can be manually invoked. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structzen_1_1to__result}{to\+\_\+result}}
 \item 
 struct \mbox{\hyperlink{structzen_1_1to__result_3_01result_3_01_t_01_4_01_4}{to\+\_\+result$<$ result$<$ T $>$ $>$}}
@@ -68,32 +70,32 @@ struct \mbox{\hyperlink{structzen_1_1to__result_3_01result_3_01_t_01_4_01_4}{to\
 \item 
 {\footnotesize template$<$typename T , typename Fn $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a00d12d6a51ffeabf349241a0ae804224}{operator$\vert$}} (\mbox{\hyperlink{classzen_1_1result}{result}}$<$ T $>$ \&\&r, Fn \&\&f)
 \item 
-{\footnotesize template$<$typename T , T First\+Element$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_a7db13f7a291fab3b3b5dc438850c144c}{hash\+\_\+sequence}} ()
-\item 
-{\footnotesize template$<$typename T , T First\+Element, T Second\+Element, T... Other\+Elements$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_ab45660cb174cbd2a3caea214464fb477}{hash\+\_\+sequence}} ()
-\item 
 {\footnotesize template$<$typename T , T... Elements$>$ }\\constexpr auto \mbox{\hyperlink{namespacezen_a19335d4087bb4b056179057c4ab21207}{operator\char`\"{}\char`\"{}\+\_\+msg}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a message from a string literal. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , T... Elements$>$ }\\constexpr auto \mbox{\hyperlink{namespacezen_a472cfa5e6813a49e52923cc1605c6711}{operator\char`\"{}\char`\"{}\+\_\+hash}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns hash value associate which a string literal. \end{DoxyCompactList}\item 
 {\footnotesize template$<$char... C$>$ }\\std\+::ostream \& \mbox{\hyperlink{namespacezen_a6548677007dd525859f3b093b10be71a}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ m)
-\item 
+\begin{DoxyCompactList}\small\item\em {\ttfamily std\+::ostream} overload for message \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , T... Elements$>$ }\\constexpr auto \mbox{\hyperlink{namespacezen_abc6a073e79657ca62009c8a9ba8d5eae}{operator\char`\"{}\char`\"{}\+\_\+fail}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a failure message from a string literal. \end{DoxyCompactList}\item 
 std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_a5de5843680a3f6729c2dd69d5e24f0c1}{hash}} (const std\+::string\+\_\+view sv)
-\item 
+\begin{DoxyCompactList}\small\item\em Computes a hash of a string. \end{DoxyCompactList}\item 
 std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_a28c8e386dd2c231f81bc0b687e9b4a43}{hash}} (const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&s)
-\item 
-{\footnotesize template$<$char... C$>$ }\\bool \mbox{\hyperlink{namespacezen_a936d980e8994dedcf61dea858c89fdeb}{operator==}} (const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&lhs, const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&rhs)
-\item 
-{\footnotesize template$<$char... C$>$ }\\bool \mbox{\hyperlink{namespacezen_a06b4131f8c1fccba6885296ffe91f84d}{operator==}} (const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&lhs, const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&rhs)
-\item 
-{\footnotesize template$<$char... C$>$ }\\bool \mbox{\hyperlink{namespacezen_a8f5c24304aebe2a2231207eb6b46e9cc}{operator!=}} (const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&lhs, const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&rhs)
-\item 
-{\footnotesize template$<$char... C$>$ }\\bool \mbox{\hyperlink{namespacezen_a48159882618ed66d5f6976cc63840ffa}{operator!=}} (const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&lhs, const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&rhs)
-\item 
+\begin{DoxyCompactList}\small\item\em Computes a hash associated with a \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$char... C$>$ }\\constexpr bool \mbox{\hyperlink{namespacezen_aae23b1f7fd1af07ec71f33fa5d27fe04}{operator==}} (const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&lhs, const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Equality comparions between message and \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} (with message) \end{DoxyCompactList}\item 
+{\footnotesize template$<$char... C$>$ }\\constexpr bool \mbox{\hyperlink{namespacezen_ad0c8ff96dfa85917b0f0a1ccdc38ae5a}{operator==}} (const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&lhs, const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Equality comparions between \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} (with message) and message. \end{DoxyCompactList}\item 
+{\footnotesize template$<$char... C$>$ }\\constexpr bool \mbox{\hyperlink{namespacezen_a193233d5a75cae68ac31888942a5e561}{operator!=}} (const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&lhs, const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Inequality comparions between message and \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} (with message) \end{DoxyCompactList}\item 
+{\footnotesize template$<$char... C$>$ }\\constexpr bool \mbox{\hyperlink{namespacezen_aa2705e948f42d24c91ae9e74a32c32ba}{operator!=}} (const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&lhs, const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Inequality comparions between \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} (with message) and message. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{namespacezen_aff5a4578f0001fcb56272dfbe93085ae}{operator==}} (const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&lhs, const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Equality comparions between two \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} objects. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{namespacezen_a77867a9182da34739dcacf9624ba400c}{operator!=}} (const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&lhs, const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Inequality comparions between two \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} objects. \end{DoxyCompactList}\item 
 std\+::ostream \& \mbox{\hyperlink{namespacezen_a04bc261b0462b49974b511f377bb93e7}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&s)
-\item 
+\begin{DoxyCompactList}\small\item\em {\ttfamily std\+::ostream} overload for \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename InvocableT $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a5e99ec328007b7ee84ebed748115f747}{make\+\_\+deferred\+\_\+result}} (InvocableT \&\&invocable)
 \item 
 {\footnotesize template$<$typename InvocableT , typename Arg\+TupleT $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a20104a2253cf0eb6740f39bc98f331e2}{make\+\_\+deferred\+\_\+result}} (InvocableT \&\&invocable, Arg\+TupleT \&\&arg)
@@ -194,26 +196,42 @@ decltype(auto) zen\+::create (\begin{DoxyParamCaption}\item[{Result\+TupleT \&\&
 \doxysubsubsection{\texorpdfstring{hash()}{hash()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily std\+::size\+\_\+t zen\+::hash (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Computes a hash associated with a \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & status object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hash value
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{https://stackoverflow.com/questions/7666509/hash-function-for-string}{\texttt{ https\+://stackoverflow.\+com/questions/7666509/hash-\/function-\/for-\/string}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{namespacezen_a5de5843680a3f6729c2dd69d5e24f0c1}\label{namespacezen_a5de5843680a3f6729c2dd69d5e24f0c1}} 
 \index{zen@{zen}!hash@{hash}}
 \index{hash@{hash}!zen@{zen}}
 \doxysubsubsection{\texorpdfstring{hash()}{hash()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily std\+::size\+\_\+t zen\+::hash (\begin{DoxyParamCaption}\item[{const std\+::string\+\_\+view}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{namespacezen_a7db13f7a291fab3b3b5dc438850c144c}\label{namespacezen_a7db13f7a291fab3b3b5dc438850c144c}} 
-\index{zen@{zen}!hash\_sequence@{hash\_sequence}}
-\index{hash\_sequence@{hash\_sequence}!zen@{zen}}
-\doxysubsubsection{\texorpdfstring{hash\_sequence()}{hash\_sequence()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T , T First\+Element$>$ \\
-constexpr std\+::size\+\_\+t zen\+::hash\+\_\+sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{namespacezen_ab45660cb174cbd2a3caea214464fb477}\label{namespacezen_ab45660cb174cbd2a3caea214464fb477}} 
-\index{zen@{zen}!hash\_sequence@{hash\_sequence}}
-\index{hash\_sequence@{hash\_sequence}!zen@{zen}}
-\doxysubsubsection{\texorpdfstring{hash\_sequence()}{hash\_sequence()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T , T First\+Element, T Second\+Element, T... Other\+Elements$>$ \\
-constexpr std\+::size\+\_\+t zen\+::hash\+\_\+sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
+Computes a hash of a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sv} & string to hash, as a {\ttfamily std\+::string\+\_\+view}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hash value
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{https://stackoverflow.com/questions/7666509/hash-function-for-string}{\texttt{ https\+://stackoverflow.\+com/questions/7666509/hash-\/function-\/for-\/string}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{namespacezen_a5e99ec328007b7ee84ebed748115f747}\label{namespacezen_a5e99ec328007b7ee84ebed748115f747}} 
 \index{zen@{zen}!make\_deferred\_result@{make\_deferred\_result}}
 \index{make\_deferred\_result@{make\_deferred\_result}!zen@{zen}}
@@ -235,19 +253,37 @@ decltype(auto) zen\+::make\+\_\+deferred\+\_\+result (\begin{DoxyParamCaption}\i
 {\footnotesize\ttfamily template$<$typename... Ts$>$ \\
 decltype(auto) zen\+::make\+\_\+result (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{values }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespacezen_a8f5c24304aebe2a2231207eb6b46e9cc}\label{namespacezen_a8f5c24304aebe2a2231207eb6b46e9cc}} 
+\mbox{\Hypertarget{namespacezen_a193233d5a75cae68ac31888942a5e561}\label{namespacezen_a193233d5a75cae68ac31888942a5e561}} 
 \index{zen@{zen}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!zen@{zen}}
-\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$char... C$>$ \\
-bool zen\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+constexpr bool zen\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{namespacezen_a48159882618ed66d5f6976cc63840ffa}\label{namespacezen_a48159882618ed66d5f6976cc63840ffa}} 
+
+
+Inequality comparions between message and \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} (with message) 
+
+\mbox{\Hypertarget{namespacezen_aa2705e948f42d24c91ae9e74a32c32ba}\label{namespacezen_aa2705e948f42d24c91ae9e74a32c32ba}} 
 \index{zen@{zen}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!zen@{zen}}
-\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$char... C$>$ \\
-bool zen\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+constexpr bool zen\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Inequality comparions between \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} (with message) and message. 
+
+\mbox{\Hypertarget{namespacezen_a77867a9182da34739dcacf9624ba400c}\label{namespacezen_a77867a9182da34739dcacf9624ba400c}} 
+\index{zen@{zen}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!zen@{zen}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily constexpr bool zen\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Inequality comparions between two \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} objects. 
 
 \mbox{\Hypertarget{namespacezen_abc6a073e79657ca62009c8a9ba8d5eae}\label{namespacezen_abc6a073e79657ca62009c8a9ba8d5eae}} 
 \index{zen@{zen}!operator\char`\"{}\char`\"{}\_fail@{operator""""\_fail}}
@@ -256,6 +292,10 @@ bool zen\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{cl
 {\footnotesize\ttfamily template$<$typename T , T... Elements$>$ \\
 constexpr auto zen\+::operator\char`\"{}\char`\"{}\+\_\+fail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
+
+
+Creates a failure message from a string literal. 
+
 \mbox{\Hypertarget{namespacezen_a472cfa5e6813a49e52923cc1605c6711}\label{namespacezen_a472cfa5e6813a49e52923cc1605c6711}} 
 \index{zen@{zen}!operator\char`\"{}\char`\"{}\_hash@{operator""""\_hash}}
 \index{operator\char`\"{}\char`\"{}\_hash@{operator""""\_hash}!zen@{zen}}
@@ -263,19 +303,46 @@ constexpr auto zen\+::operator\char`\"{}\char`\"{}\+\_\+fail (\begin{DoxyParamCa
 {\footnotesize\ttfamily template$<$typename T , T... Elements$>$ \\
 constexpr auto zen\+::operator\char`\"{}\char`\"{}\+\_\+hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{namespacezen_a19335d4087bb4b056179057c4ab21207}\label{namespacezen_a19335d4087bb4b056179057c4ab21207}} 
+
+
+Returns hash value associate which a string literal. 
+
+\begin{DoxyVerb}switch(hash(str))
+{
+case "one case"_hash:
+  return 1;
+case "two case"_hash:
+  return 2;
+...
+}
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacezen_a19335d4087bb4b056179057c4ab21207}\label{namespacezen_a19335d4087bb4b056179057c4ab21207}} 
 \index{zen@{zen}!operator\char`\"{}\char`\"{}\_msg@{operator""""\_msg}}
 \index{operator\char`\"{}\char`\"{}\_msg@{operator""""\_msg}!zen@{zen}}
 \doxysubsubsection{\texorpdfstring{operator""""\_msg()}{operator""\_msg()}}
 {\footnotesize\ttfamily template$<$typename T , T... Elements$>$ \\
 constexpr auto zen\+::operator\char`\"{}\char`\"{}\+\_\+msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{namespacezen_a6548677007dd525859f3b093b10be71a}\label{namespacezen_a6548677007dd525859f3b093b10be71a}} 
+
+
+Creates a message from a string literal. 
+
+\begin{DoxyVerb}// Create the message constant
+const auto m = "this is a message"_msg;
+
+// Print associate string literal
+std::fprintf(stderr, "%s\n", m.c_str());
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacezen_a6548677007dd525859f3b093b10be71a}\label{namespacezen_a6548677007dd525859f3b093b10be71a}} 
 \index{zen@{zen}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!zen@{zen}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$char... C$>$ \\
 std\+::ostream\& zen\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+{\ttfamily std\+::ostream} overload for message 
 
 \mbox{\Hypertarget{namespacezen_a2e0e2113bbc8d754556f78043781cb9f}\label{namespacezen_a2e0e2113bbc8d754556f78043781cb9f}} 
 \index{zen@{zen}!operator$<$$<$@{operator$<$$<$}}
@@ -290,19 +357,41 @@ std\+::ostream\& zen\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::os
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily std\+::ostream\& zen\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{namespacezen_a936d980e8994dedcf61dea858c89fdeb}\label{namespacezen_a936d980e8994dedcf61dea858c89fdeb}} 
-\index{zen@{zen}!operator==@{operator==}}
-\index{operator==@{operator==}!zen@{zen}}
-\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$char... C$>$ \\
-bool zen\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{namespacezen_a06b4131f8c1fccba6885296ffe91f84d}\label{namespacezen_a06b4131f8c1fccba6885296ffe91f84d}} 
+
+{\ttfamily std\+::ostream} overload for \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} 
+
+\mbox{\Hypertarget{namespacezen_aae23b1f7fd1af07ec71f33fa5d27fe04}\label{namespacezen_aae23b1f7fd1af07ec71f33fa5d27fe04}} 
 \index{zen@{zen}!operator==@{operator==}}
 \index{operator==@{operator==}!zen@{zen}}
-\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$char... C$>$ \\
-bool zen\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+constexpr bool zen\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Equality comparions between message and \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} (with message) 
+
+\mbox{\Hypertarget{namespacezen_ad0c8ff96dfa85917b0f0a1ccdc38ae5a}\label{namespacezen_ad0c8ff96dfa85917b0f0a1ccdc38ae5a}} 
+\index{zen@{zen}!operator==@{operator==}}
+\index{operator==@{operator==}!zen@{zen}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$char... C$>$ \\
+constexpr bool zen\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structzen_1_1message}{message}}$<$ C... $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Equality comparions between \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} (with message) and message. 
+
+\mbox{\Hypertarget{namespacezen_aff5a4578f0001fcb56272dfbe93085ae}\label{namespacezen_aff5a4578f0001fcb56272dfbe93085ae}} 
+\index{zen@{zen}!operator==@{operator==}}
+\index{operator==@{operator==}!zen@{zen}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily constexpr bool zen\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Equality comparions between two \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} objects. 
 
 \mbox{\Hypertarget{namespacezen_a00d12d6a51ffeabf349241a0ae804224}\label{namespacezen_a00d12d6a51ffeabf349241a0ae804224}} 
 \index{zen@{zen}!operator\texttt{"|}@{operator\texttt{"|}}}

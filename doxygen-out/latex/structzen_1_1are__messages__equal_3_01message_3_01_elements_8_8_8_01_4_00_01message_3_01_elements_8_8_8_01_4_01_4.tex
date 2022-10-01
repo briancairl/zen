@@ -2,6 +2,11 @@
 \label{structzen_1_1are__messages__equal_3_01message_3_01_elements_8_8_8_01_4_00_01message_3_01_elements_8_8_8_01_4_01_4}\index{zen::are\_messages\_equal$<$ message$<$ Elements... $>$, message$<$ Elements... $>$ $>$@{zen::are\_messages\_equal$<$ message$<$ Elements... $>$, message$<$ Elements... $>$ $>$}}
 
 
+Checks if two {\ttfamily message} types are equal.  
+
+
+
+
 {\ttfamily \#include $<$message.\+hpp$>$}
 
 Inheritance diagram for zen\+::are\+\_\+messages\+\_\+equal$<$ message$<$ Elements... $>$, message$<$ Elements... $>$ $>$\+:\begin{figure}[H]
@@ -10,6 +15,26 @@ Inheritance diagram for zen\+::are\+\_\+messages\+\_\+equal$<$ message$<$ Elemen
 \includegraphics[height=2.000000cm]{structzen_1_1are__messages__equal_3_01message_3_01_elements_8_8_8_01_4_00_01message_3_01_elements_8_8_8_01_4_01_4}
 \end{center}
 \end{figure}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$char... Elements$>$\newline
+struct zen\+::are\+\_\+messages\+\_\+equal$<$ message$<$ Elements... $>$, message$<$ Elements... $>$ $>$}
+
+Checks if two {\ttfamily message} types are equal. 
+
+\begin{DoxyVerb}const auto m1 = "this is a message"_msg;
+const auto m2 = "this is also a message"_msg;
+
+// prints 'true'
+std::cout << std::boolalpha << are_messages_equal<decltype(m1), decltype(m1)>() << std::endl;
+
+// prints 'false'
+std::cout << std::boolalpha << are_messages_equal<decltype(m1), decltype(m2)>() << std::endl;
+\end{DoxyVerb}
+ \begin{DoxyNote}{Note}
+{\ttfamily true} case 
+\end{DoxyNote}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

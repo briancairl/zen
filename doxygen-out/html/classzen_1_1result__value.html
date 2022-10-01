@@ -76,36 +76,60 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Holds a value whose constructor/destructor can be manually invoked.  
+ <a href="classzen_1_1result__value.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="value_8hpp_source.html">value.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9182636fc83fa6601b5f7ac42d6ef09c"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a9182636fc83fa6601b5f7ac42d6ef09c">result_value</a> ()=default</td></tr>
 <tr class="separator:a9182636fc83fa6601b5f7ac42d6ef09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a313936b22cc68b7fce767c954659203c"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a313936b22cc68b7fce767c954659203c">result_value</a> (const T &amp;<a class="el" href="classzen_1_1result__value.html#ac7117b05a218e0aab9e76899a127e78f">value</a>)</td></tr>
-<tr class="separator:a313936b22cc68b7fce767c954659203c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af29a3138f23fe2694c656c5833fc85fc"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#af29a3138f23fe2694c656c5833fc85fc">result_value</a> (T &amp;&amp;<a class="el" href="classzen_1_1result__value.html#ac7117b05a218e0aab9e76899a127e78f">value</a>)</td></tr>
-<tr class="separator:af29a3138f23fe2694c656c5833fc85fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7117b05a218e0aab9e76899a127e78f"><td class="memItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#ac7117b05a218e0aab9e76899a127e78f">value</a> ()</td></tr>
-<tr class="separator:ac7117b05a218e0aab9e76899a127e78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4229edc5a5c5e18017b15685b773babf"><td class="memItemLeft" align="right" valign="top">constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a4229edc5a5c5e18017b15685b773babf">value</a> () const</td></tr>
-<tr class="separator:a4229edc5a5c5e18017b15685b773babf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46b8c6fc3787f9d3e31188fe6a7eca32"><td class="memItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a46b8c6fc3787f9d3e31188fe6a7eca32">operator*</a> ()</td></tr>
-<tr class="separator:a46b8c6fc3787f9d3e31188fe6a7eca32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac6e8e00660100a555a66ecf26fdc323"><td class="memItemLeft" align="right" valign="top">constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#aac6e8e00660100a555a66ecf26fdc323">operator*</a> () const</td></tr>
-<tr class="separator:aac6e8e00660100a555a66ecf26fdc323"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a695d1f9083672a8bc9eacd42935a6cb9"><td class="memTemplParams" colspan="2">template&lt;typename... ArgTs&gt; </td></tr>
-<tr class="memitem:a695d1f9083672a8bc9eacd42935a6cb9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a695d1f9083672a8bc9eacd42935a6cb9">emplace</a> (ArgTs &amp;&amp;... args)</td></tr>
-<tr class="separator:a695d1f9083672a8bc9eacd42935a6cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f4e33f5e8ec187fb576c7189470db6"><td class="memTemplParams" colspan="2">template&lt;typename... ArgTs&gt; </td></tr>
+<tr class="memitem:a67f4e33f5e8ec187fb576c7189470db6"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a67f4e33f5e8ec187fb576c7189470db6">result_value</a> (ArgTs &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a67f4e33f5e8ec187fb576c7189470db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards <code>ArgTs...</code> and invokes constructor associated with <code>T</code>  <a href="classzen_1_1result__value.html#a67f4e33f5e8ec187fb576c7189470db6">More...</a><br /></td></tr>
+<tr class="separator:a67f4e33f5e8ec187fb576c7189470db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:ac7117b05a218e0aab9e76899a127e78f"><td class="memItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#ac7117b05a218e0aab9e76899a127e78f">value</a> ()</td></tr>
+<tr class="memdesc:ac7117b05a218e0aab9e76899a127e78f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to held value <code>T</code>  <a href="classzen_1_1result__value.html#ac7117b05a218e0aab9e76899a127e78f">More...</a><br /></td></tr>
+<tr class="separator:ac7117b05a218e0aab9e76899a127e78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4229edc5a5c5e18017b15685b773babf"><td class="memItemLeft" align="right" valign="top">constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a4229edc5a5c5e18017b15685b773babf">value</a> () const</td></tr>
+<tr class="memdesc:a4229edc5a5c5e18017b15685b773babf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns immutable reference to held value <code>T</code>  <a href="classzen_1_1result__value.html#a4229edc5a5c5e18017b15685b773babf">More...</a><br /></td></tr>
+<tr class="separator:a4229edc5a5c5e18017b15685b773babf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46b8c6fc3787f9d3e31188fe6a7eca32"><td class="memItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a46b8c6fc3787f9d3e31188fe6a7eca32">operator*</a> ()</td></tr>
+<tr class="memdesc:a46b8c6fc3787f9d3e31188fe6a7eca32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to held value <code>T</code>  <a href="classzen_1_1result__value.html#a46b8c6fc3787f9d3e31188fe6a7eca32">More...</a><br /></td></tr>
+<tr class="separator:a46b8c6fc3787f9d3e31188fe6a7eca32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac6e8e00660100a555a66ecf26fdc323"><td class="memItemLeft" align="right" valign="top">constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#aac6e8e00660100a555a66ecf26fdc323">operator*</a> () const</td></tr>
+<tr class="memdesc:aac6e8e00660100a555a66ecf26fdc323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns immutable reference to held value <code>T</code>  <a href="classzen_1_1result__value.html#aac6e8e00660100a555a66ecf26fdc323">More...</a><br /></td></tr>
+<tr class="separator:aac6e8e00660100a555a66ecf26fdc323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695d1f9083672a8bc9eacd42935a6cb9"><td class="memTemplParams" colspan="2">template&lt;typename... ArgTs&gt; </td></tr>
+<tr class="memitem:a695d1f9083672a8bc9eacd42935a6cb9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a695d1f9083672a8bc9eacd42935a6cb9">emplace</a> (ArgTs &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a695d1f9083672a8bc9eacd42935a6cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards <code>ArgTs...</code> and invokes constructor associated with <code>T</code>  <a href="classzen_1_1result__value.html#a695d1f9083672a8bc9eacd42935a6cb9">More...</a><br /></td></tr>
+<tr class="separator:a695d1f9083672a8bc9eacd42935a6cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c6351f6b3032a6ac28c2aaf504f887b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__value.html#a2c6351f6b3032a6ac28c2aaf504f887b">destroy</a> ()</td></tr>
+<tr class="memdesc:a2c6351f6b3032a6ac28c2aaf504f887b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes constructor associated with <code>T</code>  <a href="classzen_1_1result__value.html#a2c6351f6b3032a6ac28c2aaf504f887b">More...</a><br /></td></tr>
 <tr class="separator:a2c6351f6b3032a6ac28c2aaf504f887b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class zen::result_value&lt; T &gt;</h3>
+
+<p>Holds a value whose constructor/destructor can be manually invoked. </p>
+<p>This is used to deal with objects which have non-default constructors:</p><ul>
+<li>Defers construction of a value of type <code>T</code> to manual call to <code>emplace</code></li>
+<li>Requires manual destruction with <code>destroy</code></li>
+</ul>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>value type </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9182636fc83fa6601b5f7ac42d6ef09c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9182636fc83fa6601b5f7ac42d6ef09c">&#9670;&nbsp;</a></span>result_value() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9182636fc83fa6601b5f7ac42d6ef09c">&#9670;&nbsp;</a></span>result_value() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,13 +155,15 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a313936b22cc68b7fce767c954659203c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a313936b22cc68b7fce767c954659203c">&#9670;&nbsp;</a></span>result_value() <span class="overload">[2/3]</span></h2>
+<a id="a67f4e33f5e8ec187fb576c7189470db6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f4e33f5e8ec187fb576c7189470db6">&#9670;&nbsp;</a></span>result_value() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename... ArgTs&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -145,8 +171,8 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">constexpr <a class="el" href="classzen_1_1result__value.html">zen::result_value</a>&lt; T &gt;::<a class="el" href="classzen_1_1result__value.html">result_value</a> </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype">ArgTs &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -157,33 +183,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="af29a3138f23fe2694c656c5833fc85fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af29a3138f23fe2694c656c5833fc85fc">&#9670;&nbsp;</a></span>result_value() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="classzen_1_1result__value.html">zen::result_value</a>&lt; T &gt;::<a class="el" href="classzen_1_1result__value.html">result_value</a> </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Forwards <code>ArgTs...</code> and invokes constructor associated with <code>T</code> </p>
 
 </div>
 </div>
@@ -213,6 +213,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Invokes constructor associated with <code>T</code> </p>
+<dl class="section warning"><dt>Warning</dt><dd>behavior undefined if <code>emplace</code> has not been called </dd></dl>
+
 </div>
 </div>
 <a id="a695d1f9083672a8bc9eacd42935a6cb9"></a>
@@ -238,10 +241,12 @@ template&lt;typename... ArgTs&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Forwards <code>ArgTs...</code> and invokes constructor associated with <code>T</code> </p>
 
 </div>
 </div>
@@ -265,10 +270,13 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns reference to held value <code>T</code> </p>
+<dl class="section warning"><dt>Warning</dt><dd>behavior undefined if <code>emplace</code> has not been called </dd></dl>
 
 </div>
 </div>
@@ -292,10 +300,13 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns immutable reference to held value <code>T</code> </p>
+<dl class="section warning"><dt>Warning</dt><dd>behavior undefined if <code>emplace</code> has not been called </dd></dl>
 
 </div>
 </div>
@@ -319,10 +330,13 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns reference to held value <code>T</code> </p>
+<dl class="section warning"><dt>Warning</dt><dd>behavior undefined if <code>emplace</code> has not been called </dd></dl>
 
 </div>
 </div>
@@ -346,10 +360,13 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns immutable reference to held value <code>T</code> </p>
+<dl class="section warning"><dt>Warning</dt><dd>behavior undefined if <code>emplace</code> has not been called </dd></dl>
 
 </div>
 </div>

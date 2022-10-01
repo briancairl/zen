@@ -1,7 +1,7 @@
 var searchData=
 [
   ['operator_20bool_54',['operator bool',['../classzen_1_1result.html#ac16a66e41fcd2f9ee71def955d1e75b2',1,'zen::result']]],
-  ['operator_21_3d_55',['operator!=',['../namespacezen.html#a8f5c24304aebe2a2231207eb6b46e9cc',1,'zen::operator!=(const message&lt; C... &gt; &amp;lhs, const result_status &amp;rhs)'],['../namespacezen.html#a48159882618ed66d5f6976cc63840ffa',1,'zen::operator!=(const result_status &amp;lhs, const message&lt; C... &gt; &amp;rhs)']]],
+  ['operator_21_3d_55',['operator!=',['../namespacezen.html#a193233d5a75cae68ac31888942a5e561',1,'zen::operator!=(const message&lt; C... &gt; &amp;lhs, const result_status &amp;rhs)'],['../namespacezen.html#aa2705e948f42d24c91ae9e74a32c32ba',1,'zen::operator!=(const result_status &amp;lhs, const message&lt; C... &gt; &amp;rhs)'],['../namespacezen.html#a77867a9182da34739dcacf9624ba400c',1,'zen::operator!=(const result_status &amp;lhs, const result_status &amp;rhs)']]],
   ['operator_22_22_5ffail_56',['operator&quot;&quot;_fail',['../namespacezen.html#abc6a073e79657ca62009c8a9ba8d5eae',1,'zen']]],
   ['operator_22_22_5fhash_57',['operator&quot;&quot;_hash',['../namespacezen.html#a472cfa5e6813a49e52923cc1605c6711',1,'zen']]],
   ['operator_22_22_5fmsg_58',['operator&quot;&quot;_msg',['../namespacezen.html#a19335d4087bb4b056179057c4ab21207',1,'zen']]],
@@ -9,6 +9,6 @@ var searchData=
   ['operator_2a_60',['operator*',['../classzen_1_1result__value.html#a46b8c6fc3787f9d3e31188fe6a7eca32',1,'zen::result_value::operator*()'],['../classzen_1_1result__value.html#aac6e8e00660100a555a66ecf26fdc323',1,'zen::result_value::operator*() const']]],
   ['operator_3c_3c_61',['operator&lt;&lt;',['../namespacezen.html#a6548677007dd525859f3b093b10be71a',1,'zen::operator&lt;&lt;(std::ostream &amp;os, const message&lt; C... &gt; m)'],['../namespacezen.html#a04bc261b0462b49974b511f377bb93e7',1,'zen::operator&lt;&lt;(std::ostream &amp;os, const result_status &amp;s)'],['../namespacezen.html#a2e0e2113bbc8d754556f78043781cb9f',1,'zen::operator&lt;&lt;(std::ostream &amp;os, const result&lt; T &gt; &amp;r)']]],
   ['operator_3d_62',['operator=',['../classzen_1_1result__status.html#aeaeaa44fd6a6602bd1042cc006c234a3',1,'zen::result_status::operator=(const result_status &amp;)=default'],['../classzen_1_1result__status.html#aebe4dae0fd71b876091ba42b8f27948e',1,'zen::result_status::operator=(result_status &amp;&amp;)=default']]],
-  ['operator_3d_3d_63',['operator==',['../namespacezen.html#a936d980e8994dedcf61dea858c89fdeb',1,'zen::operator==(const message&lt; C... &gt; &amp;lhs, const result_status &amp;rhs)'],['../namespacezen.html#a06b4131f8c1fccba6885296ffe91f84d',1,'zen::operator==(const result_status &amp;lhs, const message&lt; C... &gt; &amp;rhs)']]],
+  ['operator_3d_3d_63',['operator==',['../namespacezen.html#aae23b1f7fd1af07ec71f33fa5d27fe04',1,'zen::operator==(const message&lt; C... &gt; &amp;lhs, const result_status &amp;rhs)'],['../namespacezen.html#ad0c8ff96dfa85917b0f0a1ccdc38ae5a',1,'zen::operator==(const result_status &amp;lhs, const message&lt; C... &gt; &amp;rhs)'],['../namespacezen.html#aff5a4578f0001fcb56272dfbe93085ae',1,'zen::operator==(const result_status &amp;lhs, const result_status &amp;rhs)']]],
   ['operator_7c_64',['operator|',['../namespacezen.html#a00d12d6a51ffeabf349241a0ae804224',1,'zen']]]
 ];

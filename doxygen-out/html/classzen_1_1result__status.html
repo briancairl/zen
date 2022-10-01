@@ -75,6 +75,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Indicates valid/invalid state with an associated message payload.  
+ <a href="classzen_1_1result__status.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="status_8hpp_source.html">status.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -85,19 +88,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a02823e94dc0148c23d81c5eafee5887d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4abd04b1d757ab27c44a7a3c2805afcd"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__status.html#a4abd04b1d757ab27c44a7a3c2805afcd">result_status</a> (<a class="el" href="classzen_1_1result__status.html">result_status</a> &amp;&amp;other)</td></tr>
 <tr class="separator:a4abd04b1d757ab27c44a7a3c2805afcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c95af1bb52f06173213dbe39c76ee3f"><td class="memTemplParams" colspan="2">template&lt;char... C&gt; </td></tr>
-<tr class="memitem:a7c95af1bb52f06173213dbe39c76ee3f"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzen_1_1result__status.html#a7c95af1bb52f06173213dbe39c76ee3f">result_status</a> (<a class="el" href="structzen_1_1message.html">message</a>&lt; C... &gt; m)</td></tr>
-<tr class="separator:a7c95af1bb52f06173213dbe39c76ee3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaeaa44fd6a6602bd1042cc006c234a3"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classzen_1_1result__status.html">result_status</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__status.html#aeaeaa44fd6a6602bd1042cc006c234a3">operator=</a> (const <a class="el" href="classzen_1_1result__status.html">result_status</a> &amp;)=default</td></tr>
 <tr class="separator:aeaeaa44fd6a6602bd1042cc006c234a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebe4dae0fd71b876091ba42b8f27948e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classzen_1_1result__status.html">result_status</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__status.html#aebe4dae0fd71b876091ba42b8f27948e">operator=</a> (<a class="el" href="classzen_1_1result__status.html">result_status</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:aebe4dae0fd71b876091ba42b8f27948e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c95af1bb52f06173213dbe39c76ee3f"><td class="memTemplParams" colspan="2">template&lt;char... C&gt; </td></tr>
+<tr class="memitem:a7c95af1bb52f06173213dbe39c76ee3f"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzen_1_1result__status.html#a7c95af1bb52f06173213dbe39c76ee3f">result_status</a> (<a class="el" href="structzen_1_1message.html">message</a>&lt; C... &gt; m)</td></tr>
+<tr class="memdesc:a7c95af1bb52f06173213dbe39c76ee3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates <a class="el" href="classzen_1_1result__status.html" title="Indicates valid/invalid state with an associated message payload.">result_status</a> from a message.  <a href="classzen_1_1result__status.html#a7c95af1bb52f06173213dbe39c76ee3f">More...</a><br /></td></tr>
+<tr class="separator:a7c95af1bb52f06173213dbe39c76ee3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a168f21bae8d27d3197d1d3c167699f4c"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__status.html#a168f21bae8d27d3197d1d3c167699f4c">message</a> () const</td></tr>
+<tr class="memdesc:a168f21bae8d27d3197d1d3c167699f4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns message string payload associated with status.  <a href="classzen_1_1result__status.html#a168f21bae8d27d3197d1d3c167699f4c">More...</a><br /></td></tr>
 <tr class="separator:a168f21bae8d27d3197d1d3c167699f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af94d7cc32fd4298e0a200c9423a69ca8"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result__status.html#af94d7cc32fd4298e0a200c9423a69ca8">valid</a> () const</td></tr>
+<tr class="memdesc:af94d7cc32fd4298e0a200c9423a69ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if status indicates "Valid" state.  <a href="classzen_1_1result__status.html#af94d7cc32fd4298e0a200c9423a69ca8">More...</a><br /></td></tr>
 <tr class="separator:af94d7cc32fd4298e0a200c9423a69ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Indicates valid/invalid state with an associated message payload. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6abe0fc885b533068d6a2024f3ed2121"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6abe0fc885b533068d6a2024f3ed2121">&#9670;&nbsp;</a></span>result_status() <span class="overload">[1/4]</span></h2>
 
@@ -201,6 +209,8 @@ template&lt;char... C&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Creates <a class="el" href="classzen_1_1result__status.html" title="Indicates valid/invalid state with an associated message payload.">result_status</a> from a message. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -226,6 +236,8 @@ template&lt;char... C&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns message string payload associated with status. </p>
 
 </div>
 </div>
@@ -303,6 +315,8 @@ template&lt;char... C&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns <code>true</code> if status indicates "Valid" state. </p>
 
 </div>
 </div>

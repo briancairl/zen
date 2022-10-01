@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Checks if two <code>message</code> types are equal.  
+ <a href="structzen_1_1are__messages__equal_3_01message_3_01_elements_8_8_8_01_4_00_01message_3_01_elements_8_8_8_01_4_01_4.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="message_8hpp_source.html">message.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zen::are_messages_equal&lt; message&lt; Elements... &gt;, message&lt; Elements... &gt; &gt;:</div>
@@ -79,7 +82,21 @@ Inheritance diagram for zen::are_messages_equal&lt; message&lt; Elements... &gt;
  <div class="center">
   <img src="structzen_1_1are__messages__equal_3_01message_3_01_elements_8_8_8_01_4_00_01message_3_01_elements_8_8_8_01_4_01_4.png" alt=""/>
  </div></div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;char... Elements&gt;<br />
+struct zen::are_messages_equal&lt; message&lt; Elements... &gt;, message&lt; Elements... &gt; &gt;</h3>
+
+<p>Checks if two <code>message</code> types are equal. </p>
+<pre class="fragment">const auto m1 = "this is a message"_msg;
+const auto m2 = "this is also a message"_msg;
+
+// prints 'true'
+std::cout &lt;&lt; std::boolalpha &lt;&lt; are_messages_equal&lt;decltype(m1), decltype(m1)&gt;() &lt;&lt; std::endl;
+
+// prints 'false'
+std::cout &lt;&lt; std::boolalpha &lt;&lt; are_messages_equal&lt;decltype(m1), decltype(m2)&gt;() &lt;&lt; std::endl;
+</pre> <dl class="section note"><dt>Note</dt><dd><code>true</code> case </dd></dl>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/zen/result/<a class="el" href="message_8hpp_source.html">message.hpp</a></li>
 </ul>
 </div><!-- contents -->
