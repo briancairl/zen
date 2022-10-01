@@ -1,6 +1,7 @@
 #pragma once
 
 // C++ Standard Library
+#include <type_traits>
 #include <utility>
 
 namespace zen
@@ -15,15 +16,15 @@ namespace zen
  *
  * @tparam T  value type
  */
-template <typename T> class result_value
+template <typename T> class value_mem
 {
 public:
-  constexpr result_value() = default;
+  constexpr value_mem() = default;
 
   /**
    * @copydoc emplace
    */
-  template <typename... ArgTs> constexpr result_value(ArgTs&&... args) { emplace(std::forward<ArgTs>(args)...); }
+  template <typename... ArgTs> constexpr value_mem(ArgTs&&... args) { emplace(std::forward<ArgTs>(args)...); }
 
 protected:
   /**
@@ -64,7 +65,13 @@ protected:
    *
    * @warning behavior undefined if <code>emplace</code> has not been called
    */
-  void destroy() { data()->~T(); }
+  constexpr void destroy()
+  {
+    if constexpr (!std::is_trivial<T>())
+    {
+      data()->~T();
+    }
+  }
 
 private:
   /**

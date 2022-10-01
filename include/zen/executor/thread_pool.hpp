@@ -11,7 +11,6 @@
 #include <vector>
 
 // Zen
-#include <zen/core.hpp>
 #include <zen/executor/executor.hpp>
 
 namespace zen::exec
