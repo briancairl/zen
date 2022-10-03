@@ -37,7 +37,7 @@ cc_library(
 
 cc_library(
   name="core",
-  hdrs=["include/zen/core.hpp"],
+  hdrs=["include/zen/core.hpp"] + glob(["include/zen/core/*.hpp"]),
   strip_include_prefix="include",
   deps=[":fwd", ":meta", ":result"],
   visibility=["//visibility:public"]
