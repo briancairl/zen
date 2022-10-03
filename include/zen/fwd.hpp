@@ -7,9 +7,7 @@ namespace zen
 {
 
 template <typename T> class result;
-
 template <typename... Ts> class any_dispatch;
-
 template <typename... Ts> class all_dispatch;
 
 }  // namespace zen

@@ -32,28 +32,28 @@ protected:
    *
    * @warning behavior undefined if <code>emplace</code> has not been called
    */
-  [[nodiscard]] constexpr T& value() { return (*data()); }
+  [[nodiscard]] constexpr T& operator*() & { return (*data()); }
 
   /**
    * @brief Returns immutable reference to held value <code>T</code>
    *
    * @warning behavior undefined if <code>emplace</code> has not been called
    */
-  [[nodiscard]] constexpr const T& value() const { return (*data()); }
+  [[nodiscard]] constexpr const T& operator*() const& { return (*data()); }
 
   /**
    * @brief Returns reference to held value <code>T</code>
    *
    * @warning behavior undefined if <code>emplace</code> has not been called
    */
-  [[nodiscard]] constexpr T& operator*() { return (*data()); }
+  [[nodiscard]] constexpr T&& operator*() && { return (*data()); }
 
   /**
    * @brief Returns immutable reference to held value <code>T</code>
    *
    * @warning behavior undefined if <code>emplace</code> has not been called
    */
-  [[nodiscard]] constexpr const T& operator*() const { return (*data()); }
+  [[nodiscard]] constexpr const T&& operator*() const&& { return (*data()); }
 
   /**
    * @brief Returns pointer to held value <code>T</code>

@@ -1,3 +1,6 @@
+// C++ Standard Library
+#include <vector>
+
 // GTest
 #include <gtest/gtest.h>
 
@@ -12,6 +15,25 @@ TEST(Result, Default)
   ASSERT_FALSE(r.valid()) << r;
   EXPECT_EQ(r.status(), Unknown);
 }
+
+TEST(Result, DefaultBadAccess)
+{
+  result<int> r;
+  [[maybe_unused]] int v = 0;
+  ASSERT_THROW(v = r.value(), bad_result_access);
+}
+
+TEST(Result, MoveResultValue)
+{
+  result<std::vector<int>> r = std::vector<int>{1, 2, 3, 4};
+
+  auto value = std::move(r).value();
+
+  ASSERT_FALSE(r.valid());
+
+  EXPECT_EQ(value, (std::vector<int>{1, 2, 3, 4}));
+}
+
 
 TEST(Result, CreateValidFromDeferredNoArg)
 {
