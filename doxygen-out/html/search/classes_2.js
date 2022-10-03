@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['deferred_5fresult_123',['deferred_result',['../classzen_1_1deferred__result.html',1,'zen']]],
-  ['deferred_5fresult_3c_20invocablet_2c_20void_20_3e_124',['deferred_result&lt; InvocableT, void &gt;',['../classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4.html',1,'zen']]],
-  ['deferred_5fresult_5fof_125',['deferred_result_of',['../structzen_1_1deferred__result__of.html',1,'zen']]],
-  ['deferred_5fresult_5fof_3c_20deferred_5fresult_3c_20invocablet_2c_20inputt_20_3e_20_3e_126',['deferred_result_of&lt; deferred_result&lt; InvocableT, InputT &gt; &gt;',['../structzen_1_1deferred__result__of_3_01deferred__result_3_01_invocable_t_00_01_input_t_01_4_01_4.html',1,'zen']]]
+  ['can_5fapply_134',['can_apply',['../structzen_1_1meta_1_1can__apply.html',1,'zen::meta']]],
+  ['can_5fapply_3c_20fn_2c_20std_3a_3atuple_3c_20argts_2e_2e_2e_20_3e_20_3e_135',['can_apply&lt; Fn, std::tuple&lt; ArgTs... &gt; &gt;',['../structzen_1_1meta_1_1can__apply_3_01_fn_00_01std_1_1tuple_3_01_arg_ts_8_8_8_01_4_01_4.html',1,'zen::meta']]]
 ];

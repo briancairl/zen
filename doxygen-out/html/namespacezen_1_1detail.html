@@ -68,7 +68,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">zen::detail Namespace Reference</div>  </div>
 </div><!--header-->
@@ -76,6 +77,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a49b98c81bbe51fa75f89468b4fe4717f"><td class="memTemplParams" colspan="2">template&lt;typename ResultTupleT , typename DeferredTupleT , std::size_t... Is&gt; </td></tr>
+<tr class="memitem:a49b98c81bbe51fa75f89468b4fe4717f"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen_1_1detail.html#a49b98c81bbe51fa75f89468b4fe4717f">create</a> (ResultTupleT &amp;&amp;result_tuple, DeferredTupleT &amp;&amp;deferred_result_tuple, std::index_sequence&lt; Is... &gt; _)</td></tr>
+<tr class="separator:a49b98c81bbe51fa75f89468b4fe4717f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bb2fbe75f5026e67d345807c4556ce8"><td class="memTemplParams" colspan="2">template&lt;typename T , T FirstElement&gt; </td></tr>
 <tr class="memitem:a0bb2fbe75f5026e67d345807c4556ce8"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen_1_1detail.html#a0bb2fbe75f5026e67d345807c4556ce8">hash_sequence</a> ()</td></tr>
 <tr class="memdesc:a0bb2fbe75f5026e67d345807c4556ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a hash from elements in a variadic argument pack.  <a href="namespacezen_1_1detail.html#a0bb2fbe75f5026e67d345807c4556ce8">More...</a><br /></td></tr>
@@ -84,8 +88,49 @@ Functions</h2></td></tr>
 <tr class="memitem:ab878689b544d5d3fc2c0d3aaf0b220b9"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen_1_1detail.html#ab878689b544d5d3fc2c0d3aaf0b220b9">hash_sequence</a> ()</td></tr>
 <tr class="memdesc:ab878689b544d5d3fc2c0d3aaf0b220b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a hash from elements in a variadic argument pack.  <a href="namespacezen_1_1detail.html#ab878689b544d5d3fc2c0d3aaf0b220b9">More...</a><br /></td></tr>
 <tr class="separator:ab878689b544d5d3fc2c0d3aaf0b220b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a69143ad6673b331da151af75f2313201"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezen_1_1detail.html#a69143ad6673b331da151af75f2313201">kStringHashShift</a> = 7</td></tr>
+<tr class="separator:a69143ad6673b331da151af75f2313201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a49b98c81bbe51fa75f89468b4fe4717f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b98c81bbe51fa75f89468b4fe4717f">&#9670;&nbsp;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultTupleT , typename DeferredTupleT , std::size_t... Is&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(auto) zen::detail::create </td>
+          <td>(</td>
+          <td class="paramtype">ResultTupleT &amp;&amp;&#160;</td>
+          <td class="paramname"><em>result_tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DeferredTupleT &amp;&amp;&#160;</td>
+          <td class="paramname"><em>deferred_result_tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::index_sequence&lt; Is... &gt;&#160;</td>
+          <td class="paramname"><em>_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab878689b544d5d3fc2c0d3aaf0b220b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab878689b544d5d3fc2c0d3aaf0b220b9">&#9670;&nbsp;</a></span>hash_sequence() <span class="overload">[1/2]</span></h2>
 
@@ -147,6 +192,29 @@ template&lt;typename T , T FirstElement&gt; </div>
 <dl class="section note"><dt>Note</dt><dd>base case </dd>
 <dd>
 base case </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a69143ad6673b331da151af75f2313201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69143ad6673b331da151af75f2313201">&#9670;&nbsp;</a></span>kStringHashShift</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t zen::detail::kStringHashShift = 7</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

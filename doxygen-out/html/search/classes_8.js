@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['thread_5fpool_145',['thread_pool',['../classzen_1_1exec_1_1thread__pool.html',1,'zen::exec']]],
-  ['thread_5fpool_3c_20f_2c_20a_20_3e_146',['thread_pool&lt; F, A &gt;',['../classzen_1_1exec_1_1thread__pool.html',1,'zen::exec']]],
-  ['thread_5fpool_5fhandle_147',['thread_pool_handle',['../classzen_1_1exec_1_1thread__pool__handle.html',1,'zen::exec']]],
-  ['to_5fresult_148',['to_result',['../structzen_1_1to__result.html',1,'zen']]],
-  ['to_5fresult_3c_20result_3c_20t_20_3e_20_3e_149',['to_result&lt; result&lt; T &gt; &gt;',['../structzen_1_1to__result_3_01result_3_01_t_01_4_01_4.html',1,'zen']]],
-  ['transform_150',['transform',['../structzen_1_1meta_1_1transform.html',1,'zen::meta']]],
-  ['transform_3c_20packtmpl_3c_20ts_2e_2e_2e_20_3e_2c_20transformtmpl_20_3e_151',['transform&lt; PackTmpl&lt; Ts... &gt;, TransformTmpl &gt;',['../structzen_1_1meta_1_1transform_3_01_pack_tmpl_3_01_ts_8_8_8_01_4_00_01_transform_tmpl_01_4.html',1,'zen::meta']]]
+  ['result_151',['result',['../classzen_1_1result.html',1,'zen']]],
+  ['result_5fas_5ftuple_152',['result_as_tuple',['../structzen_1_1result__as__tuple.html',1,'zen']]],
+  ['result_5fas_5ftuple_3c_20result_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_20_3e_153',['result_as_tuple&lt; result&lt; std::tuple&lt; Ts... &gt; &gt; &gt;',['../structzen_1_1result__as__tuple_3_01result_3_01std_1_1tuple_3_01_ts_8_8_8_01_4_01_4_01_4.html',1,'zen']]],
+  ['result_5fas_5ftuple_3c_20result_3c_20t_20_3e_20_3e_154',['result_as_tuple&lt; result&lt; T &gt; &gt;',['../structzen_1_1result__as__tuple_3_01result_3_01_t_01_4_01_4.html',1,'zen']]],
+  ['result_5fof_5fapply_155',['result_of_apply',['../structzen_1_1meta_1_1result__of__apply.html',1,'zen::meta']]],
+  ['result_5fof_5fapply_3c_20fn_2c_20std_3a_3atuple_3c_20argts_2e_2e_2e_20_3e_2c_20otherstups_2e_2e_2e_20_3e_156',['result_of_apply&lt; Fn, std::tuple&lt; ArgTs... &gt;, OthersTups... &gt;',['../structzen_1_1meta_1_1result__of__apply_3_01_fn_00_01std_1_1tuple_3_01_arg_ts_8_8_8_01_4_00_01_others_tups_8_8_8_01_4.html',1,'zen::meta']]],
+  ['result_5fstatus_157',['result_status',['../classzen_1_1result__status.html',1,'zen']]]
 ];

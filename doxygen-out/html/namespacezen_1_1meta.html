@@ -70,7 +70,8 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">zen::meta Namespace Reference</div>  </div>
 </div><!--header-->
@@ -133,6 +134,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ad90bfc2b32cab913644c56d4b50ecbf2"><td class="memTemplItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen_1_1meta.html#ad90bfc2b32cab913644c56d4b50ecbf2">type_to_string_view</a> ()</td></tr>
 <tr class="memdesc:ad90bfc2b32cab913644c56d4b50ecbf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the full-qualified name of a type as a string_view.  <a href="namespacezen_1_1meta.html#ad90bfc2b32cab913644c56d4b50ecbf2">More...</a><br /></td></tr>
 <tr class="separator:ad90bfc2b32cab913644c56d4b50ecbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac444bb271fc32c3bf02e57a2a2c8c370"><td class="memTemplParams" colspan="2">template&lt;typename Fn , typename Tup &gt; </td></tr>
+<tr class="memitem:ac444bb271fc32c3bf02e57a2a2c8c370"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen_1_1meta.html#ac444bb271fc32c3bf02e57a2a2c8c370">can_apply_v</a> = <a class="el" href="structzen_1_1meta_1_1can__apply.html">can_apply</a>&lt;Fn, Tup&gt;::value</td></tr>
+<tr class="separator:ac444bb271fc32c3bf02e57a2a2c8c370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4139a4f5972cc0ec801ed2529300217e"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename... &gt; class Tmpl&gt; </td></tr>
+<tr class="memitem:a4139a4f5972cc0ec801ed2529300217e"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen_1_1meta.html#a4139a4f5972cc0ec801ed2529300217e">is_specialization_v</a> = <a class="el" href="structzen_1_1meta_1_1is__specialization.html">is_specialization</a>&lt;T, Tmpl&gt;::value</td></tr>
+<tr class="separator:a4139a4f5972cc0ec801ed2529300217e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a1839dc5c0a029566b136b2a5b04c1771"></a>
@@ -239,6 +249,55 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the full-qualified name of a type as a string_view. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ac444bb271fc32c3bf02e57a2a2c8c370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac444bb271fc32c3bf02e57a2a2c8c370">&#9670;&nbsp;</a></span>can_apply_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Fn , typename Tup &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool zen::meta::can_apply_v = <a class="el" href="structzen_1_1meta_1_1can__apply.html">can_apply</a>&lt;Fn, Tup&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4139a4f5972cc0ec801ed2529300217e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4139a4f5972cc0ec801ed2529300217e">&#9670;&nbsp;</a></span>is_specialization_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename... &gt; class Tmpl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool zen::meta::is_specialization_v = <a class="el" href="structzen_1_1meta_1_1is__specialization.html">is_specialization</a>&lt;T, Tmpl&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

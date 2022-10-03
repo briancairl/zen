@@ -2,74 +2,140 @@
 \label{classzen_1_1result}\index{zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 
 
+Stores a value type, or an error message.  
+
+
+
+
 {\ttfamily \#include $<$fwd.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{classzen_1_1result_a702d342f2b518f6eb456b97d4d39b5d1}{result}} ()=default
-\item 
-{\footnotesize template$<$char... Elements$>$ }\\constexpr \mbox{\hyperlink{classzen_1_1result_aeda6e944799aa1cdc8e6f9a82df46b8a}{result}} (\mbox{\hyperlink{structzen_1_1message}{message}}$<$ Elements... $>$ error\+\_\+message)
-\item 
+{\footnotesize template$<$char... Elements$>$ }\\constexpr \mbox{\hyperlink{classzen_1_1result_a15faf36a8fa5808eb510dca8d4c0b062}{result}} (\mbox{\hyperlink{structzen_1_1message}{message}}$<$ Elements... $>$ \&\&error\+\_\+message)
+\begin{DoxyCompactList}\small\item\em Creates an invalid result from an error message. \end{DoxyCompactList}\item 
 constexpr \mbox{\hyperlink{classzen_1_1result_a9cabd53bf4e5fd0970a70d05fb414321}{result}} (\mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&\&\mbox{\hyperlink{classzen_1_1result_aedfc2aac9a5c81da76bdbeac9ae5e609}{status}})
-\item 
-constexpr \mbox{\hyperlink{classzen_1_1result_aaecb0bed262ab1c7889696a7f2f03739}{result}} (const T \&value)
-\item 
-constexpr \mbox{\hyperlink{classzen_1_1result_a4d5663ffc4a33bd82dc2b8aa181a7457}{result}} (T \&\&value)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates an invalid result from an error status. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classzen_1_1result_aaecb0bed262ab1c7889696a7f2f03739}{result}} (const T \&\mbox{\hyperlink{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}{value}})
+\begin{DoxyCompactList}\small\item\em Creates a valid result from a value. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classzen_1_1result_a4d5663ffc4a33bd82dc2b8aa181a7457}{result}} (T \&\&\mbox{\hyperlink{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}{value}})
+\begin{DoxyCompactList}\small\item\em Creates a valid result from a value. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classzen_1_1result_a702d342f2b518f6eb456b97d4d39b5d1}{result}} ()=default
+\begin{DoxyCompactList}\small\item\em Default initializes result to invalid (Unknown) state. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classzen_1_1result_a339abc9f7c8ffac59f34908b0db01c9c}{$\sim$result}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destroys result value, if {\ttfamily \mbox{\hyperlink{classzen_1_1result_ab529ca5a7f76389e6d2ee1e6cf7acdb8}{valid()}} == true} \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}{value}} () const \&
+\begin{DoxyCompactList}\small\item\em Returns immutable reference to result value. \end{DoxyCompactList}\item 
+T \&\& \mbox{\hyperlink{classzen_1_1result_a003a4891ea2a994e71d5501422ccdde9}{value}} () \&\&
+\begin{DoxyCompactList}\small\item\em Returns rvalue reference to result value. \end{DoxyCompactList}\item 
 constexpr \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \mbox{\hyperlink{classzen_1_1result_aedfc2aac9a5c81da76bdbeac9ae5e609}{status}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns status associated with result. \end{DoxyCompactList}\item 
 constexpr bool \mbox{\hyperlink{classzen_1_1result_ab529ca5a7f76389e6d2ee1e6cf7acdb8}{valid}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns {\ttfamily true} if result value pay load is valid. \end{DoxyCompactList}\item 
 constexpr \mbox{\hyperlink{classzen_1_1result_ac16a66e41fcd2f9ee71def955d1e75b2}{operator bool}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns {\ttfamily true} if result value pay load is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class zen\+::result$<$ T $>$}
+
+Stores a value type, or an error message. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & value type \\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classzen_1_1result_a702d342f2b518f6eb456b97d4d39b5d1}\label{classzen_1_1result_a702d342f2b518f6eb456b97d4d39b5d1}} 
+\mbox{\Hypertarget{classzen_1_1result_a15faf36a8fa5808eb510dca8d4c0b062}\label{classzen_1_1result_a15faf36a8fa5808eb510dca8d4c0b062}} 
 \index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!result@{result}}
 \index{result@{result}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{result()}{result()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+template$<$char... Elements$>$ \\
+constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structzen_1_1message}{message}}$<$ Elements... $>$ \&\&}]{error\+\_\+message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{classzen_1_1result_aeda6e944799aa1cdc8e6f9a82df46b8a}\label{classzen_1_1result_aeda6e944799aa1cdc8e6f9a82df46b8a}} 
+
+
+Creates an invalid result from an error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+message} & error description message; must not be {\ttfamily \mbox{\hyperlink{namespacezen_a6937ffb09f12ad0b46022a444dadfa78}{zen\+::\+Valid}}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classzen_1_1result_a9cabd53bf4e5fd0970a70d05fb414321}\label{classzen_1_1result_a9cabd53bf4e5fd0970a70d05fb414321}} 
 \index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!result@{result}}
 \index{result@{result}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{result()}{result()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-template$<$char... Elements$>$ \\
-constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structzen_1_1message}{message}}$<$ Elements... $>$}]{error\+\_\+message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&\&}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{classzen_1_1result_a9cabd53bf4e5fd0970a70d05fb414321}\label{classzen_1_1result_a9cabd53bf4e5fd0970a70d05fb414321}} 
+
+
+Creates an invalid result from an error status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & error status \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classzen_1_1result_aaecb0bed262ab1c7889696a7f2f03739}\label{classzen_1_1result_aaecb0bed262ab1c7889696a7f2f03739}} 
 \index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!result@{result}}
 \index{result@{result}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{result()}{result()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \&\&}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{classzen_1_1result_aaecb0bed262ab1c7889696a7f2f03739}\label{classzen_1_1result_aaecb0bed262ab1c7889696a7f2f03739}} 
+
+
+Creates a valid result from a value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value payload \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classzen_1_1result_a4d5663ffc4a33bd82dc2b8aa181a7457}\label{classzen_1_1result_a4d5663ffc4a33bd82dc2b8aa181a7457}} 
 \index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!result@{result}}
 \index{result@{result}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{result()}{result()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}\item[{T \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{classzen_1_1result_a4d5663ffc4a33bd82dc2b8aa181a7457}\label{classzen_1_1result_a4d5663ffc4a33bd82dc2b8aa181a7457}} 
+
+
+Creates a valid result from a value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value payload \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classzen_1_1result_a702d342f2b518f6eb456b97d4d39b5d1}\label{classzen_1_1result_a702d342f2b518f6eb456b97d4d39b5d1}} 
 \index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!result@{result}}
 \index{result@{result}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{result()}{result()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}\item[{T \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+
+
+
+Default initializes result to invalid (Unknown) state. 
 
 \mbox{\Hypertarget{classzen_1_1result_a339abc9f7c8ffac59f34908b0db01c9c}\label{classzen_1_1result_a339abc9f7c8ffac59f34908b0db01c9c}} 
 \index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!````~result@{$\sim$result}}
 \index{````~result@{$\sim$result}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{$\sim$result()}{~result()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classzen_1_1result}{result}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classzen_1_1result}{result}}}
+
+
+
+Destroys result value, if {\ttfamily \mbox{\hyperlink{classzen_1_1result_ab529ca5a7f76389e6d2ee1e6cf7acdb8}{valid()}} == true} 
 
 
 
@@ -79,22 +145,74 @@ constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::\mbox
 \index{operator bool@{operator bool}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::operator bool\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{classzen_1_1result_aedfc2aac9a5c81da76bdbeac9ae5e609}\label{classzen_1_1result_aedfc2aac9a5c81da76bdbeac9ae5e609}} 
+
+
+Returns {\ttfamily true} if result value pay load is valid. 
+
+If {\ttfamily \mbox{\hyperlink{classzen_1_1result_ab529ca5a7f76389e6d2ee1e6cf7acdb8}{valid()}} == true}, then {\ttfamily \mbox{\hyperlink{classzen_1_1result_aedfc2aac9a5c81da76bdbeac9ae5e609}{status()}}.message() == Valid}
+
+Enables implicit cast to {\ttfamily bool} based on \mbox{\hyperlink{classzen_1_1result_ab529ca5a7f76389e6d2ee1e6cf7acdb8}{valid()}} \mbox{\Hypertarget{classzen_1_1result_aedfc2aac9a5c81da76bdbeac9ae5e609}\label{classzen_1_1result_aedfc2aac9a5c81da76bdbeac9ae5e609}} 
 \index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!status@{status}}
 \index{status@{status}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{status()}{status()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::status\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Returns status associated with result. 
 
 \mbox{\Hypertarget{classzen_1_1result_ab529ca5a7f76389e6d2ee1e6cf7acdb8}\label{classzen_1_1result_ab529ca5a7f76389e6d2ee1e6cf7acdb8}} 
 \index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!valid@{valid}}
 \index{valid@{valid}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{valid()}{valid()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr bool \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr bool \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::valid\hspace{0.3cm}{\ttfamily [constexpr]}}
 
+
+
+Returns {\ttfamily true} if result value pay load is valid. 
+
+If {\ttfamily \mbox{\hyperlink{classzen_1_1result_ab529ca5a7f76389e6d2ee1e6cf7acdb8}{valid()}} == true}, then {\ttfamily \mbox{\hyperlink{classzen_1_1result_aedfc2aac9a5c81da76bdbeac9ae5e609}{status()}}.message() == Valid} \mbox{\Hypertarget{classzen_1_1result_a003a4891ea2a994e71d5501422ccdde9}\label{classzen_1_1result_a003a4891ea2a994e71d5501422ccdde9}} 
+\index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!value@{value}}
+\index{value@{value}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\&\& \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) \&\&}
+
+
+
+Returns rvalue reference to result value. 
+
+\begin{DoxyNote}{Note}
+use operator$\ast$ as a more efficient option that does not check validity
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classzen_1_1bad__result__access}{bad\+\_\+result\+\_\+access}}} & if result is not valid \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}\label{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}} 
+\index{zen::result$<$ T $>$@{zen::result$<$ T $>$}!value@{value}}
+\index{value@{value}!zen::result$<$ T $>$@{zen::result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \&\& \mbox{\hyperlink{classzen_1_1result}{zen\+::result}}$<$ T $>$\+::value}
+
+
+
+Returns immutable reference to result value. 
+
+\begin{DoxyNote}{Note}
+use operator$\ast$ as a more efficient option that does not check validity
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classzen_1_1bad__result__access}{bad\+\_\+result\+\_\+access}}} & if result is not valid \\
+\hline
+\end{DoxyExceptions}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -75,7 +75,10 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="core_8hpp_source.html">core.hpp</a>&gt;</code></p>
+<p>Implements invocable dispatch behavior for free-function <code>all</code>  
+ <a href="classzen_1_1all__dispatch.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="all__dispatch_8hpp_source.html">all_dispatch.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -83,9 +86,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7fdac55d29f92d88ab05b72bb1716c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ae938f3a90c69be4bd41731bec11d9c"><td class="memTemplParams" colspan="2">template&lt;typename... ValueTs&gt; </td></tr>
 <tr class="memitem:a0ae938f3a90c69be4bd41731bec11d9c"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzen_1_1all__dispatch.html#a0ae938f3a90c69be4bd41731bec11d9c">operator()</a> (ValueTs &amp;&amp;... values) const</td></tr>
+<tr class="memdesc:a0ae938f3a90c69be4bd41731bec11d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes all held invocables with <code>values</code> as arguments.  <a href="classzen_1_1all__dispatch.html#a0ae938f3a90c69be4bd41731bec11d9c">More...</a><br /></td></tr>
 <tr class="separator:a0ae938f3a90c69be4bd41731bec11d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename... InvocableTs&gt;<br />
+class zen::all_dispatch&lt; InvocableTs &gt;</h3>
+
+<p>Implements invocable dispatch behavior for free-function <code>all</code> </p>
+<p>Executes invocables until any of them returns an invalid result, then terminates, returning a result holding the first invalid status. Otherwise, returns a result containing values returned by all invocables. <br  />
+This is the default, single threaded implementation. Specializations of <a class="el" href="classzen_1_1all__dispatch.html" title="Implements invocable dispatch behavior for free-function all">all_dispatch</a> may be made available for invocation in different execution contexts, such as multi-threaded dispatch. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7fdac55d29f92d88ab05b72bb1716c12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7fdac55d29f92d88ab05b72bb1716c12">&#9670;&nbsp;</a></span>all_dispatch()</h2>
 
@@ -143,10 +154,13 @@ template&lt;typename... ValueTs&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Invokes all held invocables with <code>values</code> as arguments. </p>
+<dl class="section return"><dt>Returns</dt><dd>result </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/zen/<a class="el" href="core_8hpp_source.html">core.hpp</a></li>
+<li>include/zen/core/<a class="el" href="all__dispatch_8hpp_source.html">all_dispatch.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

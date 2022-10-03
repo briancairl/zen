@@ -1,36 +1,28 @@
 \hypertarget{result_8hpp}{}\doxysection{include/zen/result.hpp File Reference}
 \label{result_8hpp}\index{include/zen/result.hpp@{include/zen/result.hpp}}
+{\ttfamily \#include $<$exception$>$}\newline
 {\ttfamily \#include $<$iosfwd$>$}\newline
 {\ttfamily \#include $<$utility$>$}\newline
 {\ttfamily \#include $<$zen/fwd.\+hpp$>$}\newline
-{\ttfamily \#include $<$zen/meta/invocable.\+hpp$>$}\newline
 {\ttfamily \#include $<$zen/meta/is\+\_\+specialization.\+hpp$>$}\newline
-{\ttfamily \#include $<$zen/meta/transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$zen/meta/type\+\_\+to\+\_\+string.\+hpp$>$}\newline
+{\ttfamily \#include $<$zen/result/deferred\+\_\+result.\+hpp$>$}\newline
 {\ttfamily \#include $<$zen/result/status.\+hpp$>$}\newline
+{\ttfamily \#include $<$zen/result/to\+\_\+result.\+hpp$>$}\newline
 {\ttfamily \#include $<$zen/utility/value\+\_\+mem.\+hpp$>$}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structzen_1_1to__result}{zen\+::to\+\_\+result$<$ T $>$}}
-\item 
-struct \mbox{\hyperlink{structzen_1_1to__result_3_01result_3_01_t_01_4_01_4}{zen\+::to\+\_\+result$<$ result$<$ T $>$ $>$}}
-\item 
-class \mbox{\hyperlink{classzen_1_1deferred__result}{zen\+::deferred\+\_\+result$<$ Invocable\+T, Argument\+Tuple\+T $>$}}
-\item 
-class \mbox{\hyperlink{classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4}{zen\+::deferred\+\_\+result$<$ Invocable\+T, void $>$}}
-\item 
-struct \mbox{\hyperlink{structzen_1_1deferred__result__of}{zen\+::deferred\+\_\+result\+\_\+of$<$ D $>$}}
-\item 
-struct \mbox{\hyperlink{structzen_1_1deferred__result__of_3_01deferred__result_3_01_invocable_t_00_01_input_t_01_4_01_4}{zen\+::deferred\+\_\+result\+\_\+of$<$ deferred\+\_\+result$<$ Invocable\+T, Input\+T $>$ $>$}}
-\item 
+class \mbox{\hyperlink{classzen_1_1bad__result__access}{zen\+::bad\+\_\+result\+\_\+access}}
+\begin{DoxyCompactList}\small\item\em Exception thrown when result does not contain a valid value. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classzen_1_1result}{zen\+::result$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Stores a value type, or an error message. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structzen_1_1result__as__tuple}{zen\+::result\+\_\+as\+\_\+tuple$<$ Result\+T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Traits type which isolates the type returned by {\ttfamily \mbox{\hyperlink{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}{result\+::value()}}} as a {\ttfamily std\+::tuple} \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structzen_1_1result__as__tuple_3_01result_3_01_t_01_4_01_4}{zen\+::result\+\_\+as\+\_\+tuple$<$ result$<$ T $>$ $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Traits type which isolates the type returned by {\ttfamily \mbox{\hyperlink{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}{result\+::value()}}} as a {\ttfamily std\+::tuple} \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structzen_1_1result__as__tuple_3_01result_3_01std_1_1tuple_3_01_ts_8_8_8_01_4_01_4_01_4}{zen\+::result\+\_\+as\+\_\+tuple$<$ result$<$ std\+::tuple$<$ Ts... $>$ $>$ $>$}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Traits type which isolates the type returned by {\ttfamily \mbox{\hyperlink{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}{result\+::value()}}} as a {\ttfamily std\+::tuple} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,30 +31,20 @@ struct \mbox{\hyperlink{structzen_1_1result__as__tuple_3_01result_3_01std_1_1tup
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespacezen_a225b9cf73f337201f92954bfa62177a9}{zen\+::to\+\_\+result\+\_\+t}} = typename to\+\_\+result$<$ T $>$\+::type
-\item 
-{\footnotesize template$<$typename D $>$ }\\using \mbox{\hyperlink{namespacezen_ab7670f825b824c968ee8e155e4531ce5}{zen\+::deferred\+\_\+result\+\_\+of\+\_\+t}} = typename deferred\+\_\+result\+\_\+of$<$ D $>$\+::type
-\item 
 {\footnotesize template$<$typename ResultT $>$ }\\using \mbox{\hyperlink{namespacezen_a56a346ef4dce309c723306da9c8e3cb2}{zen\+::result\+\_\+as\+\_\+tuple\+\_\+t}} = typename result\+\_\+as\+\_\+tuple$<$ ResultT $>$\+::type
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Traits type which isolates the type returned by {\ttfamily \mbox{\hyperlink{classzen_1_1result_aaac682b7e7e084e853e727073e1bc41e}{result\+::value()}}} as a {\ttfamily std\+::tuple} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename InvocableT $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a5e99ec328007b7ee84ebed748115f747}{zen\+::make\+\_\+deferred\+\_\+result}} (InvocableT \&\&invocable)
-\item 
-{\footnotesize template$<$typename InvocableT , typename Arg\+TupleT $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a20104a2253cf0eb6740f39bc98f331e2}{zen\+::make\+\_\+deferred\+\_\+result}} (InvocableT \&\&invocable, Arg\+TupleT \&\&arg)
 \item 
 {\footnotesize template$<$typename T $>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespacezen_a0c6019e698f74339dd081cb1520e706d}{zen\+::as\+\_\+tuple}} (const result$<$ T $>$ \&r)
 \item 
 {\footnotesize template$<$typename... Ts$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespacezen_a8a685313a6ca149964b83b1054855ec0}{zen\+::as\+\_\+tuple}} (const result$<$ std\+::tuple$<$ Ts... $>$$>$ \&r)
 \item 
-{\footnotesize template$<$typename DeferredT $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a552a4ea42e7f442893e0bf53b8888fbd}{zen\+::create}} (DeferredT deferred\+\_\+result)
+{\footnotesize template$<$typename T $>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespacezen_a8a782f4cc2a1b1b29e482f2440f1155f}{zen\+::as\+\_\+tuple}} (result$<$ T $>$ \&\&r)
 \item 
-{\footnotesize template$<$typename Result\+TupleT , typename Deferred\+TupleT , std\+::size\+\_\+t... Is$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a4bc3088dc7dfaad23a43fdf59efe252d}{zen\+::create}} (Result\+TupleT \&\&result\+\_\+tuple, Deferred\+TupleT \&\&deferred\+\_\+result\+\_\+tuple, std\+::index\+\_\+sequence$<$ Is... $>$ \+\_\+)
-\item 
-{\footnotesize template$<$typename Deferred\+T1 , typename Deferred\+T2 , typename... Other\+Deferred\+Ts$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_aff9279c60152efdf55e598f81a684e74}{zen\+::create}} (Deferred\+T1 d1, Deferred\+T2 d2, Other\+Deferred\+Ts... dn)
+{\footnotesize template$<$typename... Ts$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespacezen_a85fc0cd3d770f87800a758ad15b395f7}{zen\+::as\+\_\+tuple}} (result$<$ std\+::tuple$<$ Ts... $>$$>$ \&\&r)
 \item 
 {\footnotesize template$<$typename... Ts$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a81e6dd0fb313cbc5ca08ae08a9376887}{zen\+::make\+\_\+result}} (Ts \&\&... values)
-\item 
+\begin{DoxyCompactList}\small\item\em Wraps values or \mbox{\hyperlink{classzen_1_1result__status}{result\+\_\+status}} in a result. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespacezen_a2e0e2113bbc8d754556f78043781cb9f}{zen\+::operator$<$$<$}} (std\+::ostream \&os, const result$<$ T $>$ \&r)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em {\ttfamily std\+::ostream} overload for {\ttfamily result$<$\+T$>$} \end{DoxyCompactList}\end{DoxyCompactItemize}

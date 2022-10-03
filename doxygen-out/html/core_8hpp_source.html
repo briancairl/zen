@@ -77,160 +77,48 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Zen</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="fwd_8hpp.html">zen/fwd.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="first_8hpp.html">zen/meta/first.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="result_8hpp.html">zen/result.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacezen.html">   11</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacezen.html">zen</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classzen_1_1any__dispatch.html">   14</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... InvocableTs&gt; <span class="keyword">class </span><a class="code" href="classzen_1_1any__dispatch.html">any_dispatch</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classzen_1_1any__dispatch.html#afc3b80e8b5ff93198b73f80d563f753e">   17</a></span>&#160;  <span class="keyword">explicit</span> constexpr <a class="code" href="classzen_1_1any__dispatch.html#afc3b80e8b5ff93198b73f80d563f753e">any_dispatch</a>(InvocableTs&amp;&amp;... fs) : invocables_{std::forward&lt;InvocableTs&gt;(fs)...}</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    static_assert(<span class="keyword">sizeof</span>...(InvocableTs) &gt; 0, <span class="stringliteral">&quot;At least one invocable must be specified&quot;</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classzen_1_1any__dispatch.html#ada8ed051e5602ce1f766b888de05641d">   22</a></span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs&gt; decltype(<span class="keyword">auto</span>) operator()(ValueTs&amp;&amp;... values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> constexpr std::size_t N = <span class="keyword">sizeof</span>...(InvocableTs);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> call_exec_impl(std::make_index_sequence&lt;N&gt;{}, std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs, std::size_t... Is&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  decltype(<span class="keyword">auto</span>) exec_impl(std::index_sequence&lt;Is...&gt; _, ValueTs&amp;&amp;... values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">using</span> result_type = std::invoke_result_t&lt;<a class="code" href="namespacezen_1_1meta.html#aa704b98ab800673c033f342a328fa5c3">meta::first_t</a>&lt;InvocableTs...&gt;, ValueTs...&gt;;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    static_assert(</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      (<span class="keyword">sizeof</span>...(InvocableTs) == 1) ||</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        (std::is_same_v&lt;result_type, std::invoke_result_t&lt;InvocableTs, ValueTs...&gt;&gt; &amp;&amp; ...),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="stringliteral">&quot;&#39;InvocableTs&#39; executed under [any_dispatch] must all have the same return type&quot;</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    result_type return_value;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">auto</span> unused =</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        ((return_value = std::get&lt;Is&gt;(this-&gt;invocables_)(std::forward&lt;ValueTs&gt;(values)...), return_value.valid()) ||</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         ...);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> return_value;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs, <span class="keyword">typename</span> Ignore, std::size_t... Is&gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  decltype(<span class="keyword">auto</span>) exec_impl_ignore(std::index_sequence&lt;Is...&gt; _, Ignore&amp;&amp;, ValueTs&amp;&amp;... values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> exec_impl(_, std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs, std::size_t... Is&gt;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  decltype(<span class="keyword">auto</span>) call_exec_impl(std::index_sequence&lt;Is...&gt; _, ValueTs&amp;&amp;... values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> constexpr (std::is_base_of_v&lt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    exec::executor_handle&lt;std::remove_reference_t&lt;meta::first_t&lt;ValueTs...&gt;&gt;&gt;,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    std::remove_reference_t&lt;meta::first_t&lt;ValueTs...&gt;&gt;&gt;)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordflow">return</span> exec_impl_ignore(_, std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordflow">return</span> exec_impl(_, std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::tuple&lt;InvocableTs&amp;&amp;...&gt; invocables_;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classzen_1_1all__dispatch.html">   72</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... InvocableTs&gt; <span class="keyword">class </span><a class="code" href="classzen_1_1all__dispatch.html">all_dispatch</a></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classzen_1_1all__dispatch.html#a7fdac55d29f92d88ab05b72bb1716c12">   75</a></span>&#160;  <span class="keyword">explicit</span> constexpr <a class="code" href="classzen_1_1all__dispatch.html#a7fdac55d29f92d88ab05b72bb1716c12">all_dispatch</a>(InvocableTs&amp;&amp;... fs) : invocables_{std::forward&lt;InvocableTs&gt;(fs)...}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    static_assert(<span class="keyword">sizeof</span>...(InvocableTs) &gt; 0, <span class="stringliteral">&quot;At least one invocable must be specified&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  };</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classzen_1_1all__dispatch.html#a0ae938f3a90c69be4bd41731bec11d9c">   80</a></span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs&gt; decltype(<span class="keyword">auto</span>) operator()(ValueTs&amp;&amp;... values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">static</span> constexpr std::size_t N = <span class="keyword">sizeof</span>...(InvocableTs);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> call_exec_impl(std::make_index_sequence&lt;N&gt;{}, std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs, std::size_t... Is&gt;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  decltype(<span class="keyword">auto</span>) exec_impl(std::index_sequence&lt;Is...&gt; _, ValueTs&amp;&amp;... values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacezen.html#a552a4ea42e7f442893e0bf53b8888fbd">create</a>(</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <a class="code" href="namespacezen.html#a5e99ec328007b7ee84ebed748115f747">make_deferred_result</a>(std::forward&lt;InvocableTs&gt;(std::get&lt;Is&gt;(invocables_)), std::forward_as_tuple(values...))...);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs, <span class="keyword">typename</span> Ignore, std::size_t... Is&gt;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  decltype(<span class="keyword">auto</span>) exec_impl_ignore(std::index_sequence&lt;Is...&gt; _, Ignore&amp;&amp;, ValueTs&amp;&amp;... values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> exec_impl(_, std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs, std::size_t... Is&gt;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  decltype(<span class="keyword">auto</span>) call_exec_impl(std::index_sequence&lt;Is...&gt; _, ValueTs&amp;&amp;... values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> constexpr (std::is_base_of_v&lt;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    exec::executor_handle&lt;std::remove_reference_t&lt;meta::first_t&lt;ValueTs...&gt;&gt;&gt;,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    std::remove_reference_t&lt;meta::first_t&lt;ValueTs...&gt;&gt;&gt;)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keywordflow">return</span> exec_impl_ignore(_, std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">return</span> exec_impl(_, std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  std::tuple&lt;InvocableTs&amp;&amp;...&gt; invocables_;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="namespacezen.html#aad3fe1cdae1ef44f70cc7408e48f613c">  118</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs&gt; constexpr decltype(<span class="keyword">auto</span>) <a class="code" href="namespacezen.html#aad3fe1cdae1ef44f70cc7408e48f613c">pass</a>(ValueTs&amp;&amp;... values)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  static_assert(<span class="keyword">sizeof</span>...(ValueTs) &gt; 0, <span class="stringliteral">&quot;at least one value must be specified&quot;</span>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacezen.html#a81e6dd0fb313cbc5ca08ae08a9376887">make_result</a>(std::forward&lt;ValueTs&gt;(values)...);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="namespacezen.html#a05a50c5c2e385783abd1ff1859c74eae">  124</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... InvocableTs&gt; constexpr decltype(<span class="keyword">auto</span>) <a class="code" href="namespacezen.html#a05a50c5c2e385783abd1ff1859c74eae">any</a>(InvocableTs&amp;&amp;... t)</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classzen_1_1any__dispatch.html">any_dispatch&lt;std::remove_reference_t&lt;InvocableTs&gt;</a>...&gt;{std::forward&lt;InvocableTs&gt;(t)...};</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="namespacezen.html#aa51ef351adfb85513022091752267a12">  129</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... InvocableTs&gt; constexpr decltype(<span class="keyword">auto</span>) <a class="code" href="namespacezen.html#aa51ef351adfb85513022091752267a12">all</a>(InvocableTs&amp;&amp;... t)</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classzen_1_1all__dispatch.html">all_dispatch&lt;std::remove_reference_t&lt;InvocableTs&gt;</a>...&gt;{std::forward&lt;InvocableTs&gt;(t)...};</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="namespacezen.html#a00d12d6a51ffeabf349241a0ae804224">  134</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Fn&gt; decltype(<span class="keyword">auto</span>) operator|(<a class="code" href="classzen_1_1result.html">result</a>&lt;T&gt;&amp;&amp; r, Fn&amp;&amp; f)</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keyword">using</span> original_return_type = decltype(std::apply(std::forward&lt;Fn&gt;(f), <a class="code" href="namespacezen.html#a0c6019e698f74339dd081cb1520e706d">as_tuple</a>(r)));</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keyword">using</span> return_type = <a class="code" href="namespacezen.html#a225b9cf73f337201f92954bfa62177a9">to_result_t&lt;original_return_type&gt;</a>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">return</span> r.valid() ? return_type{std::apply(std::forward&lt;Fn&gt;(f), <a class="code" href="namespacezen.html#a0c6019e698f74339dd081cb1520e706d">as_tuple</a>(r))} : return_type{r.status()};</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}  <span class="comment">// namespace zen</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="all__dispatch_8hpp.html">zen/core/all_dispatch.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="any__dispatch_8hpp.html">zen/core/any_dispatch.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacezen.html">zen</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacezen.html#aad3fe1cdae1ef44f70cc7408e48f613c">   16</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ValueTs&gt; constexpr decltype(<span class="keyword">auto</span>) <a class="code" href="namespacezen.html#aad3fe1cdae1ef44f70cc7408e48f613c">pass</a>(ValueTs&amp;&amp;... values)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacezen.html#a81e6dd0fb313cbc5ca08ae08a9376887">make_result</a>(std::forward&lt;ValueTs&gt;(values)...);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespacezen.html#a05a50c5c2e385783abd1ff1859c74eae">   37</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... InvocableTs&gt; constexpr decltype(<span class="keyword">auto</span>) <a class="code" href="namespacezen.html#a05a50c5c2e385783abd1ff1859c74eae">any</a>(InvocableTs&amp;&amp;... t)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classzen_1_1any__dispatch.html">any_dispatch&lt;std::remove_reference_t&lt;InvocableTs&gt;</a>...&gt;{std::forward&lt;InvocableTs&gt;(t)...};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespacezen.html#aa51ef351adfb85513022091752267a12">   57</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... InvocableTs&gt; constexpr decltype(<span class="keyword">auto</span>) <a class="code" href="namespacezen.html#aa51ef351adfb85513022091752267a12">all</a>(InvocableTs&amp;&amp;... t)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classzen_1_1all__dispatch.html">all_dispatch&lt;std::remove_reference_t&lt;InvocableTs&gt;</a>...&gt;{std::forward&lt;InvocableTs&gt;(t)...};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="namespacezen.html#a00d12d6a51ffeabf349241a0ae804224">   77</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Fn&gt; decltype(<span class="keyword">auto</span>) operator|(<a class="code" href="classzen_1_1result.html">result</a>&lt;T&gt;&amp;&amp; r, Fn&amp;&amp; f)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">using</span> original_return_type = decltype(std::apply(std::forward&lt;Fn&gt;(f), <a class="code" href="namespacezen.html#a0c6019e698f74339dd081cb1520e706d">as_tuple</a>(r)));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">using</span> return_type = <a class="code" href="namespacezen.html#a225b9cf73f337201f92954bfa62177a9">to_result_t&lt;original_return_type&gt;</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> r.valid() ? return_type{std::apply(std::forward&lt;Fn&gt;(f), <a class="code" href="namespacezen.html#a0c6019e698f74339dd081cb1520e706d">as_tuple</a>(r))} : return_type{r.status()};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}  <span class="comment">// namespace zen</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclasszen_1_1all__dispatch_html_a7fdac55d29f92d88ab05b72bb1716c12"><div class="ttname"><a href="classzen_1_1all__dispatch.html#a7fdac55d29f92d88ab05b72bb1716c12">zen::all_dispatch::all_dispatch</a></div><div class="ttdeci">constexpr all_dispatch(InvocableTs &amp;&amp;... fs)</div><div class="ttdef"><b>Definition:</b> core.hpp:75</div></div>
-<div class="ttc" id="aclasszen_1_1any__dispatch_html"><div class="ttname"><a href="classzen_1_1any__dispatch.html">zen::any_dispatch</a></div><div class="ttdef"><b>Definition:</b> core.hpp:14</div></div>
-<div class="ttc" id="anamespacezen_1_1meta_html_aa704b98ab800673c033f342a328fa5c3"><div class="ttname"><a href="namespacezen_1_1meta.html#aa704b98ab800673c033f342a328fa5c3">zen::meta::first_t</a></div><div class="ttdeci">typename first&lt; Ts... &gt;::type first_t</div><div class="ttdef"><b>Definition:</b> first.hpp:15</div></div>
-<div class="ttc" id="afwd_8hpp_html"><div class="ttname"><a href="fwd_8hpp.html">fwd.hpp</a></div></div>
-<div class="ttc" id="anamespacezen_html"><div class="ttname"><a href="namespacezen.html">zen</a></div><div class="ttdef"><b>Definition:</b> core.hpp:11</div></div>
-<div class="ttc" id="anamespacezen_html_aa51ef351adfb85513022091752267a12"><div class="ttname"><a href="namespacezen.html#aa51ef351adfb85513022091752267a12">zen::all</a></div><div class="ttdeci">constexpr decltype(auto) all(InvocableTs &amp;&amp;... t)</div><div class="ttdef"><b>Definition:</b> core.hpp:129</div></div>
-<div class="ttc" id="anamespacezen_html_a5e99ec328007b7ee84ebed748115f747"><div class="ttname"><a href="namespacezen.html#a5e99ec328007b7ee84ebed748115f747">zen::make_deferred_result</a></div><div class="ttdeci">decltype(auto) make_deferred_result(InvocableT &amp;&amp;invocable)</div><div class="ttdef"><b>Definition:</b> result.hpp:68</div></div>
-<div class="ttc" id="anamespacezen_html_aad3fe1cdae1ef44f70cc7408e48f613c"><div class="ttname"><a href="namespacezen.html#aad3fe1cdae1ef44f70cc7408e48f613c">zen::pass</a></div><div class="ttdeci">constexpr decltype(auto) pass(ValueTs &amp;&amp;... values)</div><div class="ttdef"><b>Definition:</b> core.hpp:118</div></div>
-<div class="ttc" id="aclasszen_1_1all__dispatch_html"><div class="ttname"><a href="classzen_1_1all__dispatch.html">zen::all_dispatch</a></div><div class="ttdef"><b>Definition:</b> core.hpp:72</div></div>
-<div class="ttc" id="afirst_8hpp_html"><div class="ttname"><a href="first_8hpp.html">first.hpp</a></div></div>
-<div class="ttc" id="aclasszen_1_1any__dispatch_html_afc3b80e8b5ff93198b73f80d563f753e"><div class="ttname"><a href="classzen_1_1any__dispatch.html#afc3b80e8b5ff93198b73f80d563f753e">zen::any_dispatch::any_dispatch</a></div><div class="ttdeci">constexpr any_dispatch(InvocableTs &amp;&amp;... fs)</div><div class="ttdef"><b>Definition:</b> core.hpp:17</div></div>
-<div class="ttc" id="anamespacezen_html_a552a4ea42e7f442893e0bf53b8888fbd"><div class="ttname"><a href="namespacezen.html#a552a4ea42e7f442893e0bf53b8888fbd">zen::create</a></div><div class="ttdeci">decltype(auto) create(DeferredT deferred_result)</div><div class="ttdef"><b>Definition:</b> result.hpp:129</div></div>
-<div class="ttc" id="anamespacezen_html_a81e6dd0fb313cbc5ca08ae08a9376887"><div class="ttname"><a href="namespacezen.html#a81e6dd0fb313cbc5ca08ae08a9376887">zen::make_result</a></div><div class="ttdeci">decltype(auto) make_result(Ts &amp;&amp;... values)</div><div class="ttdef"><b>Definition:</b> result.hpp:180</div></div>
-<div class="ttc" id="anamespacezen_html_a05a50c5c2e385783abd1ff1859c74eae"><div class="ttname"><a href="namespacezen.html#a05a50c5c2e385783abd1ff1859c74eae">zen::any</a></div><div class="ttdeci">constexpr decltype(auto) any(InvocableTs &amp;&amp;... t)</div><div class="ttdef"><b>Definition:</b> core.hpp:124</div></div>
-<div class="ttc" id="aresult_8hpp_html"><div class="ttname"><a href="result_8hpp.html">result.hpp</a></div></div>
-<div class="ttc" id="anamespacezen_html_a0c6019e698f74339dd081cb1520e706d"><div class="ttname"><a href="namespacezen.html#a0c6019e698f74339dd081cb1520e706d">zen::as_tuple</a></div><div class="ttdeci">constexpr decltype(auto) as_tuple(const result&lt; T &gt; &amp;r)</div><div class="ttdef"><b>Definition:</b> result.hpp:119</div></div>
-<div class="ttc" id="anamespacezen_html_a225b9cf73f337201f92954bfa62177a9"><div class="ttname"><a href="namespacezen.html#a225b9cf73f337201f92954bfa62177a9">zen::to_result_t</a></div><div class="ttdeci">typename to_result&lt; T &gt;::type to_result_t</div><div class="ttdef"><b>Definition:</b> result.hpp:27</div></div>
-<div class="ttc" id="aclasszen_1_1result_html"><div class="ttname"><a href="classzen_1_1result.html">zen::result</a></div><div class="ttdef"><b>Definition:</b> fwd.hpp:9</div></div>
+<div class="ttc" id="aclasszen_1_1any__dispatch_html"><div class="ttname"><a href="classzen_1_1any__dispatch.html">zen::any_dispatch</a></div><div class="ttdoc">Implements invocable dispatch behavior for free-function any</div><div class="ttdef"><b>Definition:</b> any_dispatch.hpp:24</div></div>
+<div class="ttc" id="anamespacezen_html"><div class="ttname"><a href="namespacezen.html">zen</a></div><div class="ttdef"><b>Definition:</b> all_dispatch.hpp:12</div></div>
+<div class="ttc" id="anamespacezen_html_aa51ef351adfb85513022091752267a12"><div class="ttname"><a href="namespacezen.html#aa51ef351adfb85513022091752267a12">zen::all</a></div><div class="ttdeci">constexpr decltype(auto) all(InvocableTs &amp;&amp;... t)</div><div class="ttdoc">Executes invocables until any of them returns a valid result&lt;T&gt;, then terminates, returning that resu...</div><div class="ttdef"><b>Definition:</b> core.hpp:57</div></div>
+<div class="ttc" id="aall__dispatch_8hpp_html"><div class="ttname"><a href="all__dispatch_8hpp.html">all_dispatch.hpp</a></div></div>
+<div class="ttc" id="anamespacezen_html_aad3fe1cdae1ef44f70cc7408e48f613c"><div class="ttname"><a href="namespacezen.html#aad3fe1cdae1ef44f70cc7408e48f613c">zen::pass</a></div><div class="ttdeci">constexpr decltype(auto) pass(ValueTs &amp;&amp;... values)</div><div class="ttdoc">Passes values as a result</div><div class="ttdef"><b>Definition:</b> core.hpp:16</div></div>
+<div class="ttc" id="aclasszen_1_1all__dispatch_html"><div class="ttname"><a href="classzen_1_1all__dispatch.html">zen::all_dispatch</a></div><div class="ttdoc">Implements invocable dispatch behavior for free-function all</div><div class="ttdef"><b>Definition:</b> all_dispatch.hpp:24</div></div>
+<div class="ttc" id="anamespacezen_html_a81e6dd0fb313cbc5ca08ae08a9376887"><div class="ttname"><a href="namespacezen.html#a81e6dd0fb313cbc5ca08ae08a9376887">zen::make_result</a></div><div class="ttdeci">decltype(auto) make_result(Ts &amp;&amp;... values)</div><div class="ttdoc">Wraps values or result_status in a result.</div><div class="ttdef"><b>Definition:</b> result.hpp:220</div></div>
+<div class="ttc" id="anamespacezen_html_a05a50c5c2e385783abd1ff1859c74eae"><div class="ttname"><a href="namespacezen.html#a05a50c5c2e385783abd1ff1859c74eae">zen::any</a></div><div class="ttdeci">constexpr decltype(auto) any(InvocableTs &amp;&amp;... t)</div><div class="ttdoc">Executes invocables until any of them returns an invalid result&lt;T&gt;, then terminates,...</div><div class="ttdef"><b>Definition:</b> core.hpp:37</div></div>
+<div class="ttc" id="aany__dispatch_8hpp_html"><div class="ttname"><a href="any__dispatch_8hpp.html">any_dispatch.hpp</a></div></div>
+<div class="ttc" id="anamespacezen_html_a0c6019e698f74339dd081cb1520e706d"><div class="ttname"><a href="namespacezen.html#a0c6019e698f74339dd081cb1520e706d">zen::as_tuple</a></div><div class="ttdeci">constexpr decltype(auto) as_tuple(const result&lt; T &gt; &amp;r)</div><div class="ttdef"><b>Definition:</b> result.hpp:170</div></div>
+<div class="ttc" id="anamespacezen_html_a225b9cf73f337201f92954bfa62177a9"><div class="ttname"><a href="namespacezen.html#a225b9cf73f337201f92954bfa62177a9">zen::to_result_t</a></div><div class="ttdeci">typename to_result&lt; T &gt;::type to_result_t</div><div class="ttdoc">Converts a type T to a corresponding result&lt;T&gt;</div><div class="ttdef"><b>Definition:</b> to_result.hpp:28</div></div>
+<div class="ttc" id="aclasszen_1_1result_html"><div class="ttname"><a href="classzen_1_1result.html">zen::result</a></div><div class="ttdoc">Stores a value type, or an error message.</div><div class="ttdef"><b>Definition:</b> fwd.hpp:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

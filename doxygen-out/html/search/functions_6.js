@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['make_5fdeferred_5fresult_192',['make_deferred_result',['../namespacezen.html#a5e99ec328007b7ee84ebed748115f747',1,'zen::make_deferred_result(InvocableT &amp;&amp;invocable)'],['../namespacezen.html#a20104a2253cf0eb6740f39bc98f331e2',1,'zen::make_deferred_result(InvocableT &amp;&amp;invocable, ArgTupleT &amp;&amp;arg)']]],
-  ['make_5fresult_193',['make_result',['../namespacezen.html#a81e6dd0fb313cbc5ca08ae08a9376887',1,'zen']]],
-  ['message_194',['message',['../classzen_1_1result__status.html#a168f21bae8d27d3197d1d3c167699f4c',1,'zen::result_status']]]
+  ['is_5fcancelled_208',['is_cancelled',['../classzen_1_1exec_1_1executor__handle.html#ae436460fdaa22b7125ee1b13056cc3bc',1,'zen::exec::executor_handle']]],
+  ['is_5fworking_209',['is_working',['../classzen_1_1exec_1_1executor__handle.html#af0dba9c29413f7fd8952ac02edb2ac69',1,'zen::exec::executor_handle']]]
 ];

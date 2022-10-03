@@ -3,13 +3,27 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$typename Result\+TupleT , typename Deferred\+TupleT , std\+::size\+\_\+t... Is$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_1_1detail_a49b98c81bbe51fa75f89468b4fe4717f}{create}} (Result\+TupleT \&\&result\+\_\+tuple, Deferred\+TupleT \&\&deferred\+\_\+result\+\_\+tuple, std\+::index\+\_\+sequence$<$ Is... $>$ \+\_\+)
+\item 
 {\footnotesize template$<$typename T , T First\+Element$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_1_1detail_a0bb2fbe75f5026e67d345807c4556ce8}{hash\+\_\+sequence}} ()
 \begin{DoxyCompactList}\small\item\em Computes a hash from elements in a variadic argument pack. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , T First\+Element, T Second\+Element, T... Other\+Elements$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_1_1detail_ab878689b544d5d3fc2c0d3aaf0b220b9}{hash\+\_\+sequence}} ()
 \begin{DoxyCompactList}\small\item\em Computes a hash from elements in a variadic argument pack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacezen_1_1detail_a69143ad6673b331da151af75f2313201}{k\+String\+Hash\+Shift}} = 7
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacezen_1_1detail_a49b98c81bbe51fa75f89468b4fe4717f}\label{namespacezen_1_1detail_a49b98c81bbe51fa75f89468b4fe4717f}} 
+\index{zen::detail@{zen::detail}!create@{create}}
+\index{create@{create}!zen::detail@{zen::detail}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$typename Result\+TupleT , typename Deferred\+TupleT , std\+::size\+\_\+t... Is$>$ \\
+decltype(auto) zen\+::detail\+::create (\begin{DoxyParamCaption}\item[{Result\+TupleT \&\&}]{result\+\_\+tuple,  }\item[{Deferred\+TupleT \&\&}]{deferred\+\_\+result\+\_\+tuple,  }\item[{std\+::index\+\_\+sequence$<$ Is... $>$}]{\+\_\+ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{namespacezen_1_1detail_ab878689b544d5d3fc2c0d3aaf0b220b9}\label{namespacezen_1_1detail_ab878689b544d5d3fc2c0d3aaf0b220b9}} 
 \index{zen::detail@{zen::detail}!hash\_sequence@{hash\_sequence}}
 \index{hash\_sequence@{hash\_sequence}!zen::detail@{zen::detail}}
@@ -45,3 +59,12 @@ base case
 
 base case 
 \end{DoxyNote}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacezen_1_1detail_a69143ad6673b331da151af75f2313201}\label{namespacezen_1_1detail_a69143ad6673b331da151af75f2313201}} 
+\index{zen::detail@{zen::detail}!kStringHashShift@{kStringHashShift}}
+\index{kStringHashShift@{kStringHashShift}!zen::detail@{zen::detail}}
+\doxysubsubsection{\texorpdfstring{kStringHashShift}{kStringHashShift}}
+{\footnotesize\ttfamily constexpr std\+::size\+\_\+t zen\+::detail\+::k\+String\+Hash\+Shift = 7\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+

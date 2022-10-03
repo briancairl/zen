@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['emplace_186',['emplace',['../classzen_1_1value__mem.html#a67e587dcf8fb5bacf8d81eb1c7b20a02',1,'zen::value_mem']]],
-  ['execute_187',['execute',['../classzen_1_1exec_1_1executor.html#a851703bff28971d79fa0ff4188c7adc8',1,'zen::exec::executor']]]
+  ['deferred_5fresult_202',['deferred_result',['../classzen_1_1deferred__result.html#a4cff746210f1f77b3e8c217c45c2c9a1',1,'zen::deferred_result::deferred_result()'],['../classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4.html#a0298375aa72119bb13f9b5a3ae74918b',1,'zen::deferred_result&lt; InvocableT, void &gt;::deferred_result()']]],
+  ['destroy_203',['destroy',['../classzen_1_1value__mem.html#a3b75464219c22a73a2b41b14450fc7d1',1,'zen::value_mem']]]
 ];

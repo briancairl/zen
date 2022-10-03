@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['first_34',['first',['../structzen_1_1meta_1_1first.html',1,'zen::meta']]],
-  ['first_2ehpp_35',['first.hpp',['../first_8hpp.html',1,'']]],
-  ['first_3c_20firstt_2c_20otherts_2e_2e_2e_20_3e_36',['first&lt; FirstT, OtherTs... &gt;',['../structzen_1_1meta_1_1first_3_01_first_t_00_01_other_ts_8_8_8_01_4.html',1,'zen::meta']]],
-  ['first_5ft_37',['first_t',['../namespacezen_1_1meta.html#aa704b98ab800673c033f342a328fa5c3',1,'zen::meta']]],
-  ['fwd_2ehpp_38',['fwd.hpp',['../fwd_8hpp.html',1,'']]]
+  ['emplace_32',['emplace',['../classzen_1_1value__mem.html#a67e587dcf8fb5bacf8d81eb1c7b20a02',1,'zen::value_mem']]],
+  ['execute_33',['execute',['../classzen_1_1exec_1_1executor.html#a851703bff28971d79fa0ff4188c7adc8',1,'zen::exec::executor']]],
+  ['executor_34',['executor',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
+  ['executor_2ehpp_35',['executor.hpp',['../executor_2executor_8hpp.html',1,'(Global Namespace)'],['../executor_8hpp.html',1,'(Global Namespace)']]],
+  ['executor_3c_20thread_5fpool_3c_20f_2c_20a_20_3e_20_3e_36',['executor&lt; thread_pool&lt; F, A &gt; &gt;',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
+  ['executor_3c_20thread_5fpool_3c_20std_3a_3afunction_3c_20void_28_29_3e_2c_20std_3a_3aallocator_3c_20std_3a_3afunction_3c_20void_28_29_3e_20_3e_20_3e_20_3e_37',['executor&lt; thread_pool&lt; std::function&lt; void()&gt;, std::allocator&lt; std::function&lt; void()&gt; &gt; &gt; &gt;',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
+  ['executor_5fhandle_38',['executor_handle',['../classzen_1_1exec_1_1executor__handle.html',1,'zen::exec']]],
+  ['executor_5fhandle_3c_20thread_5fpool_5fhandle_20_3e_39',['executor_handle&lt; thread_pool_handle &gt;',['../classzen_1_1exec_1_1executor__handle.html',1,'zen::exec::executor_handle&lt; thread_pool_handle &gt;'],['../classzen_1_1exec_1_1thread__pool__handle.html#aa1a9e2d3bd8cf8a5a0fb60438cffee41',1,'zen::exec::thread_pool_handle::executor_handle&lt; thread_pool_handle &gt;()']]]
 ];

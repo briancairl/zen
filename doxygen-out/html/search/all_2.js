@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['deferred_5fresult_20',['deferred_result',['../classzen_1_1deferred__result.html',1,'zen::deferred_result&lt; InvocableT, ArgumentTupleT &gt;'],['../classzen_1_1deferred__result.html#a4cff746210f1f77b3e8c217c45c2c9a1',1,'zen::deferred_result::deferred_result()'],['../classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4.html#a0298375aa72119bb13f9b5a3ae74918b',1,'zen::deferred_result&lt; InvocableT, void &gt;::deferred_result()']]],
-  ['deferred_5fresult_3c_20invocablet_2c_20void_20_3e_21',['deferred_result&lt; InvocableT, void &gt;',['../classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4.html',1,'zen']]],
-  ['deferred_5fresult_5fof_22',['deferred_result_of',['../structzen_1_1deferred__result__of.html',1,'zen']]],
-  ['deferred_5fresult_5fof_3c_20deferred_5fresult_3c_20invocablet_2c_20inputt_20_3e_20_3e_23',['deferred_result_of&lt; deferred_result&lt; InvocableT, InputT &gt; &gt;',['../structzen_1_1deferred__result__of_3_01deferred__result_3_01_invocable_t_00_01_input_t_01_4_01_4.html',1,'zen']]],
-  ['deferred_5fresult_5fof_5ft_24',['deferred_result_of_t',['../namespacezen.html#ab7670f825b824c968ee8e155e4531ce5',1,'zen']]],
-  ['destroy_25',['destroy',['../classzen_1_1value__mem.html#a3b75464219c22a73a2b41b14450fc7d1',1,'zen::value_mem']]]
+  ['c_5fstr_17',['c_str',['../structzen_1_1message.html#a75ad421af9dcdc6db0b8dafc97516fa4',1,'zen::message']]],
+  ['can_5fapply_18',['can_apply',['../structzen_1_1meta_1_1can__apply.html',1,'zen::meta']]],
+  ['can_5fapply_3c_20fn_2c_20std_3a_3atuple_3c_20argts_2e_2e_2e_20_3e_20_3e_19',['can_apply&lt; Fn, std::tuple&lt; ArgTs... &gt; &gt;',['../structzen_1_1meta_1_1can__apply_3_01_fn_00_01std_1_1tuple_3_01_arg_ts_8_8_8_01_4_01_4.html',1,'zen::meta']]],
+  ['can_5fapply_5fv_20',['can_apply_v',['../namespacezen_1_1meta.html#ac444bb271fc32c3bf02e57a2a2c8c370',1,'zen::meta']]],
+  ['cancel_21',['cancel',['../classzen_1_1exec_1_1executor__handle.html#a9037bf3e2aff09eaf747e6c1b89c08b4',1,'zen::exec::executor_handle']]],
+  ['core_2ehpp_22',['core.hpp',['../core_8hpp.html',1,'']]],
+  ['create_23',['create',['../namespacezen_1_1detail.html#a49b98c81bbe51fa75f89468b4fe4717f',1,'zen::detail::create()'],['../namespacezen.html#a8914258ddb966b3ebfc9743286349f30',1,'zen::create(DeferredT &amp;&amp;dr)'],['../namespacezen.html#a905828ffdc5d20c78b11c03b2190dcc9',1,'zen::create(DeferredT1 &amp;&amp;d1, DeferredT2 &amp;&amp;d2, OtherDeferredTs &amp;&amp;... dn)']]]
 ];

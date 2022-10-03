@@ -68,7 +68,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -76,19 +75,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;utility&gt;</code><br />
-<code>#include &lt;<a class="el" href="fwd_8hpp_source.html">zen/fwd.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="first_8hpp_source.html">zen/meta/first.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="result_8hpp_source.html">zen/result.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="all__dispatch_8hpp_source.html">zen/core/all_dispatch.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="any__dispatch_8hpp_source.html">zen/core/any_dispatch.hpp</a>&gt;</code><br />
 </div>
 <p><a href="core_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1any__dispatch.html">zen::any_dispatch&lt; InvocableTs &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1all__dispatch.html">zen::all_dispatch&lt; InvocableTs &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacezen"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezen.html">zen</a></td></tr>
@@ -98,15 +89,19 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:aad3fe1cdae1ef44f70cc7408e48f613c"><td class="memTemplParams" colspan="2">template&lt;typename... ValueTs&gt; </td></tr>
 <tr class="memitem:aad3fe1cdae1ef44f70cc7408e48f613c"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen.html#aad3fe1cdae1ef44f70cc7408e48f613c">zen::pass</a> (ValueTs &amp;&amp;... values)</td></tr>
+<tr class="memdesc:aad3fe1cdae1ef44f70cc7408e48f613c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes values as a <code>result</code>  <a href="namespacezen.html#aad3fe1cdae1ef44f70cc7408e48f613c">More...</a><br /></td></tr>
 <tr class="separator:aad3fe1cdae1ef44f70cc7408e48f613c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a50c5c2e385783abd1ff1859c74eae"><td class="memTemplParams" colspan="2">template&lt;typename... InvocableTs&gt; </td></tr>
 <tr class="memitem:a05a50c5c2e385783abd1ff1859c74eae"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen.html#a05a50c5c2e385783abd1ff1859c74eae">zen::any</a> (InvocableTs &amp;&amp;... t)</td></tr>
+<tr class="memdesc:a05a50c5c2e385783abd1ff1859c74eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes invocables until any of them returns an invalid result&lt;T&gt;, then terminates, returning a result&lt;T&gt; holding the first invalid status.  <a href="namespacezen.html#a05a50c5c2e385783abd1ff1859c74eae">More...</a><br /></td></tr>
 <tr class="separator:a05a50c5c2e385783abd1ff1859c74eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa51ef351adfb85513022091752267a12"><td class="memTemplParams" colspan="2">template&lt;typename... InvocableTs&gt; </td></tr>
 <tr class="memitem:aa51ef351adfb85513022091752267a12"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen.html#aa51ef351adfb85513022091752267a12">zen::all</a> (InvocableTs &amp;&amp;... t)</td></tr>
+<tr class="memdesc:aa51ef351adfb85513022091752267a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes invocables until any of them returns a valid result&lt;T&gt;, then terminates, returning that result&lt;T&gt;.  <a href="namespacezen.html#aa51ef351adfb85513022091752267a12">More...</a><br /></td></tr>
 <tr class="separator:aa51ef351adfb85513022091752267a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00d12d6a51ffeabf349241a0ae804224"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Fn &gt; </td></tr>
 <tr class="memitem:a00d12d6a51ffeabf349241a0ae804224"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezen.html#a00d12d6a51ffeabf349241a0ae804224">zen::operator|</a> (result&lt; T &gt; &amp;&amp;r, Fn &amp;&amp;f)</td></tr>
+<tr class="memdesc:a00d12d6a51ffeabf349241a0ae804224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chains together invocables which return a <code>result&lt;T&gt;</code>  <a href="namespacezen.html#a00d12d6a51ffeabf349241a0ae804224">More...</a><br /></td></tr>
 <tr class="separator:a00d12d6a51ffeabf349241a0ae804224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

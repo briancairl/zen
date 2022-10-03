@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['thread_5fpool_212',['thread_pool',['../classzen_1_1exec_1_1thread__pool.html#ae77a9d18cc06a9b5dfd47f5dc484c1af',1,'zen::exec::thread_pool']]],
-  ['thread_5fpool_5fhandle_213',['thread_pool_handle',['../classzen_1_1exec_1_1thread__pool__handle.html#afd0fd43e2284bd8a821c1bb370b86896',1,'zen::exec::thread_pool_handle']]],
-  ['type_5fto_5fstring_214',['type_to_string',['../namespacezen_1_1meta.html#a792b4e57bad8e191a57003ad7cad4107',1,'zen::meta']]],
-  ['type_5fto_5fstring_5fview_215',['type_to_string_view',['../namespacezen_1_1meta.html#ad90bfc2b32cab913644c56d4b50ecbf2',1,'zen::meta']]]
+  ['status_228',['status',['../classzen_1_1result.html#aedfc2aac9a5c81da76bdbeac9ae5e609',1,'zen::result']]],
+  ['sv_229',['sv',['../structzen_1_1message.html#a4f50492923cf7f5c367a566210e338d9',1,'zen::message']]]
 ];

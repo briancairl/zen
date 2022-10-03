@@ -2,7 +2,12 @@
 \label{classzen_1_1all__dispatch}\index{zen::all\_dispatch$<$ InvocableTs $>$@{zen::all\_dispatch$<$ InvocableTs $>$}}
 
 
-{\ttfamily \#include $<$core.\+hpp$>$}
+Implements invocable dispatch behavior for free-\/function {\ttfamily all}  
+
+
+
+
+{\ttfamily \#include $<$all\+\_\+dispatch.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -10,8 +15,17 @@
 constexpr \mbox{\hyperlink{classzen_1_1all__dispatch_a7fdac55d29f92d88ab05b72bb1716c12}{all\+\_\+dispatch}} (Invocable\+Ts \&\&... fs)
 \item 
 {\footnotesize template$<$typename... Value\+Ts$>$ }\\decltype(auto) \mbox{\hyperlink{classzen_1_1all__dispatch_a0ae938f3a90c69be4bd41731bec11d9c}{operator()}} (Value\+Ts \&\&... values) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Invokes all held invocables with {\ttfamily values} as arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename... Invocable\+Ts$>$\newline
+class zen\+::all\+\_\+dispatch$<$ Invocable\+Ts $>$}
+
+Implements invocable dispatch behavior for free-\/function {\ttfamily all} 
+
+Executes invocables until any of them returns an invalid result, then terminates, returning a result holding the first invalid status. Otherwise, returns a result containing values returned by all invocables. ~\newline
+This is the default, single threaded implementation. Specializations of \mbox{\hyperlink{classzen_1_1all__dispatch}{all\+\_\+dispatch}} may be made available for invocation in different execution contexts, such as multi-\/threaded dispatch. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classzen_1_1all__dispatch_a7fdac55d29f92d88ab05b72bb1716c12}\label{classzen_1_1all__dispatch_a7fdac55d29f92d88ab05b72bb1716c12}} 
@@ -34,6 +48,13 @@ decltype(auto) \mbox{\hyperlink{classzen_1_1all__dispatch}{zen\+::all\+\_\+dispa
 
 
 
+Invokes all held invocables with {\ttfamily values} as arguments. 
+
+\begin{DoxyReturn}{Returns}
+result 
+\end{DoxyReturn}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/zen/\mbox{\hyperlink{core_8hpp}{core.\+hpp}}\end{DoxyCompactItemize}
+include/zen/core/\mbox{\hyperlink{all__dispatch_8hpp}{all\+\_\+dispatch.\+hpp}}\end{DoxyCompactItemize}

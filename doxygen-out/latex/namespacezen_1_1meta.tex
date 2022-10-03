@@ -47,6 +47,13 @@ struct \mbox{\hyperlink{structzen_1_1meta_1_1transform_3_01_pack_tmpl_3_01_ts_8_
 \begin{DoxyCompactList}\small\item\em Returns the full-\/qualified name of a type as a C-\/style string. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::string\+\_\+view \mbox{\hyperlink{namespacezen_1_1meta_ad90bfc2b32cab913644c56d4b50ecbf2}{type\+\_\+to\+\_\+string\+\_\+view}} ()
 \begin{DoxyCompactList}\small\item\em Returns the full-\/qualified name of a type as a string\+\_\+view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Fn , typename Tup $>$ }\\static constexpr bool \mbox{\hyperlink{namespacezen_1_1meta_ac444bb271fc32c3bf02e57a2a2c8c370}{can\+\_\+apply\+\_\+v}} = \mbox{\hyperlink{structzen_1_1meta_1_1can__apply}{can\+\_\+apply}}$<$Fn, Tup$>$\+::value
+\item 
+{\footnotesize template$<$typename T , template$<$ typename... $>$ class Tmpl$>$ }\\static constexpr bool \mbox{\hyperlink{namespacezen_1_1meta_a4139a4f5972cc0ec801ed2529300217e}{is\+\_\+specialization\+\_\+v}} = \mbox{\hyperlink{structzen_1_1meta_1_1is__specialization}{is\+\_\+specialization}}$<$T, Tmpl$>$\+::value
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -102,4 +109,21 @@ std\+::string\+\_\+view zen\+::meta\+::type\+\_\+to\+\_\+string\+\_\+view (\begi
 
 
 Returns the full-\/qualified name of a type as a string\+\_\+view. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacezen_1_1meta_ac444bb271fc32c3bf02e57a2a2c8c370}\label{namespacezen_1_1meta_ac444bb271fc32c3bf02e57a2a2c8c370}} 
+\index{zen::meta@{zen::meta}!can\_apply\_v@{can\_apply\_v}}
+\index{can\_apply\_v@{can\_apply\_v}!zen::meta@{zen::meta}}
+\doxysubsubsection{\texorpdfstring{can\_apply\_v}{can\_apply\_v}}
+{\footnotesize\ttfamily template$<$typename Fn , typename Tup $>$ \\
+constexpr bool zen\+::meta\+::can\+\_\+apply\+\_\+v = \mbox{\hyperlink{structzen_1_1meta_1_1can__apply}{can\+\_\+apply}}$<$Fn, Tup$>$\+::value\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacezen_1_1meta_a4139a4f5972cc0ec801ed2529300217e}\label{namespacezen_1_1meta_a4139a4f5972cc0ec801ed2529300217e}} 
+\index{zen::meta@{zen::meta}!is\_specialization\_v@{is\_specialization\_v}}
+\index{is\_specialization\_v@{is\_specialization\_v}!zen::meta@{zen::meta}}
+\doxysubsubsection{\texorpdfstring{is\_specialization\_v}{is\_specialization\_v}}
+{\footnotesize\ttfamily template$<$typename T , template$<$ typename... $>$ class Tmpl$>$ \\
+constexpr bool zen\+::meta\+::is\+\_\+specialization\+\_\+v = \mbox{\hyperlink{structzen_1_1meta_1_1is__specialization}{is\+\_\+specialization}}$<$T, Tmpl$>$\+::value\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 

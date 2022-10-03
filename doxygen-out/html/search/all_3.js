@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['emplace_26',['emplace',['../classzen_1_1value__mem.html#a67e587dcf8fb5bacf8d81eb1c7b20a02',1,'zen::value_mem']]],
-  ['execute_27',['execute',['../classzen_1_1exec_1_1executor.html#a851703bff28971d79fa0ff4188c7adc8',1,'zen::exec::executor']]],
-  ['executor_28',['executor',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
-  ['executor_2ehpp_29',['executor.hpp',['../executor_2executor_8hpp.html',1,'(Global Namespace)'],['../executor_8hpp.html',1,'(Global Namespace)']]],
-  ['executor_3c_20thread_5fpool_3c_20f_2c_20a_20_3e_20_3e_30',['executor&lt; thread_pool&lt; F, A &gt; &gt;',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
-  ['executor_3c_20thread_5fpool_3c_20std_3a_3afunction_3c_20void_28_29_3e_2c_20std_3a_3aallocator_3c_20std_3a_3afunction_3c_20void_28_29_3e_20_3e_20_3e_20_3e_31',['executor&lt; thread_pool&lt; std::function&lt; void()&gt;, std::allocator&lt; std::function&lt; void()&gt; &gt; &gt; &gt;',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
-  ['executor_5fhandle_32',['executor_handle',['../classzen_1_1exec_1_1executor__handle.html',1,'zen::exec']]],
-  ['executor_5fhandle_3c_20thread_5fpool_5fhandle_20_3e_33',['executor_handle&lt; thread_pool_handle &gt;',['../classzen_1_1exec_1_1executor__handle.html',1,'zen::exec::executor_handle&lt; thread_pool_handle &gt;'],['../classzen_1_1exec_1_1thread__pool__handle.html#aa1a9e2d3bd8cf8a5a0fb60438cffee41',1,'zen::exec::thread_pool_handle::executor_handle&lt; thread_pool_handle &gt;()']]]
+  ['deferred_5fresult_24',['deferred_result',['../classzen_1_1deferred__result.html',1,'zen::deferred_result&lt; InvocableT, ArgumentTupleT &gt;'],['../classzen_1_1deferred__result.html#a4cff746210f1f77b3e8c217c45c2c9a1',1,'zen::deferred_result::deferred_result()'],['../classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4.html#a0298375aa72119bb13f9b5a3ae74918b',1,'zen::deferred_result&lt; InvocableT, void &gt;::deferred_result()']]],
+  ['deferred_5fresult_2ehpp_25',['deferred_result.hpp',['../deferred__result_8hpp.html',1,'']]],
+  ['deferred_5fresult_3c_20invocablet_2c_20void_20_3e_26',['deferred_result&lt; InvocableT, void &gt;',['../classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4.html',1,'zen']]],
+  ['deferred_5fresult_5fof_27',['deferred_result_of',['../structzen_1_1deferred__result__of.html',1,'zen']]],
+  ['deferred_5fresult_5fof_3c_20deferred_5fresult_3c_20invocablet_2c_20inputt_20_3e_20_3e_28',['deferred_result_of&lt; deferred_result&lt; InvocableT, InputT &gt; &gt;',['../structzen_1_1deferred__result__of_3_01deferred__result_3_01_invocable_t_00_01_input_t_01_4_01_4.html',1,'zen']]],
+  ['deferred_5fresult_5fof_5ft_29',['deferred_result_of_t',['../namespacezen.html#a0519979fd4e00ea8c2efc5576333c9aa',1,'zen']]],
+  ['destroy_30',['destroy',['../classzen_1_1value__mem.html#a3b75464219c22a73a2b41b14450fc7d1',1,'zen::value_mem']]],
+  ['doxygen_5fshould_5fskip_5fthis_31',['DOXYGEN_SHOULD_SKIP_THIS',['../deferred__result_8hpp.html#a9e75ab0099dbf032cc42cfb6613f5665',1,'deferred_result.hpp']]]
 ];

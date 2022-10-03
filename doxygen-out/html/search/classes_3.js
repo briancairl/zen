@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['executor_127',['executor',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
-  ['executor_3c_20thread_5fpool_3c_20f_2c_20a_20_3e_20_3e_128',['executor&lt; thread_pool&lt; F, A &gt; &gt;',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
-  ['executor_3c_20thread_5fpool_3c_20std_3a_3afunction_3c_20void_28_29_3e_2c_20std_3a_3aallocator_3c_20std_3a_3afunction_3c_20void_28_29_3e_20_3e_20_3e_20_3e_129',['executor&lt; thread_pool&lt; std::function&lt; void()&gt;, std::allocator&lt; std::function&lt; void()&gt; &gt; &gt; &gt;',['../classzen_1_1exec_1_1executor.html',1,'zen::exec']]],
-  ['executor_5fhandle_130',['executor_handle',['../classzen_1_1exec_1_1executor__handle.html',1,'zen::exec']]],
-  ['executor_5fhandle_3c_20thread_5fpool_5fhandle_20_3e_131',['executor_handle&lt; thread_pool_handle &gt;',['../classzen_1_1exec_1_1executor__handle.html',1,'zen::exec']]]
+  ['deferred_5fresult_136',['deferred_result',['../classzen_1_1deferred__result.html',1,'zen']]],
+  ['deferred_5fresult_3c_20invocablet_2c_20void_20_3e_137',['deferred_result&lt; InvocableT, void &gt;',['../classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4.html',1,'zen']]],
+  ['deferred_5fresult_5fof_138',['deferred_result_of',['../structzen_1_1deferred__result__of.html',1,'zen']]],
+  ['deferred_5fresult_5fof_3c_20deferred_5fresult_3c_20invocablet_2c_20inputt_20_3e_20_3e_139',['deferred_result_of&lt; deferred_result&lt; InvocableT, InputT &gt; &gt;',['../structzen_1_1deferred__result__of_3_01deferred__result_3_01_invocable_t_00_01_input_t_01_4_01_4.html',1,'zen']]]
 ];

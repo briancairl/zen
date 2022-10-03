@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['deferred_5fresult_184',['deferred_result',['../classzen_1_1deferred__result.html#a4cff746210f1f77b3e8c217c45c2c9a1',1,'zen::deferred_result::deferred_result()'],['../classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4.html#a0298375aa72119bb13f9b5a3ae74918b',1,'zen::deferred_result&lt; InvocableT, void &gt;::deferred_result()']]],
-  ['destroy_185',['destroy',['../classzen_1_1value__mem.html#a3b75464219c22a73a2b41b14450fc7d1',1,'zen::value_mem']]]
+  ['c_5fstr_199',['c_str',['../structzen_1_1message.html#a75ad421af9dcdc6db0b8dafc97516fa4',1,'zen::message']]],
+  ['cancel_200',['cancel',['../classzen_1_1exec_1_1executor__handle.html#a9037bf3e2aff09eaf747e6c1b89c08b4',1,'zen::exec::executor_handle']]],
+  ['create_201',['create',['../namespacezen_1_1detail.html#a49b98c81bbe51fa75f89468b4fe4717f',1,'zen::detail::create()'],['../namespacezen.html#a8914258ddb966b3ebfc9743286349f30',1,'zen::create(DeferredT &amp;&amp;dr)'],['../namespacezen.html#a905828ffdc5d20c78b11c03b2190dcc9',1,'zen::create(DeferredT1 &amp;&amp;d1, DeferredT2 &amp;&amp;d2, OtherDeferredTs &amp;&amp;... dn)']]]
 ];

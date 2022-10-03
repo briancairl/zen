@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['is_5fexecutor_5fhandle_134',['is_executor_handle',['../structzen_1_1exec_1_1is__executor__handle.html',1,'zen::exec']]],
-  ['is_5fspecialization_135',['is_specialization',['../structzen_1_1meta_1_1is__specialization.html',1,'zen::meta']]],
-  ['is_5fspecialization_3c_20tmpl_3c_20ts_2e_2e_2e_20_3e_2c_20tmpl_20_3e_136',['is_specialization&lt; Tmpl&lt; Ts... &gt;, Tmpl &gt;',['../structzen_1_1meta_1_1is__specialization_3_01_tmpl_3_01_ts_8_8_8_01_4_00_01_tmpl_01_4.html',1,'zen::meta']]]
+  ['first_145',['first',['../structzen_1_1meta_1_1first.html',1,'zen::meta']]],
+  ['first_3c_20firstt_2c_20otherts_2e_2e_2e_20_3e_146',['first&lt; FirstT, OtherTs... &gt;',['../structzen_1_1meta_1_1first_3_01_first_t_00_01_other_ts_8_8_8_01_4.html',1,'zen::meta']]]
 ];

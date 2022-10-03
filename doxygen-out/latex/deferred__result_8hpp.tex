@@ -1,0 +1,57 @@
+\hypertarget{deferred__result_8hpp}{}\doxysection{include/zen/result/deferred\+\_\+result.hpp File Reference}
+\label{deferred__result_8hpp}\index{include/zen/result/deferred\_result.hpp@{include/zen/result/deferred\_result.hpp}}
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$zen/fwd.\+hpp$>$}\newline
+{\ttfamily \#include $<$zen/meta/invocable.\+hpp$>$}\newline
+{\ttfamily \#include $<$zen/meta/transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$zen/result/to\+\_\+result.\+hpp$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classzen_1_1deferred__result}{zen\+::deferred\+\_\+result$<$ Invocable\+T, Argument\+Tuple\+T $>$}}
+\begin{DoxyCompactList}\small\item\em An invocable packaged with its arguments, which returns a result. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classzen_1_1deferred__result_3_01_invocable_t_00_01void_01_4}{zen\+::deferred\+\_\+result$<$ Invocable\+T, void $>$}}
+\begin{DoxyCompactList}\small\item\em An invocable with no arguments, which returns a result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structzen_1_1deferred__result__of}{zen\+::deferred\+\_\+result\+\_\+of$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Traits type which isolates the type returned by {\ttfamily deferred\+\_\+result\+::operator()} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structzen_1_1deferred__result__of_3_01deferred__result_3_01_invocable_t_00_01_input_t_01_4_01_4}{zen\+::deferred\+\_\+result\+\_\+of$<$ deferred\+\_\+result$<$ Invocable\+T, Input\+T $>$ $>$}}
+\begin{DoxyCompactList}\small\item\em Traits type which isolates the type returned by {\ttfamily deferred\+\_\+result\+::operator()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacezen}{zen}}
+\item 
+ \mbox{\hyperlink{namespacezen_1_1detail}{zen\+::detail}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{deferred__result_8hpp_a9e75ab0099dbf032cc42cfb6613f5665}{D\+O\+X\+Y\+G\+E\+N\+\_\+\+S\+H\+O\+U\+L\+D\+\_\+\+S\+K\+I\+P\+\_\+\+T\+H\+IS}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename D $>$ }\\using \mbox{\hyperlink{namespacezen_a0519979fd4e00ea8c2efc5576333c9aa}{zen\+::deferred\+\_\+result\+\_\+of\+\_\+t}} = typename deferred\+\_\+result\+\_\+of$<$ std\+::remove\+\_\+reference\+\_\+t$<$ D $>$ $>$\+::type
+\begin{DoxyCompactList}\small\item\em Traits type which isolates the type returned by {\ttfamily deferred\+\_\+result\+::operator()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Result\+TupleT , typename Deferred\+TupleT , std\+::size\+\_\+t... Is$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_1_1detail_a49b98c81bbe51fa75f89468b4fe4717f}{zen\+::detail\+::create}} (Result\+TupleT \&\&result\+\_\+tuple, Deferred\+TupleT \&\&deferred\+\_\+result\+\_\+tuple, std\+::index\+\_\+sequence$<$ Is... $>$ \+\_\+)
+\item 
+{\footnotesize template$<$typename InvocableT $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a5e99ec328007b7ee84ebed748115f747}{zen\+::make\+\_\+deferred\+\_\+result}} (InvocableT \&\&invocable)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classzen_1_1deferred__result}{deferred\+\_\+result}} with no arguments. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename InvocableT , typename Arg\+TupleT $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a20104a2253cf0eb6740f39bc98f331e2}{zen\+::make\+\_\+deferred\+\_\+result}} (InvocableT \&\&invocable, Arg\+TupleT \&\&arg)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classzen_1_1deferred__result}{deferred\+\_\+result}} with a {\ttfamily std\+::tuple} of arguments. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DeferredT $>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a8914258ddb966b3ebfc9743286349f30}{zen\+::create}} (DeferredT \&\&dr)
+\begin{DoxyCompactList}\small\item\em Creates a result from a single deferred invocable. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Deferred\+T1 , typename Deferred\+T2 , typename... Other\+Deferred\+Ts$>$ }\\decltype(auto) \mbox{\hyperlink{namespacezen_a905828ffdc5d20c78b11c03b2190dcc9}{zen\+::create}} (Deferred\+T1 \&\&d1, Deferred\+T2 \&\&d2, Other\+Deferred\+Ts \&\&... dn)
+\begin{DoxyCompactList}\small\item\em Creates a result from two or more deferred invocables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{deferred__result_8hpp_a9e75ab0099dbf032cc42cfb6613f5665}\label{deferred__result_8hpp_a9e75ab0099dbf032cc42cfb6613f5665}} 
+\index{deferred\_result.hpp@{deferred\_result.hpp}!DOXYGEN\_SHOULD\_SKIP\_THIS@{DOXYGEN\_SHOULD\_SKIP\_THIS}}
+\index{DOXYGEN\_SHOULD\_SKIP\_THIS@{DOXYGEN\_SHOULD\_SKIP\_THIS}!deferred\_result.hpp@{deferred\_result.hpp}}
+\doxysubsubsection{\texorpdfstring{DOXYGEN\_SHOULD\_SKIP\_THIS}{DOXYGEN\_SHOULD\_SKIP\_THIS}}
+{\footnotesize\ttfamily \#define D\+O\+X\+Y\+G\+E\+N\+\_\+\+S\+H\+O\+U\+L\+D\+\_\+\+S\+K\+I\+P\+\_\+\+T\+H\+IS~1}
+

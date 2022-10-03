@@ -75,33 +75,208 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Stores a value type, or an error message.  
+ <a href="classzen_1_1result.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="fwd_8hpp_source.html">fwd.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a702d342f2b518f6eb456b97d4d39b5d1"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#a702d342f2b518f6eb456b97d4d39b5d1">result</a> ()=default</td></tr>
-<tr class="separator:a702d342f2b518f6eb456b97d4d39b5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeda6e944799aa1cdc8e6f9a82df46b8a"><td class="memTemplParams" colspan="2">template&lt;char... Elements&gt; </td></tr>
-<tr class="memitem:aeda6e944799aa1cdc8e6f9a82df46b8a"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#aeda6e944799aa1cdc8e6f9a82df46b8a">result</a> (<a class="el" href="structzen_1_1message.html">message</a>&lt; Elements... &gt; error_message)</td></tr>
-<tr class="separator:aeda6e944799aa1cdc8e6f9a82df46b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15faf36a8fa5808eb510dca8d4c0b062"><td class="memTemplParams" colspan="2">template&lt;char... Elements&gt; </td></tr>
+<tr class="memitem:a15faf36a8fa5808eb510dca8d4c0b062"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#a15faf36a8fa5808eb510dca8d4c0b062">result</a> (<a class="el" href="structzen_1_1message.html">message</a>&lt; Elements... &gt; &amp;&amp;error_message)</td></tr>
+<tr class="memdesc:a15faf36a8fa5808eb510dca8d4c0b062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an invalid result from an error message.  <a href="classzen_1_1result.html#a15faf36a8fa5808eb510dca8d4c0b062">More...</a><br /></td></tr>
+<tr class="separator:a15faf36a8fa5808eb510dca8d4c0b062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cabd53bf4e5fd0970a70d05fb414321"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#a9cabd53bf4e5fd0970a70d05fb414321">result</a> (<a class="el" href="classzen_1_1result__status.html">result_status</a> &amp;&amp;<a class="el" href="classzen_1_1result.html#aedfc2aac9a5c81da76bdbeac9ae5e609">status</a>)</td></tr>
+<tr class="memdesc:a9cabd53bf4e5fd0970a70d05fb414321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an invalid result from an error status.  <a href="classzen_1_1result.html#a9cabd53bf4e5fd0970a70d05fb414321">More...</a><br /></td></tr>
 <tr class="separator:a9cabd53bf4e5fd0970a70d05fb414321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaecb0bed262ab1c7889696a7f2f03739"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#aaecb0bed262ab1c7889696a7f2f03739">result</a> (const T &amp;value)</td></tr>
+<tr class="memitem:aaecb0bed262ab1c7889696a7f2f03739"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#aaecb0bed262ab1c7889696a7f2f03739">result</a> (const T &amp;<a class="el" href="classzen_1_1result.html#aaac682b7e7e084e853e727073e1bc41e">value</a>)</td></tr>
+<tr class="memdesc:aaecb0bed262ab1c7889696a7f2f03739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a valid result from a value.  <a href="classzen_1_1result.html#aaecb0bed262ab1c7889696a7f2f03739">More...</a><br /></td></tr>
 <tr class="separator:aaecb0bed262ab1c7889696a7f2f03739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d5663ffc4a33bd82dc2b8aa181a7457"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#a4d5663ffc4a33bd82dc2b8aa181a7457">result</a> (T &amp;&amp;value)</td></tr>
+<tr class="memitem:a4d5663ffc4a33bd82dc2b8aa181a7457"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#a4d5663ffc4a33bd82dc2b8aa181a7457">result</a> (T &amp;&amp;<a class="el" href="classzen_1_1result.html#aaac682b7e7e084e853e727073e1bc41e">value</a>)</td></tr>
+<tr class="memdesc:a4d5663ffc4a33bd82dc2b8aa181a7457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a valid result from a value.  <a href="classzen_1_1result.html#a4d5663ffc4a33bd82dc2b8aa181a7457">More...</a><br /></td></tr>
 <tr class="separator:a4d5663ffc4a33bd82dc2b8aa181a7457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702d342f2b518f6eb456b97d4d39b5d1"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#a702d342f2b518f6eb456b97d4d39b5d1">result</a> ()=default</td></tr>
+<tr class="memdesc:a702d342f2b518f6eb456b97d4d39b5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default initializes result to invalid (Unknown) state.  <a href="classzen_1_1result.html#a702d342f2b518f6eb456b97d4d39b5d1">More...</a><br /></td></tr>
+<tr class="separator:a702d342f2b518f6eb456b97d4d39b5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a339abc9f7c8ffac59f34908b0db01c9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#a339abc9f7c8ffac59f34908b0db01c9c">~result</a> ()</td></tr>
+<tr class="memdesc:a339abc9f7c8ffac59f34908b0db01c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys result value, if <code><a class="el" href="classzen_1_1result.html#ab529ca5a7f76389e6d2ee1e6cf7acdb8" title="Returns true if result value pay load is valid.">valid()</a> == true</code>  <a href="classzen_1_1result.html#a339abc9f7c8ffac59f34908b0db01c9c">More...</a><br /></td></tr>
 <tr class="separator:a339abc9f7c8ffac59f34908b0db01c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaac682b7e7e084e853e727073e1bc41e"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#aaac682b7e7e084e853e727073e1bc41e">value</a> () const &amp;</td></tr>
+<tr class="memdesc:aaac682b7e7e084e853e727073e1bc41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns immutable reference to result value.  <a href="classzen_1_1result.html#aaac682b7e7e084e853e727073e1bc41e">More...</a><br /></td></tr>
+<tr class="separator:aaac682b7e7e084e853e727073e1bc41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003a4891ea2a994e71d5501422ccdde9"><td class="memItemLeft" align="right" valign="top">T &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#a003a4891ea2a994e71d5501422ccdde9">value</a> () &amp;&amp;</td></tr>
+<tr class="memdesc:a003a4891ea2a994e71d5501422ccdde9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns rvalue reference to result value.  <a href="classzen_1_1result.html#a003a4891ea2a994e71d5501422ccdde9">More...</a><br /></td></tr>
+<tr class="separator:a003a4891ea2a994e71d5501422ccdde9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedfc2aac9a5c81da76bdbeac9ae5e609"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classzen_1_1result__status.html">result_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#aedfc2aac9a5c81da76bdbeac9ae5e609">status</a> () const</td></tr>
+<tr class="memdesc:aedfc2aac9a5c81da76bdbeac9ae5e609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns status associated with result.  <a href="classzen_1_1result.html#aedfc2aac9a5c81da76bdbeac9ae5e609">More...</a><br /></td></tr>
 <tr class="separator:aedfc2aac9a5c81da76bdbeac9ae5e609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab529ca5a7f76389e6d2ee1e6cf7acdb8"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#ab529ca5a7f76389e6d2ee1e6cf7acdb8">valid</a> () const</td></tr>
+<tr class="memdesc:ab529ca5a7f76389e6d2ee1e6cf7acdb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if result value pay load is valid.  <a href="classzen_1_1result.html#ab529ca5a7f76389e6d2ee1e6cf7acdb8">More...</a><br /></td></tr>
 <tr class="separator:ab529ca5a7f76389e6d2ee1e6cf7acdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac16a66e41fcd2f9ee71def955d1e75b2"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzen_1_1result.html#ac16a66e41fcd2f9ee71def955d1e75b2">operator bool</a> () const</td></tr>
+<tr class="memdesc:ac16a66e41fcd2f9ee71def955d1e75b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if result value pay load is valid.  <a href="classzen_1_1result.html#ac16a66e41fcd2f9ee71def955d1e75b2">More...</a><br /></td></tr>
 <tr class="separator:ac16a66e41fcd2f9ee71def955d1e75b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class zen::result&lt; T &gt;</h3>
+
+<p>Stores a value type, or an error message. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>value type </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a15faf36a8fa5808eb510dca8d4c0b062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15faf36a8fa5808eb510dca8d4c0b062">&#9670;&nbsp;</a></span>result() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;char... Elements&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::<a class="el" href="classzen_1_1result.html">result</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structzen_1_1message.html">message</a>&lt; Elements... &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>error_message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an invalid result from an error message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error_message</td><td>error description message; must not be <code><a class="el" href="namespacezen.html#a6937ffb09f12ad0b46022a444dadfa78" title="Standard message used to indicate valid status.">zen::Valid</a></code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9cabd53bf4e5fd0970a70d05fb414321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cabd53bf4e5fd0970a70d05fb414321">&#9670;&nbsp;</a></span>result() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::<a class="el" href="classzen_1_1result.html">result</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classzen_1_1result__status.html">result_status</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an invalid result from an error status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>error status </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaecb0bed262ab1c7889696a7f2f03739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaecb0bed262ab1c7889696a7f2f03739">&#9670;&nbsp;</a></span>result() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::<a class="el" href="classzen_1_1result.html">result</a> </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a valid result from a value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>value payload </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4d5663ffc4a33bd82dc2b8aa181a7457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5663ffc4a33bd82dc2b8aa181a7457">&#9670;&nbsp;</a></span>result() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::<a class="el" href="classzen_1_1result.html">result</a> </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a valid result from a value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>value payload </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a702d342f2b518f6eb456b97d4d39b5d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a702d342f2b518f6eb456b97d4d39b5d1">&#9670;&nbsp;</a></span>result() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a702d342f2b518f6eb456b97d4d39b5d1">&#9670;&nbsp;</a></span>result() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,119 +300,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="aeda6e944799aa1cdc8e6f9a82df46b8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeda6e944799aa1cdc8e6f9a82df46b8a">&#9670;&nbsp;</a></span>result() <span class="overload">[2/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<div class="memtemplate">
-template&lt;char... Elements&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::<a class="el" href="classzen_1_1result.html">result</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structzen_1_1message.html">message</a>&lt; Elements... &gt;&#160;</td>
-          <td class="paramname"><em>error_message</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9cabd53bf4e5fd0970a70d05fb414321"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cabd53bf4e5fd0970a70d05fb414321">&#9670;&nbsp;</a></span>result() <span class="overload">[3/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::<a class="el" href="classzen_1_1result.html">result</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classzen_1_1result__status.html">result_status</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>status</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaecb0bed262ab1c7889696a7f2f03739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaecb0bed262ab1c7889696a7f2f03739">&#9670;&nbsp;</a></span>result() <span class="overload">[4/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::<a class="el" href="classzen_1_1result.html">result</a> </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4d5663ffc4a33bd82dc2b8aa181a7457"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d5663ffc4a33bd82dc2b8aa181a7457">&#9670;&nbsp;</a></span>result() <span class="overload">[5/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::<a class="el" href="classzen_1_1result.html">result</a> </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Default initializes result to invalid (Unknown) state. </p>
 
 </div>
 </div>
@@ -248,23 +311,14 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::~<a class="el" href="classzen_1_1result.html">result</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::~<a class="el" href="classzen_1_1result.html">result</a></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Destroys result value, if <code><a class="el" href="classzen_1_1result.html#ab529ca5a7f76389e6d2ee1e6cf7acdb8" title="Returns true if result value pay load is valid.">valid()</a> == true</code> </p>
 
 </div>
 </div>
@@ -281,18 +335,19 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::operator bool </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="memname">constexpr <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::operator bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns <code>true</code> if result value pay load is valid. </p>
+<p>If <code><a class="el" href="classzen_1_1result.html#ab529ca5a7f76389e6d2ee1e6cf7acdb8" title="Returns true if result value pay load is valid.">valid()</a> == true</code>, then <code><a class="el" href="classzen_1_1result.html#aedfc2aac9a5c81da76bdbeac9ae5e609" title="Returns status associated with result.">status()</a>.message() == Valid</code></p>
+<p>Enables implicit cast to <code>bool</code> based on <a class="el" href="classzen_1_1result.html#ab529ca5a7f76389e6d2ee1e6cf7acdb8" title="Returns true if result value pay load is valid.">valid()</a> </p>
 
 </div>
 </div>
@@ -308,18 +363,17 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classzen_1_1result__status.html">result_status</a> <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::status </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="memname">constexpr <a class="el" href="classzen_1_1result__status.html">result_status</a> <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::status</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns status associated with result. </p>
 
 </div>
 </div>
@@ -335,18 +389,71 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::valid </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="memname">constexpr bool <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::valid</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns <code>true</code> if result value pay load is valid. </p>
+<p>If <code><a class="el" href="classzen_1_1result.html#ab529ca5a7f76389e6d2ee1e6cf7acdb8" title="Returns true if result value pay load is valid.">valid()</a> == true</code>, then <code><a class="el" href="classzen_1_1result.html#aedfc2aac9a5c81da76bdbeac9ae5e609" title="Returns status associated with result.">status()</a>.message() == Valid</code> </p>
+
+</div>
+</div>
+<a id="a003a4891ea2a994e71d5501422ccdde9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003a4891ea2a994e71d5501422ccdde9">&#9670;&nbsp;</a></span>value() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp;&amp; <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns rvalue reference to result value. </p>
+<dl class="section note"><dt>Note</dt><dd>use operator* as a more efficient option that does not check validity</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzen_1_1bad__result__access.html" title="Exception thrown when result does not contain a valid value.">bad_result_access</a></td><td>if result is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaac682b7e7e084e853e727073e1bc41e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaac682b7e7e084e853e727073e1bc41e">&#9670;&nbsp;</a></span>value() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp;&amp; <a class="el" href="classzen_1_1result.html">zen::result</a>&lt; T &gt;::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns immutable reference to result value. </p>
+<dl class="section note"><dt>Note</dt><dd>use operator* as a more efficient option that does not check validity</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzen_1_1bad__result__access.html" title="Exception thrown when result does not contain a valid value.">bad_result_access</a></td><td>if result is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
