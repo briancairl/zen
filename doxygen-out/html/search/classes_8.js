@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['result_151',['result',['../classzen_1_1result.html',1,'zen']]],
-  ['result_5fas_5ftuple_152',['result_as_tuple',['../structzen_1_1result__as__tuple.html',1,'zen']]],
-  ['result_5fas_5ftuple_3c_20result_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_20_3e_153',['result_as_tuple&lt; result&lt; std::tuple&lt; Ts... &gt; &gt; &gt;',['../structzen_1_1result__as__tuple_3_01result_3_01std_1_1tuple_3_01_ts_8_8_8_01_4_01_4_01_4.html',1,'zen']]],
-  ['result_5fas_5ftuple_3c_20result_3c_20t_20_3e_20_3e_154',['result_as_tuple&lt; result&lt; T &gt; &gt;',['../structzen_1_1result__as__tuple_3_01result_3_01_t_01_4_01_4.html',1,'zen']]],
-  ['result_5fof_5fapply_155',['result_of_apply',['../structzen_1_1meta_1_1result__of__apply.html',1,'zen::meta']]],
-  ['result_5fof_5fapply_3c_20fn_2c_20std_3a_3atuple_3c_20argts_2e_2e_2e_20_3e_2c_20otherstups_2e_2e_2e_20_3e_156',['result_of_apply&lt; Fn, std::tuple&lt; ArgTs... &gt;, OthersTups... &gt;',['../structzen_1_1meta_1_1result__of__apply_3_01_fn_00_01std_1_1tuple_3_01_arg_ts_8_8_8_01_4_00_01_others_tups_8_8_8_01_4.html',1,'zen::meta']]],
-  ['result_5fstatus_157',['result_status',['../classzen_1_1result__status.html',1,'zen']]]
+  ['result_153',['result',['../classzen_1_1result.html',1,'zen']]],
+  ['result_5fas_5ftuple_154',['result_as_tuple',['../structzen_1_1result__as__tuple.html',1,'zen']]],
+  ['result_5fas_5ftuple_3c_20result_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_20_3e_155',['result_as_tuple&lt; result&lt; std::tuple&lt; Ts... &gt; &gt; &gt;',['../structzen_1_1result__as__tuple_3_01result_3_01std_1_1tuple_3_01_ts_8_8_8_01_4_01_4_01_4.html',1,'zen']]],
+  ['result_5fas_5ftuple_3c_20result_3c_20t_20_3e_20_3e_156',['result_as_tuple&lt; result&lt; T &gt; &gt;',['../structzen_1_1result__as__tuple_3_01result_3_01_t_01_4_01_4.html',1,'zen']]],
+  ['result_5fof_5fapply_157',['result_of_apply',['../structzen_1_1meta_1_1result__of__apply.html',1,'zen::meta']]],
+  ['result_5fof_5fapply_3c_20fn_2c_20std_3a_3atuple_3c_20argts_2e_2e_2e_20_3e_2c_20otherstups_2e_2e_2e_20_3e_158',['result_of_apply&lt; Fn, std::tuple&lt; ArgTs... &gt;, OthersTups... &gt;',['../structzen_1_1meta_1_1result__of__apply_3_01_fn_00_01std_1_1tuple_3_01_arg_ts_8_8_8_01_4_00_01_others_tups_8_8_8_01_4.html',1,'zen::meta']]],
+  ['result_5fstatus_159',['result_status',['../classzen_1_1result__status.html',1,'zen']]]
 ];

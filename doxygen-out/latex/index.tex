@@ -1,0 +1,20 @@
+Zen provides facilities for railroad style programming in C++.
+
+This library supports parallel execution which can be easily swapped into any single-\/threaded program written with Zen.\hypertarget{index_autotoc_md1}{}\doxysection{Running examples}\label{index_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bazel run examples:<target>}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bazel run examples:zen}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md2}{}\doxysection{Running tests}\label{index_autotoc_md2}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{bazel}\label{index_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bazel test test/... -\/-\/test\_output=all -\/-\/cache\_test\_results=no -\/-\/compilation\_mode=dbg}
+\end{DoxyCode}
+ 
